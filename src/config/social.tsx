@@ -4,7 +4,7 @@ import { FiGithub } from "react-icons/fi";
 
 export const SOCIAL = {
   GITHUB_ACCOUNT_URL: "https://github.com/mohamadomran",
-  EMAIL: "mohamadomran_13@hotmail.com",
+  EMAIL: "hello@mohamadomran.dev",
   INSTAGRAM_ACCOUNT_URL: "https://www.instagram.com/mohamadomran_13/",
   TWITTER_ACCOUNT_URL : "https://twitter.com/itsmohamadomran",
 };
