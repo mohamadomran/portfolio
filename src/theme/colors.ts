@@ -5,6 +5,7 @@ export const colors = {
             ghost_white: '#F5F2F8',
             coral: '#F86B63',
             lemon_yellow: '##F7F052',
+            dodger_blue: '#4392F1',
         },
     },
 };
