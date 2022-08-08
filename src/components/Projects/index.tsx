@@ -10,7 +10,7 @@ export const Projects = () => (
           Projects
         </Heading>
         <Text mt="4" variant="lighter">
-          A glimpse of some of the best commercial and personal projects I have built.
+          Projects that I contributed to
         </Text>
       </Box>
       <ProjectsList />
