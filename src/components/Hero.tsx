@@ -1,6 +1,6 @@
-import NextLink from "next/link"
-import { HStack, VStack, Heading, Text, Center, Image, Link, Stack } from "@chakra-ui/react"
-import { FiArrowRight } from "react-icons/fi"
+import { SOCIAL } from "@/config/social"
+import { Button, VStack, Heading, Text, Center, Image, Stack, Link } from "@chakra-ui/react"
+import { FiMessageSquare } from "react-icons/fi"
 
 export const Hero = () => (
     <Center height="90vh">
@@ -22,6 +22,8 @@ export const Hero = () => (
                 <Text fontSize="xl" maxWidth="lg" variant="light" lineHeight="base">
                     I&apos;m always open to new adventures and challenges! Tryin&apos; to make the world a better place, one line of code at a time
                 </Text>
+
+                <Link href={`mailto:${SOCIAL.EMAIL}`}><Button rightIcon={<FiMessageSquare />}>Got a project? Let’s talk</Button></Link>
             </VStack>
         </Stack>
     </Center >

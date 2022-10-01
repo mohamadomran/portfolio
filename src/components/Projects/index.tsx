@@ -6,7 +6,7 @@ export const Projects = () => (
   <Center id="projects">
     <Box w={layoutDimensions.width} my="12">
       <Box pb="12">
-        <Heading as="h1" size="xl">
+        <Heading as="h2" size="xl">
           Projects
         </Heading>
       </Box>
