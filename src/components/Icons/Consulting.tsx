@@ -6,7 +6,7 @@ export const ConsultingIcon = () => {
   const color = useColorModeValue("purple.300", "purple.400");
   return (
     <Box color={color}>
-          <Image src="/assets/images/lightbulb.png" alt="Consulting" height="160" width="160"/>
+          <Image src="/assets/images/web.svg" alt="Consulting" height="300" width="300"/>
     </Box>
   );
 };

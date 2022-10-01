@@ -6,12 +6,9 @@ export const Projects = () => (
   <Center id="projects">
     <Box w={layoutDimensions.width} my="12">
       <Box pb="12">
-        <Heading as="h2" size="xl">
+        <Heading as="h1" size="xl">
           Projects
         </Heading>
-        <Text mt="4" variant="lighter">
-          Projects that I contributed to
-        </Text>
       </Box>
       <ProjectsList />
     </Box>

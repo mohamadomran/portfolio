@@ -13,11 +13,11 @@ export const ServicesListItem = (props: ServicesListItemProps) => {
     <SlideUpTransition order={order}>
       <Box maxW="md" textAlign="center">
         <VStack>
-          <Box>{service.icon}</Box>
-          <Text as="h3" fontSize="xl" fontWeight="bold">
+          <Box alignSelf="top">{service.icon}</Box>
+          <Text as="h3" fontSize="2xl" fontWeight="bold">
             {service.title}
           </Text>
-          <Text>{service.description}</Text>
+          <Text fontSize="lg">{service.description}</Text>
         </VStack>
       </Box>
     </SlideUpTransition>

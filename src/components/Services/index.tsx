@@ -10,7 +10,7 @@ export const Services = () => {
     {
       title: "Web/Mobile Development",
       description:
-        "I'll be assisting you in turning your ideas and concepts into products, whether you're developing a brand-new website or updating the look of an already-existing one. Using the latest recent technology, I bring my concepts to production readiness.",
+        "I'll be assisting you in turning your ideas and concepts into products, whether you're developing a brand-new website or updating the look of an already-existing one.",
       icon: <WebMobileDevelopmentIcon />,
     },
     {
@@ -28,9 +28,6 @@ export const Services = () => {
           <Heading as="h2" size="xl">
          Services
           </Heading>
-          <Text mt="2" variant="lighter">
-            Some of my services I provide.
-          </Text>
         </Box>
         <ServicesList services={services} />
       </Box>
