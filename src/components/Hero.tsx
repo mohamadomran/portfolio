@@ -12,8 +12,12 @@ export const Hero = () => (
             <VStack spacing="6" textAlign="center">
                 <Heading as="h1" size="2xl" maxWidth="lg" lineHeight="shorter" paddingTop="5">
                     Hi, I&apos;m Mohamad!, I&apos;m a Software engineer at{" "}
+                    <span color="red.500" >
+                         SpeedLane.
+                    </span>
+                    {" "}previously known as {" "}
                     <Link color="red.500" href='https://postlight.com'>
-                        Postlight.
+                        Postlight
                     </Link>
                 </Heading>
                 <Text fontSize="xl" maxWidth="lg" variant="light" lineHeight="base">
