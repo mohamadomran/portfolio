@@ -1,18 +1,9 @@
 import { ReactNode } from 'react'
 import { Container } from '@/components/Container'
 import { twMerge } from 'tailwind-merge'
+import { SimpleLayout } from '@/types'
 
-type SimpleLayout = {
-    title: string
-    children: ReactNode
-    gradient: string
-}
-
-export function SimpleLayout({
-    title,
-    children,
-    gradient,
-}: SimpleLayout) {
+export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
     return (
         <Container className='mt-16 sm:mt-32'>
             <header className='max-w-2xl'>

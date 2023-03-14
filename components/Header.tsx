@@ -244,7 +244,7 @@ export function Header() {
                     </Container>
                 </div>
             </header>
-            {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}views
+            {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
         </>
     )
 }
