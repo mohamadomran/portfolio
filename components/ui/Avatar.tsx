@@ -1,10 +1,10 @@
-import {Props} from '@/types'
+import { Props } from '@/types'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
-import avatar from '@/public/static/images/avatar.jpg'
+import avatar from '@/public/static/images/avatar.png'
 
-export function AvatarContainer({className, ...props}: { style?: Object } & Props) {
+export function AvatarContainer({ className, ...props }: { style?: Object } & Props) {
     return (
         <div
             className={clsx(
@@ -16,7 +16,7 @@ export function AvatarContainer({className, ...props}: { style?: Object } & Prop
     )
 }
 
-export function Avatar({large = false, className, ...props}: { large?: boolean, style?: Object } & Props) {
+export function Avatar({ large = false, className, ...props }: { large?: boolean, style?: Object } & Props) {
     return (
         <Link
             href="/"

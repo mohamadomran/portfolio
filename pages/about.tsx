@@ -11,7 +11,7 @@ import {
     TwitterIcon,
 } from '@/components/icons/SocialIcons'
 import { MailIcon } from '@/components/icons/MailIcon'
-import avatar from '@/public/static/images/avatar.jpg'
+import avatar from '@/public/static/images/avatar.png'
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png'
 
 function SocialLink({
