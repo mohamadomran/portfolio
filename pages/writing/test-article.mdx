@@ -1,0 +1,24 @@
+import { ArticleLayout } from '@/components/layouts/ArticleLayout';
+import { createSlug } from '@/lib/createSlug';
+
+export const meta = {
+    author: 'Mohamad Omran',
+    date: '2020-05-02',
+    title: 'Test Article',
+    description: 'This is a test article',
+};
+
+export default (props) => (
+    <ArticleLayout
+        author={meta.author}
+        date={meta.date}
+        title={meta.title}
+        description={meta.description}
+        slug={createSlug(meta.title)}
+        {...props}
+    />
+);
+
+# Test Article.
+
+This is a test article. It is a test article.
