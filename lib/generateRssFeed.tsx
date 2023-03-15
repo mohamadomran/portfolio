@@ -3,6 +3,7 @@ import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 
 import { getAllArticles } from './getAllArticles'
+import { SEO_DESCRIPTION } from '@/Utils/constants'
 
 export async function generateRssFeed() {
     let articles = await getAllArticles()
@@ -14,7 +15,7 @@ export async function generateRssFeed() {
 
     let feed = new Feed({
         title: author.name,
-        description: 'Welcome to my fullstack portfolio! As a software engineer with a focus on AI and machine learning, I bring a unique perspective to every project. With a passion for photography and travel, I approach problem-solving with creativity and innovation, paying close attention to detail in every aspect of my work. Explore my projects, skills, and achievements in this comprehensive portfolio, showcasing the power of technology to solve complex problems and bring new ideas to life.',
+        description: SEO_DESCRIPTION,
         author,
         id: siteUrl!,
         link: siteUrl,

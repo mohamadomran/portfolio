@@ -16,6 +16,7 @@ import { generateRssFeed } from '@/lib/generateRssFeed'
 import { generateSitemap } from '@/lib/generateSitemap'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { Article } from 'types'
+import { SEO_DESCRIPTION, SEO_TITLE } from '@/Utils/constants'
 
 function Article(article: Article) {
     return (
@@ -47,46 +48,20 @@ export default function Home({ articles }: { articles: Article[] }) {
         <>
             <Head>
                 <title>Portfolio | Mohamad Omran</title>
-                <meta
-                    name='description'
-                    content='Welcome to my fullstack portfolio! As a software engineer with a focus on AI and machine learning, I bring a unique perspective to every project. With a passion for photography and travel, I approach problem-solving with creativity and innovation, paying close attention to detail in every aspect of my work. Explore my projects, skills, and achievements in this comprehensive portfolio, showcasing the power of technology to solve complex problems and bring new ideas to life'
-                />
-                <meta
-                    property='og:url'
-                    content={`${process.env.NEXT_PUBLIC_SITE_URL}`}
-                />
+                <meta name='description' content={SEO_DESCRIPTION} />
+                <meta property='og:url' content={`${process.env.NEXT_PUBLIC_SITE_URL}`} />
                 <meta property='og:type' content='website' />
-                <meta
-                    property='og:title'
-                    content='Full Stack Engineer | Photographer | Travel Enthusiast'
-                />
-                <meta
-                    property='og:description'
-                    content='Welcome to my fullstack portfolio! As a software engineer with a focus on AI and machine learning, I bring a unique perspective to every project. With a passion for photography and travel, I approach problem-solving with creativity and innovation, paying close attention to detail in every aspect of my work. Explore my projects, skills, and achievements in this comprehensive portfolio, showcasing the power of technology to solve complex problems and bring new ideas to life'
-                />
-                <meta
-                    property='og:image'
-                    content='/static/images/photo-of-me-og.jpg'
-                />
+                <meta property='og:title' content={SEO_TITLE} />
+                <meta property='og:description' content={SEO_DESCRIPTION} />
+                <meta property='og:image' content='/static/images/avatar.png' />
                 <meta name='twitter:card' content='summary_large_image' />
                 <meta property='twitter:domain' content='mohamadomran.dev' />
-                <meta
-                    property='twitter:url'
-                    content={`${process.env.NEXT_PUBLIC_SITE_URL}`}
-                />
-                <meta
-                    name='twitter:title'
-                    content='Full Stack Engineer | Photographer | Travel Enthusiast'
-                />
-                <meta
-                    name='twitter:description'
-                    content='Welcome to my fullstack portfolio! As a software engineer with a focus on AI and machine learning, I bring a unique perspective to every project. With a passion for photography and travel, I approach problem-solving with creativity and innovation, paying close attention to detail in every aspect of my work. Explore my projects, skills, and achievements in this comprehensive portfolio, showcasing the power of technology to solve complex problems and bring new ideas to life'
-                />
-                <meta
-                    name='twitter:image'
-                    content='/static/images/photo-of-me-og.jpg'
-                />
+                <meta property='twitter:url' content={`${process.env.NEXT_PUBLIC_SITE_URL}`} />
+                <meta name='twitter:title' content={SEO_TITLE} />
+                <meta name='twitter:description' content={SEO_DESCRIPTION} />
+                <meta name='twitter:image' content='/static/images/photo-of-me-og.jpg' />
             </Head>
+
             <Container className='mt-9'>
                 <div className='max-w-2xl'>
                     <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:sky-300 sm:text-5xl bg-clip-text dark:text-transparent bg-gradient-to-r from-blue-500 via-sky-500 to-blue-300'>
@@ -106,17 +81,17 @@ export default function Home({ articles }: { articles: Article[] }) {
                     </p>
                     <div className='mt-6 flex gap-6'>
                         <SocialLink
-                            href='https://github.com/r-freeman'
+                            href='https://github.com/mohamad-omran'
                             ariaLabel='Follow on GitHub'
                             icon={GitHubIcon}
                         />
                         <SocialLink
-                            href='https://linkedin.com/in/r-freeman/'
+                            href='https://linkedin.com/in/mohamad-omran/'
                             ariaLabel='Follow on LinkedIn'
                             icon={LinkedInIcon}
                         />
                         <SocialLink
-                            href='https://twitter.com/freemry'
+                            href='https://twitter.com/itsMohamadomran'
                             ariaLabel='Follow on Twitter'
                             icon={TwitterIcon}
                         />
