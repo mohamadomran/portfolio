@@ -1,4 +1,11 @@
-import { ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
+
+export type IconType = {
+    className: string;
+    href: string;
+    children: ReactNode;
+    icon: ElementType;
+};
 
 export type ArticleLayout = {
     children?: ReactNode;
