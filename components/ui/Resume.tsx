@@ -1,7 +1,7 @@
-import {BriefcaseIcon} from '@/components/icons/BriefcaseIcon'
-import {ArrowDownIcon} from '@/components/icons/ArrowDownIcon'
-import {Button} from './Button'
-import {Cta} from './Cta'
+import { BriefcaseIcon } from '@/components/icons/BriefcaseIcon'
+import { ArrowDownIcon } from '@/components/icons/ArrowDownIcon'
+import { Button } from './Button'
+import { Cta } from './Cta'
 
 type Work = {
     company: string
@@ -73,9 +73,8 @@ export function Resume() {
                             <dt className="sr-only">Date</dt>
                             <dd
                                 className="ml-auto text-xs text-zinc-500 dark:text-zinc-400"
-                                aria-label={`${role.start.label ?? role.start} until ${
-                                    role.end.label ?? role.end
-                                }`}
+                                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                                    }`}
                             >
                                 <time dateTime={role.start.dateTime ?? role.start}>
                                     {role.start.label ?? role.start}
@@ -92,7 +91,7 @@ export function Resume() {
             <Button href="/mohamad-omran-CV.pdf" variant="secondary" className="group mt-6 w-full">
                 Download CV
                 <ArrowDownIcon
-                    className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"/>
+                    className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
             </Button>
         </Cta>
     )
