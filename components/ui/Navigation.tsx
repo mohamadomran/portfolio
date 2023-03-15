@@ -65,7 +65,7 @@ export function MobileNavigation(props: Props) {
                                 <MobileNavItem href="/about">About</MobileNavItem>
                                 <MobileNavItem href="/writing">Writing</MobileNavItem>
                                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                                <MobileNavItem href="/snippets">Snippets</MobileNavItem>
+                                {/* <MobileNavItem href="/snippets">Snippets</MobileNavItem> */}
                             </ul>
                         </nav>
                     </Popover.Panel>

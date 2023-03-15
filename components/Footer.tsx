@@ -20,7 +20,7 @@ export function Footer() {
                                 <NavLink href='/about'>About</NavLink>
                                 <NavLink href='/writing'>Writing</NavLink>
                                 <NavLink href='/projects'>Projects</NavLink>
-                                <NavLink href='/snippets'>Snippets</NavLink>
+                                {/* <NavLink href='/snippets'>Snippets</NavLink> */}
                             </div>
                             <div className='flex flex-col'>
                                 <p className='text-sm text-zinc-600 dark:text-zinc-400'>
