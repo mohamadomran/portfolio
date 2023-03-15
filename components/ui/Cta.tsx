@@ -15,12 +15,14 @@ export function Cta({ icon: Icon, title, children, className }: CtaProps) {
             border
             border-blue-400
             p-6
-            dark:border-blue-400/50
+            text-md
+            text-zinc-900
+            dark:border-mustard-300
             ${className ?? ""}
         `)}>
-            <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <h2 className="flex text-md font-semibold text-zinc-900 dark:text-zinc-100">
                 <Icon className="h-6 w-6 flex-none" />
-                <span className="ml-3">{title}</span>
+                <span className="ml-3 text-md">{title}</span>
             </h2>
             {children}
         </div>

@@ -11,7 +11,7 @@ export function Article(article: Article) {
             border
             border-blue-400
             p-6
-            dark:border-blue-400/50'>
+            dark:border-mustard-300'>
             <Card>
                 <Card.Title href={`/writing/${article.slug}`}>
                     {article.title}
