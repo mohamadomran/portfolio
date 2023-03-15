@@ -10,7 +10,6 @@ import {
     TwitterIcon,
 } from '@/components/icons/SocialIcons'
 import { MailIcon } from '@/components/icons/MailIcon'
-import avatar from '@/public/static/images/avatar.png'
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png'
 import { SEO_DESCRIPTION } from '@/Utils/constants'
 import { IconType } from '@/types'
@@ -44,17 +43,7 @@ export default function About() {
             </Head>
             <Container className='mt-16 sm:mt-32'>
                 <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
-                    <div className='lg:pl-20'>
-                        <div className='max-w-xs px-2.5 lg:max-w-none'>
-                            <Image
-                                src={avatar}
-                                alt=''
-                                sizes='(min-width: 1024px) 32rem, 20rem'
-                                className='aspect-square shadow-inner rounded-full bg-zinc-100 object-cover dark:bg-zinc-800'
-                                placeholder='blur'
-                            />
-                        </div>
-                    </div>
+
                     <div className='lg:order-first lg:row-span-2'>
                         <h1 className='text-5xl font-bold text-zinc-800 dark:sky-300 sm:text-5xl bg-clip-text dark:text-transparent bg-gradient-to-r from-mustard-500 to-mustard-300'>
                             About Me!
