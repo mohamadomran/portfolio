@@ -10,6 +10,7 @@ module.exports = {
         extend: {
             colors: {
                 mustard: {
+                    200: '#ffee32',
                     300: '#ffd60a',
                     500: '#ffc300'
                 },
