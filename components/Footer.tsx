@@ -1,12 +1,14 @@
-import React from 'react'
-import { OuterContainer, InnerContainer } from './Container'
-import { NavLink } from '@/components/ui/Navigation'
-import { SocialLink } from '@/components/ui/SocialLink'
+import React from 'react';
+import { OuterContainer, InnerContainer } from './Container';
+import { NavLink } from '@/components/ui/Navigation';
+import { SocialLink } from '@/components/ui/SocialLink';
 import {
     GitHubIcon,
     LinkedInIcon,
     TwitterIcon,
-} from '@/components/icons/SocialIcons'
+} from '@/components/icons/SocialIcons';
+import { SOCIAL_LINKS } from '@/Utils/constants';
+import { MailIcon } from './icons/MailIcon';
 
 export function Footer() {
     return (
@@ -29,19 +31,24 @@ export function Footer() {
                                 </p>
                                 <div className='mx-auto mt-6 flex gap-6'>
                                     <SocialLink
-                                        href='https://github.com/mohamadomran'
+                                        href={SOCIAL_LINKS.GITHUB}
                                         ariaLabel='Follow on GitHub'
                                         icon={GitHubIcon}
                                     />
                                     <SocialLink
-                                        href='https://linkedin.com/in/mohamad-omran/'
+                                        href={SOCIAL_LINKS.LINKEDIN}
                                         ariaLabel='Follow on LinkedIn'
                                         icon={LinkedInIcon}
                                     />
                                     <SocialLink
-                                        href='https://twitter.com/itsMohamadOmran'
+                                        href={SOCIAL_LINKS.TWITTER}
                                         ariaLabel='Follow on Twitter'
                                         icon={TwitterIcon}
+                                    />
+                                    <SocialLink
+                                        href={SOCIAL_LINKS.EMAIL}
+                                        ariaLabel='Send me an Email'
+                                        icon={MailIcon}
                                     />
                                 </div>
                             </div>
@@ -50,5 +57,5 @@ export function Footer() {
                 </div>
             </OuterContainer>
         </footer>
-    )
+    );
 }

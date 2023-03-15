@@ -11,7 +11,7 @@ import {
 } from '@/components/icons/SocialIcons'
 import { MailIcon } from '@/components/icons/MailIcon'
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png'
-import { SEO_DESCRIPTION } from '@/Utils/constants'
+import { SEO_DESCRIPTION, SOCIAL_LINKS } from '@/Utils/constants'
 import { IconType } from '@/types'
 
 function SocialLink({
@@ -100,25 +100,25 @@ export default function About() {
                     <div className='lg:pl-20'>
                         <ul role='list'>
                             <SocialLink
-                                href='https://github.com/mohamadomran'
+                                href={SOCIAL_LINKS.GITHUB}
                                 icon={GitHubIcon}
                                 className='mt-4'>
                                 Follow on GitHub
                             </SocialLink>
                             <SocialLink
-                                href='https://linkedin.com/in/mohamad-omran/'
+                                href={SOCIAL_LINKS.LINKEDIN}
                                 icon={LinkedInIcon}
                                 className='mt-4'>
                                 Follow on LinkedIn
                             </SocialLink>
                             <SocialLink
-                                href='https://twitter.com/itsMohamadOmran'
+                                href={SOCIAL_LINKS.TWITTER}
                                 icon={TwitterIcon}
                                 className='mt-4'>
                                 Follow on Twitter
                             </SocialLink>
                             <SocialLink
-                                href='mailto:hi@mohamadomran.dev'
+                                href={SOCIAL_LINKS.EMAIL}
                                 icon={MailIcon}
                                 className='mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'>
                                 hi@mohamadomran.dev
