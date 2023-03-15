@@ -9,11 +9,15 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                green: {
-                    950: '#1fdf64'
+                mustard: {
+                    300: '#ffd60a',
+                    500: '#ffc300'
+                },
+                navy: {
+                    500: '#003566'
                 },
                 black: {
-                    950: '#0a0a0a'
+                    950: '#000814'
                 }
             }
         },
