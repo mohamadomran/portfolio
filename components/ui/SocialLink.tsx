@@ -12,11 +12,12 @@ type SocialLink = {
 export function SocialLink({icon: Icon, href, ariaLabel, className}: SocialLink) {
     const iconStyles = twMerge(`
         w-6 h-6
+        mt-6
         fill-zinc-500
         transition
         group-hover:fill-zinc-600
         dark:fill-zinc-400
-        dark:group-hover:fill-zinc-300
+        dark:group-hover:fill-mustard-500
         ${className ?? ""}
     `)
 
