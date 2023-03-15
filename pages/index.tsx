@@ -81,7 +81,7 @@ export default function Home({ articles }: { articles: Article[] }) {
                     </p>
                     <div className='mt-6 flex gap-6'>
                         <SocialLink
-                            href='https://github.com/mohamad-omran'
+                            href='https://github.com/mohamadomran'
                             ariaLabel='Follow on GitHub'
                             icon={GitHubIcon}
                         />
