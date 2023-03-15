@@ -63,6 +63,7 @@ export function MobileNavigation(props: Props) {
                             <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                                 <MobileNavItem href="/">Home</MobileNavItem>
                                 <MobileNavItem href="/about">About</MobileNavItem>
+                                <MobileNavItem href="/work">Work</MobileNavItem>
                                 <MobileNavItem href="/writing">Writing</MobileNavItem>
                                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                                 {/* <MobileNavItem href="/snippets">Snippets</MobileNavItem> */}
@@ -106,6 +107,7 @@ export function DesktopNavigation(props: Props) {
             <ul className="flex rounded-full bg-white/90 px-3 text-md font-medium text-zinc-800 shadow-lg shadow-mustard-800/5 ring-1 ring-mustard-200/5 backdrop-blur-md dark:bg-black-950/90 dark:text-zinc-200 dark:ring-yellow-500">
                 <NavItem href="/">Home</NavItem>
                 <NavItem href="/about">About</NavItem>
+                <NavItem href="/work">Work</NavItem>
                 <NavItem href="/writing">Writing</NavItem>
                 <NavItem href="/projects">Projects</NavItem>
                 {/* <NavItem href="/snippets">Snippets</NavItem> */}

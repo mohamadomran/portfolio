@@ -46,7 +46,6 @@ export function Header() {
     const isHomePage = router.pathname === '/'
 
     const headerRef = useRef<HTMLDivElement>(null)
-    const avatarRef = useRef<HTMLImageElement>(null)
 
     const headerPosition: Object = {
         position: 'var(--header-position)',
