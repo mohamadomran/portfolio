@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { ElementType, ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -13,24 +12,21 @@ import {
 import { MailIcon } from '@/components/icons/MailIcon'
 import avatar from '@/public/static/images/avatar.png'
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png'
+import { SEO_DESCRIPTION } from '@/Utils/constants'
+import { IconType } from '@/types'
 
 function SocialLink({
     className,
     href,
     children,
     icon: Icon,
-}: {
-    className: string
-    href: string
-    children: ReactNode
-    icon: ElementType
-}) {
+}: IconType) {
     return (
         <li className={clsx(className, 'flex')}>
             <Link
                 href={href}
-                className='group flex text-sm font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-indigo-500'>
-                <Icon className='h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-indigo-500' />
+                className='group flex text-md font-medium text-zinc-800 transition hover:text-indigo-500 dark:text-zinc-200 dark:hover:text-zinc-500'>
+                <Icon className='h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-zinc-500' />
                 <span className='ml-4'>{children}</span>
             </Link>
         </li>
@@ -42,15 +38,9 @@ export default function About() {
         <>
             <Head>
                 <title>About - Mohamad Omran</title>
-                <meta
-                    name='description'
-                    content="I'm Mohamad! Welcome to my portfolio! Im a full-stack engineer with a passion for AI, machine learning, travel, and photography. Explore my comprehensive portfolio to see how I bring creativity and innovation to software development. Let's collaborate and bring your ideas to life!"
-                />
+                <meta name='description' content={SEO_DESCRIPTION} />
                 <meta property='og:title' content='About - Mohamad Omran' />
-                <meta
-                    property='og:description'
-                    content="I'm Mohamad! Welcome to my portfolio! Im a full-stack engineer with a passion for AI, machine learning, travel, and photography. Explore my comprehensive portfolio to see how I bring creativity and innovation to software development. Let's collaborate and bring your ideas to life!"
-                />
+                <meta property='og:description' content={SEO_DESCRIPTION} />
             </Head>
             <Container className='mt-16 sm:mt-32'>
                 <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
@@ -60,16 +50,16 @@ export default function About() {
                                 src={avatar}
                                 alt=''
                                 sizes='(min-width: 1024px) 32rem, 20rem'
-                                className='aspect-square shadow-inner rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 rotate-3'
+                                className='aspect-square shadow-inner rounded-full bg-zinc-100 object-cover dark:bg-zinc-800'
                                 placeholder='blur'
                             />
                         </div>
                     </div>
                     <div className='lg:order-first lg:row-span-2'>
-                        <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl bg-clip-text dark:text-transparent bg-gradient-to-r from-blue-400 to-emerald-400'>
-                            I&apos;m Mohamad! Welcome to my portfolio!
+                        <h1 className='text-5xl font-bold text-zinc-800 dark:sky-300 sm:text-5xl bg-clip-text dark:text-transparent bg-gradient-to-r from-mustard-500 to-mustard-300'>
+                            About Me!
                         </h1>
-                        <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
+                        <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-white'>
                             <p>
                                 I&apos;m a Full Stack Engineer currently based
                                 in Beirut, Lebanon. I have always been
@@ -78,34 +68,33 @@ export default function About() {
                                 career in software engineering.
                             </p>
                             <p>
-                                I earned both my Bachelor&apos;s and
-                                Master&apos;s degrees in Science of Computer and
-                                Communication Engineering, with an emphasis on
-                                AI and Machine Learning. During my studies, I
-                                developed a strong foundation in computer
-                                science and gained a deep understanding of AI
-                                and Machine Learning techniques, which have
-                                become increasingly important in the world of
-                                software engineering.
+                                I obtained my Bachelor&apos;s and Master&apos;s
+                                degrees in Science of Computer and Communication
+                                Engineering, with a specialization in AI and
+                                Machine Learning. Through my academic pursuits,
+                                I gained a solid grounding in programming and a
+                                thorough comprehension of AI and Machine
+                                Learning methodologies, which have gained
+                                immense relevance in the field of software
+                                engineering.
                             </p>
                             <p>
-                                After completing my studies, I began my career
-                                in software development. I gained extensive
-                                experience in full-stack web development,
-                                working on a variety of projects for clients
-                                around the world. One of my most notable
-                                accomplishments was my work at SpeedLane
-                                (formerly known as Postlight Lebanon), where I
-                                helped develop innovative software solutions for
-                                a wide range of clients.
+                                After completing my academic qualifications, I
+                                began my professional journey in software
+                                development. With extensive experience in
+                                full-stack web development, I have worked on
+                                diverse projects for clients across the globe,
+                                including governments and private corporations.
+                                Notably, I contributed to the development of
+                                cutting-edge software solutions for various
+                                clients while working at <a className='underline text' href="https://speedlane.co">SpeedLane</a> (formerly
+                                Postlight Lebanon).
                             </p>
                             <p>
                                 In addition to my work as a software engineer,
                                 I&apos;m also an avid traveler and photographer.
                                 I love exploring new places, meeting new people,
-                                and capturing the beauty of the world through my
-                                lens. Some of my favorite travel destinations
-                                include Europe, Asia, and South America, and
+                                and checking out different cultures.
                                 I&apos;m always on the lookout for new
                                 adventures to embark on.
                             </p>
