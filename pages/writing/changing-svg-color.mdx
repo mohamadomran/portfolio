@@ -1,0 +1,31 @@
+import { ArticleLayout } from '@/components/layouts/ArticleLayout';
+import { createSlug } from '@/lib/createSlug';
+
+export const meta = {
+    author: 'Mohamad Omran',
+    date: '2023-03-15',
+    title: 'How to Change the Color of SVGs',
+    description:
+        'Changing the colors of SVGs is easy with a simple CSS property.',
+};
+
+export default (props) => (
+    <ArticleLayout
+        author={meta.author}
+        date={meta.date}
+        title={meta.title}
+        description={meta.description}
+        slug={createSlug(meta.title)}
+        {...props}
+    />
+);
+
+# How to Change the Color of SVGs.
+
+If you're working on a project that requires the use of SVG icons, you might have run into the issue of the icons not inheriting the color of the parent component. This can be a problem if you need to use the same icon in multiple places with different colors. However, there is a simple solution.
+
+The SVG `<path>` element has a `fill` property that defines the color of the line drawn. By default, this property is set to a specific color code like `#FFFFFF`, which means the stroke will be this color no matter what.
+
+To make your SVG files inherit the color of the parent component, you should change the value of `fill` to `currentColor`. This means that the SVG will take the value of the color property from its parent.
+
+By using this method, you can easily change the color of your SVG icons by simply changing the color of the parent component. This is a practical and efficient solution that can save you time and effort in your projects.
