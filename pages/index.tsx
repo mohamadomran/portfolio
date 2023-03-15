@@ -1,21 +1,20 @@
-import React from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { GetStaticProps } from 'next'
-import { Resume } from '@/components/ui/Resume'
-import { Container } from '@/components/Container'
+import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Container } from '@/components/Container';
 import {
     GitHubIcon,
     LinkedInIcon,
     TwitterIcon,
-} from '@/components/icons/SocialIcons'
-import { SocialLink } from '@/components/ui/SocialLink'
+} from '@/components/icons/SocialIcons';
+import { MailIcon } from '@/components/icons/MailIcon';
 
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { generateSitemap } from '@/lib/generateSitemap'
-import { getAllArticles } from '@/lib/getAllArticles'
-import { SEO_DESCRIPTION, SEO_TITLE } from '@/Utils/constants'
-import avatar from '@/public/static/images/avatar.png'
+import { SocialLink } from '@/components/ui/SocialLink';
+
+import { SEO_DESCRIPTION, SEO_TITLE, SOCIAL_LINKS } from '@/Utils/constants';
+import avatar from '@/public/static/images/avatar.png';
+import { Button } from '@/components/ui/Button';
+import { ArrowDownIcon } from '@/components/icons/ArrowDownIcon';
 
 export default function Home() {
     return (
@@ -63,46 +62,50 @@ export default function Home() {
                         <h1 className='text-5xl font-bold text-zinc-800 dark:sky-300 sm:text-5xl bg-clip-text dark:text-transparent bg-gradient-to-r from-mustard-500 to-mustard-300'>
                             Hi, I&apos;m Mohamad!
                         </h1>
-                        <p className='max-w-2xl text-xl mt-6 text-base text-zinc-600 dark:text-white'>
+                        <p className='max-w-2xl text-l mt-6 text-base text-zinc-600 dark:text-white'>
                             As an experienced full-stack software engineer
                             specializing in AI and machine learning, I am
                             committed to developing innovative solutions to
                             complex problems, and bringing fresh ideas to life
                             through technology. Outside of work, I enjoy
                             exploring new destinations with my camera, capturing
-                            the beauty of the world through photography.If
-                            you&apos;re in need of a talented developer or
-                            simply interested in browsing my portfolio, I invite
-                            you to take a closer look and discover how I can
-                            help bring your ideas to fruition.
+                            the beauty of the world through photography. Whether
+                            you&apos;re seeking a skilled developer or just
+                            curious to peruse my portfolio, I welcome you to
+                            explore my work and learn how I can help transform
+                            your ideas into tangible outcomes
                         </p>
-                        <div className='mt-6 flex gap-6'>
+                        <div className='flex gap-6 items-center'>
                             <SocialLink
-                                href='https://github.com/mohamadomran'
+                                href={SOCIAL_LINKS.GITHUB}
                                 ariaLabel='Follow on GitHub'
                                 icon={GitHubIcon}
                             />
                             <SocialLink
-                                href='https://linkedin.com/in/mohamad-omran/'
+                                href={SOCIAL_LINKS.LINKEDIN}
                                 ariaLabel='Follow on LinkedIn'
                                 icon={LinkedInIcon}
                             />
                             <SocialLink
-                                href='https://twitter.com/itsMohamadomran'
+                                href={SOCIAL_LINKS.TWITTER}
                                 ariaLabel='Follow on Twitter'
                                 icon={TwitterIcon}
                             />
+                            <SocialLink
+                                href={SOCIAL_LINKS.EMAIL}
+                                ariaLabel='Send me an Email'
+                                icon={MailIcon}
+                            />
+                            <Button
+                                href='/mohamad-omran-CV.pdf'
+                                className='group mt-6 bg-mustard-300 dark:hover:bg-mustard-500 hover:text-black-950 ring ring-mustard-500'>
+                                Download CV
+                                <ArrowDownIcon className='h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50' />
+                            </Button>
                         </div>
                     </div>
                 </div>
             </Container>
-
-
-            <Container className='mt-24 md:mt-28'>
-                <div className='flex flex-col items-center justify-center my-6'>
-                    <Resume />
-                </div>
-            </Container>
         </>
-    )
+    );
 }
