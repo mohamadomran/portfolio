@@ -92,9 +92,9 @@ export function Header() {
                                 <DesktopNavigation className='pointer-events-auto hidden md:block' />
                             </div>
                             <div className='flex justify-end md:flex-1'>
-                                {/* <div className='pointer-events-auto'>
+                                <div className='pointer-events-auto'>
                                     <ModeToggle />
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </Container>
