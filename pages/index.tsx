@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Container } from '@/components/Container';
 import {
-    GitHubIcon,
-    LinkedInIcon,
-    TwitterIcon,
+GitHubIcon,
+LinkedInIcon,
+TwitterIcon,
 } from '@/components/icons/SocialIcons';
 import { MailIcon } from '@/components/icons/MailIcon';
 
@@ -97,10 +97,10 @@ export default function Home() {
                                 icon={MailIcon}
                             />
                             <Button
-                                href='/mohamad-omran-CV.pdf'
-                                className='group mt-6 bg-mustard-300 dark:bg-mustard-300 hover:bg-mustard-500 dark:hover:bg-mustard-500 text-black-950 dark:text-black-950 hover:text-black-950 ring ring-mustard-300'>
+                                href={SOCIAL_LINKS.CV}
+                                className='group mt-6 hover:bg-mustard-500 dark:hover:bg-mustard-500 text-white-100 hover:text-black-950 ring ring-mustard-300'>
                                 Download CV
-                                <ArrowDownIcon className='h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50' />
+                                <ArrowDownIcon className='h-4 w-4 stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50' />
                             </Button>
                         </div>
                     </div>
