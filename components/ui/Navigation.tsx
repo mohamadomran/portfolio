@@ -36,7 +36,7 @@ export function MobileNavigation(props: Props) {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Popover.Overlay className="fixed inset-0 z-50 bg-black-950/40 backdrop-blur-md dark:bg-black-950/80" />
+                    <Popover.Overlay className="fixed inset-0 z-50 bg-black-950/40 backdrop-blur dark:bg-black-950/80" />
                 </Transition.Child>
                 <Transition.Child
                     as={Fragment}
@@ -87,14 +87,14 @@ function NavItem({ href, children }: { href: string } & Props) {
                 className={clsx(
                     'relative block px-3 py-2 transition',
                     isActive
-                        ? 'text-blue-600 dark:text-yellow-300'
-                        : 'hover:text-blue-700 dark:hover:text-yellow-500'
+                        ? 'text-blue-600 dark:text-mustard-200 underline'
+                        : 'hover:text-blue-700 dark:hover:text-mustard-200'
                 )}
             >
                 {children}
                 {isActive && (
                     <span
-                        className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-mustard-500/0 via-mustard-300/40 to-mustard-500/0" />
+                        className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r text-mustard-200" />
                 )}
             </Link>
         </li>
@@ -104,7 +104,7 @@ function NavItem({ href, children }: { href: string } & Props) {
 export function DesktopNavigation(props: Props) {
     return (
         <nav {...props}>
-            <ul className="flex rounded-full bg-white/90 px-3 text-md font-medium text-zinc-800 shadow-lg shadow-mustard-800/5 ring-1 ring-mustard-200/5 backdrop-blur-md dark:bg-black-950/90 dark:text-zinc-200 dark:ring-yellow-500">
+            <ul className="flex rounded-full bg-white/90 px-3 text-lg font-medium text-zinc-400 shadow-lg shadow-mustard-800/5 ring-1 ring-mustard-300/5 backdrop-blur transition dark:bg-black-950/10 dark:ring-mustard-300 dark:hover:ring-mustard-200">
                 <NavItem href="/">Home</NavItem>
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/work">Work</NavItem>
