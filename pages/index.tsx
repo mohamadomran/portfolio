@@ -98,7 +98,7 @@ export default function Home() {
                             />
                             <Button
                                 href='/mohamad-omran-CV.pdf'
-                                className='group mt-6 bg-mustard-200 dark:bg-mustard-200 hover:bg-mustard-500 dark:hover:bg-mustard-500 text-black-950 dark:text-black-950 hover:text-black-950 ring ring-mustard-300'>
+                                className='group mt-6 bg-mustard-300 dark:bg-mustard-300 hover:bg-mustard-500 dark:hover:bg-mustard-500 text-black-950 dark:text-black-950 hover:text-black-950 ring ring-mustard-300'>
                                 Download CV
                                 <ArrowDownIcon className='h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50' />
                             </Button>

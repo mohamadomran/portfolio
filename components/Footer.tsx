@@ -4,7 +4,7 @@ import { NavLink } from '@/components/ui/Navigation';
 
 export function Footer() {
     return (
-        <footer className='mt-32f'>
+        <footer className='mt-32'>
             <OuterContainer>
                 <div className='border-t border-zinc-100 pb-16 dark:border-zinc-700/40'>
                     <InnerContainer>
