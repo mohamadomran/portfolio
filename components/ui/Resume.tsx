@@ -30,21 +30,14 @@ export function Resume() {
             },
             companyURL: 'https://postlight.com',
             tasks: [
-                'Develop and maintain full-stack web applications using Node.js, React.js/Next.js, PSQL, WordPress, and PHP.',
-                'Collaborate with cross-functional teams, including project managers, designers, and other engineers, to develop and deliver high-quality software solutions that meet customer requirements and expectations.',
-                'Implement and monitor continuous integration and continuous delivery (CI/CD) pipelines using tools such as GitLab CI, or CircleCI to automate the build, test, and deployment of software.',
-                'Develop RESTful APIs that enable seamless communication between the front-end and back-end systems.',
-                'Integrate third-party services and APIs into the application to enhance its functionality and provide a seamless user experience.',
-                'Utilize AWS services such as EC2, S3, RDS, and Lambda to deploy, host, and scale web applications',
-                'Set up and configure monitoring and logging tools such as CloudWatch and ELK Stack to track application performance and troubleshoot issues.',
-                'Utilize AWS Elastic Beanstalk or Docker to simplify the deployment of applications to AWS',
-                'Implement DevOps practices such as continuous integration and continuous deployment (CI/CD) to streamline the development, testing, and deployment of software.',
-                'Implement automated testing and quality assurance processes to ensure code quality and reduce the risk of introducing bugs or errors.',
-                'Participate in code reviews, testing, and debugging to ensure the quality of the code and the functionality of the application.',
-                'Adhere to coding standards and best practices, as well as keeping up-to-date with the latest technologies and industry trends.',
-                'Troubleshoot and resolve production issues, ensuring timely resolution and minimizing downtime for end-users.',
-                'Utilize version control systems such as Git to manage code changes and collaborate with other developers on the same project.',
-                'Work closely with UI/UX designers to implement responsive designs that provide an optimal user experience on all devices and screen sizes.',
+                'Developed and maintained full-stack web applications utilizing cutting-edge technologies such as Node.js, React.js/Next.js, PSQL, WordPress, and PHP to deliver high-performance software solutions that meet customer needs and expectations.',
+                'Collaborated with cross-functional teams to drive the development and delivery of high-quality software solutions that exceeded customer expectations.',
+                'Implemented and monitored robust CI/CD pipelines using industry-leading tools such as GitLab CI or CircleCI to automate build, testing, and deployment processes and achieve efficient software delivery.',
+                'Developed and integrated RESTful APIs that enabled seamless communication between front-end and back-end systems to enhance functionality and provide a smooth user experience.',
+                'Utilized AWS services such as EC2, S3, RDS, and Lambda to deploy, host, and scale web applications, delivering efficient and cost-effective solutions that met customer needs.',
+                'Set up and configured monitoring and logging tools such as CloudWatch and ELK Stack to track application performance and troubleshoot issues, ensuring high availability and reliable performance.',
+                'Implemented automated testing and quality assurance processes to ensure code quality and reduce the risk of introducing bugs or errors, delivering high-quality software solutions.',
+                'Worked closely with UI/UX designers to implement responsive designs that provided an optimal user experience on all devices and screen sizes, delivering software solutions that were user-friendly and met or exceeded customer expectations.',
             ],
         },
         {
@@ -60,15 +53,13 @@ export function Resume() {
             },
             companyURL: 'https://netways.com',
             tasks: [
-                'Design, develop, and maintain software solutions for government clients using React.js/Next.js, Redux, and SCSS.',
-                'Collaborate with cross-functional teams, including project managers, designers, and other engineers, to understand client requirements and develop software solutions that meet their needs.',
-                'Utilize Azure products such as Azure App Service, Azure Functions, and Azure Blob Storage to deploy, host, and scale web applications.',
-                'Build custom chatbots using Azure services such as Azure Bot Service and Cognitive Services to enhance the functionality and user experience of the software solutions.',
-                'Participate in code reviews, testing, and debugging to ensure the quality of the code and the functionality of the application.',
-                'Collaborate with cross-functional teams to establish agile methodologies for software development and implement DevOps best practices, such as continuous integration and continuous deployment (CI/CD).',
-                'Conduct performance tests and implement optimizations to improve the speed and responsiveness of the software solutions.',
-                'Participate in meetings and presentations with clients to gather requirements, provide updates, and demonstrate software solutions.',
-                'Ensure compliance with government regulations and standards in the development and deployment of software solutions.',
+                'Designed, developed, and maintained innovative software solutions for government clients utilizing React.js/Next.js, Redux, and SCSS, delivering high-quality software solutions that met or exceeded client requirements.',
+                'Utilized Azure products such as Azure App Service, Azure Functions, and Azure Blob Storage to deploy, host, and scale web applications, delivering efficient and cost-effective software solutions.',
+                'Built custom chatbots using Azure services such as Azure Bot Service and Cognitive Services to enhance software functionality and user experience, delivering software solutions that exceeded client expectations.',
+                'Collaborated with cross-functional teams to gather and understand client requirements, and then designed and developed software solutions that met their needs, delivering customized solutions that met specific client needs.',
+                'Participated in code reviews, testing, and debugging to ensure high-quality code and the functionality of the application, ensuring that software solutions met or exceeded client expectations.',
+                'Conducted performance tests and implemented optimizations to improve the speed and responsiveness of software solutions, ensuring that the software was efficient and delivered excellent performance.',
+                'Ensured compliance with government regulations and standards in the development and deployment of software solutions, delivering software solutions that were compliant with government regulations and standards.',
             ],
         },
         {
@@ -83,11 +74,11 @@ export function Resume() {
                 dateTime: 'November 2018',
             },
             tasks: [
-                "Worked closely with the client to understand their business needs and requirements, and developed a customized frontend solution using technologies such as React.js, CSS, and HTML to enhance the user experience and meet the client's goals.",
-                'Implemented responsive designs that ensured the platform was optimized for use on all devices and screen sizes.',
-                'Utilized various libraries and frameworks such as Material UI, Bootstrap, and Styled Components to create an intuitive and modern user interface.',
-                "Conducted user acceptance testing to ensure that the frontend solution met the client's requirements and provided a seamless user experience.",
-                'Provided ongoing maintenance and support for the frontend solution, ensuring that any issues or bugs were promptly resolved to ensure optimal performance of the platform.',
+                'Collaborated closely with clients to understand their business needs and requirements, and designed and developed a customized frontend solution using cutting-edge technologies such as React.js, CSS, and HTML, delivering software solutions that exceeded client expectations and met their goals.',
+                'Implemented responsive designs that ensured the platform was optimized for use on all devices and screen sizes, delivering software solutions that provided an optimal user experience.',
+                'Utilized various libraries and frameworks such as Material UI, Bootstrap, and Styled Components to create an intuitive and modern user interface, delivering software solutions that were visually appealing and easy to use.',
+                "Conducted user acceptance testing to ensure that the frontend solution met the client's requirements and provided a seamless user experience, delivering high-quality software solutions that met or exceeded client expectations.",
+                'Provided ongoing maintenance and support for the frontend solution, ensuring that any issues or bugs were promptly resolved to ensure optimal performance of the platform, and delivering reliable and efficient software solutions that met client needs.',
             ],
         },
     ];
@@ -95,7 +86,9 @@ export function Resume() {
     return (
         <ol className='mt-6 space-y-16  text-lg'>
             {work.map((role, roleIndex) => (
-                <li key={roleIndex} className='flex gap-4 border-l pl-4 md:pl-12 border-mustard-500'>
+                <li
+                    key={roleIndex}
+                    className='flex gap-4 border-l pl-4 md:pl-12 border-mustard-500'>
                     <dl className='flex flex-auto flex-wrap gap-x-2'>
                         <dt className='sr-only'>Role @ Company</dt>
                         <dd className='w-full text-xl text-zinc-900 dark:text-zinc-100'>
