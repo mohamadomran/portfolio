@@ -121,7 +121,7 @@ export default function About() {
                                 href={SOCIAL_LINKS.EMAIL}
                                 icon={MailIcon}
                                 className='mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'>
-                                hi@mohamadomran.dev
+                            {SOCIAL_LINKS.EMAIL}
                             </SocialLink>
                         </ul>
                         <Link href='https://www.credly.com/badges/62b0dd07-a75e-400f-a2ea-f42243f42c90/public_url'>

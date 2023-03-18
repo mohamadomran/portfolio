@@ -12,6 +12,6 @@ export const SOCIAL_LINKS = {
     LINKEDIN: 'https://www.linkedin.com/in/mohamad-omran/',
     GITHUB: 'https://github.com/mohamadomran',
     TWITTER: 'https://twitter.com/itsMohamadOmran',
-    EMAIL: 'mailto:hi@mohamadomran.dev',
+    EMAIL: 'mailto:mohamadomran_13@hotmail.com',
     CV: '/mohamad-omran-CV.pdf'
 };
