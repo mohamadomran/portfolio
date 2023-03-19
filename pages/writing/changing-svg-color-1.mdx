@@ -1,0 +1,45 @@
+
+import { ArticleLayout } from '@/components/layouts/ArticleLayout';
+import { createSlug } from '@/lib/createSlug';
+
+export const meta = {
+    author: 'Mohamad Omran',
+    date: '2023-03-19',
+    title: 'Git Cherry Pick',
+    description:
+        'Personal Notes on Git Cherry Pick',
+};
+
+export default (props) => (
+    <ArticleLayout
+        author={meta.author}
+        date={meta.date}
+        title={meta.title}
+        description={meta.description}
+        slug={createSlug(meta.title)}
+        {...props}
+    />
+);
+
+
+# Cherry-Picking in Git
+
+Cherry-picking is a Git command that allows you to apply a specific commit from one branch to another. This can be useful when you want to selectively apply changes from one branch to another, without merging the entire branch.
+
+## Basic Steps to Perform a Cherry-Pick in Git
+
+1. Identify the commit you want to cherry-pick: Use the `git log` command to view the commit history of the branch that contains the commit you want to cherry-pick. Find the commit hash of the specific commit you want to apply to another branch.
+
+2. Switch to the target branch: Use the `git checkout` command to switch to the branch that you want to apply the commit to.
+
+3. Cherry-pick the commit: Use the `git cherry-pick` command followed by the commit hash to apply the changes from the selected commit to the current branch. For example, if the commit hash is `abc123`, you would use the command `git cherry-pick abc123`.
+
+4. Resolve conflicts (if any): If there are any conflicts between the changes in the cherry-picked commit and the changes in the current branch, you will need to resolve them manually.
+
+5. Commit the changes: Once you have resolved any conflicts, use the `git commit` command to commit the cherry-picked changes to the current branch.
+
+## Things to Keep in Mind
+
+It's important to note that cherry-picking can result in changes being applied to different branches in different orders, which can make it harder to merge branches in the future. It's generally recommended to use cherry-picking sparingly, and only when it's necessary to apply a specific change to another branch.
+
+Overall, cherry-picking is a powerful tool that can help you manage changes to your Git repository more effectively. By using cherry-picking, you can apply specific changes to your codebase without having to merge entire branches, which can help you keep your codebase clean and organized.
