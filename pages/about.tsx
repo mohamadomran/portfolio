@@ -65,7 +65,7 @@ export default function About() {
                                 thorough comprehension of AI and Machine
                                 Learning methodologies, which have gained
                                 immense relevance in the field of software
-                                engineering.
+                                engineering
                             </p>
                             <p>
                                 After completing my academic qualifications, I
