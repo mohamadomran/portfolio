@@ -3,9 +3,9 @@ import { deskTool } from 'sanity/desk';
 import {schemaTypes} from "./second-brain/schemas"
 
 const config = defineConfig({
-  projectId: "txd29ab2",
+  projectId: "2gkr882k",
   dataset: "production",
-  title: "My Personal Website",
+  title: "Second Brain",
   apiVersion: "2023-03-09",
   basePath: "/admin",
   plugins: [deskTool()],
