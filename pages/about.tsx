@@ -12,7 +12,7 @@ import {
 import { MailIcon } from '@/components/icons/MailIcon'
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png'
 import { SEO_DESCRIPTION, SOCIAL_LINKS } from '@/Utils/constants'
-import { IconType } from '@/types'
+import { IconType } from '@/types/icons';
 
 function SocialLink({
     className,
