@@ -1,4 +1,4 @@
-import {Props} from '@/types'
+import {Props} from '@/types/icons';
 
 export function MailIcon(props: Props) {
     return (

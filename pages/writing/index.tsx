@@ -6,7 +6,7 @@ import { SimpleLayout } from '@/components/layouts/SimpleLayout'
 import { Views } from '@/components/ui/Views'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-import { Article } from 'types'
+import { Article } from 'types/icons'
 
 function Article({ article }: { article: Article }) {
     return (

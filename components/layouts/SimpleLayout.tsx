@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Container } from '@/components/Container'
 import { twMerge } from 'tailwind-merge'
-import { SimpleLayout } from '@/types'
+import { SimpleLayout } from '@/types/icons';
 
 export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
     return (

@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon'
 import { CloseIcon } from '@/components/icons/CloseIcon'
-import { Props } from '@/types'
+import { Props } from '@/types/icons';
 
 function MobileNavItem({ href, children }: { href: string } & Props) {
     return (

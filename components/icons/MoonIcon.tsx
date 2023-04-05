@@ -1,4 +1,4 @@
-import {Props} from '@/types'
+import {Props} from '@/types/icons';
 
 export function MoonIcon(props: Props) {
     return (

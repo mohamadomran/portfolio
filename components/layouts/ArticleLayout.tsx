@@ -7,7 +7,7 @@ import { Prose } from '@/components/ui/Prose'
 import { Views } from '@/components/ui/Views'
 import { ArrowDownIcon } from '@/components/icons/ArrowDownIcon'
 import { formatDate } from '@/lib/formatDate'
-import { ArticleLayout } from '@/types'
+import { ArticleLayout } from '@/types/icons';
 
 const isProd = process.env.NODE_ENV === 'production'
 
