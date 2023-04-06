@@ -10,7 +10,7 @@ const nextConfig = {
         mdxRs: true
     },
     images: {
-        domains: ['i.scdn.co']
+        domains: ['i.scdn.co','cdn.sanity.io']
     },
     async rewrites() {
         if (process.env.NODE_ENV === 'production') {

@@ -5,6 +5,7 @@ import { getProjects } from '@/Utils/sanity-utils';
 import { SimpleLayout } from '@/components/layouts/SimpleLayout';
 import Link from 'next/link';
 import { Project } from '@/types/Project';
+import { PortableText } from '@portabletext/react';
 
 export default function FeaturedProjects({ projects }: { projects: Project[]}) {
     return (
@@ -27,7 +28,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[]}) {
                 <div className='mt-5 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
                     {projects.map((project: Project) => (
                         <Link
-                            href={`/projects/${project.slug}`}
+                            href={project.url}
                             key={project._id}
                             className='rounded-lg border-2 border-gray-500 p-1 transition hover:scale-105 hover:border-blue-500'>
                             {project.image && (
@@ -41,6 +42,10 @@ export default function FeaturedProjects({ projects }: { projects: Project[]}) {
                             )}
                             <div className='mt-2 bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text font-extrabold text-transparent'>
                                 {project.name}
+                            </div>
+
+                            <div className="text-lg text-gray-700 mt-5">
+                                <PortableText value={project.content} />
                             </div>
                         </Link>
                     ))}
