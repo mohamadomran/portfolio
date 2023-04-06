@@ -2,7 +2,7 @@ import React from 'react'
 import { Views } from '@/components/ui/Views'
 import { formatDate } from '@/lib/formatDate'
 import { Card } from '@/components/ui/Card'
-import { Article } from 'types'
+import { Article } from 'types/icons'
 
 export function Article(article: Article) {
     return (
