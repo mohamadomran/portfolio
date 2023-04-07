@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image'
 import { getProjects } from '@/Utils/sanity-utils';
@@ -55,7 +55,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[]}) {
     );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
     return {
         props: {
             projects: (await getProjects()) || [],
