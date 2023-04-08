@@ -4,24 +4,16 @@ import { Footer } from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 
 import '../styles/tailwind.css'
-import 'focus-visible'
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <div className="fixed inset-0 flex justify-center sm:px-8">
-                <div className="flex w-full max-w-7xl lg:px-8">
-                    <div className="w-full bg-white dark:bg-black-950 dark:ring-zinc-300/20" />
-                </div>
-            </div>
-            <div className="relative">
-                <Header />
-                <main>
-                    <Component {...pageProps} />
-                    <Analytics />
-                </main>
-                <Footer />
-            </div>
+            <Header />
+            <main className='px-10 sm:px-11 md:px-12 py-5 sm:py-6 md:py-0 max-w-3xl mx-auto w-screen'>
+                <Component {...pageProps} />
+                <Analytics />
+            </main>
+            <Footer />
         </>
     )
 }
