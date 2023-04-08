@@ -1,12 +1,10 @@
-export const SEO_TITLE =
-    'Full Stack Engineer | Photographer | Travel Enthusiast';
+export const SEO_TITLE = 'Portfolio / Mohamad Omran';
+export const WORK_SEO_TITLE = 'Work Experience / Mohamad Omran';
+export const BLOG_SEO_TITLE = 'Blog / Mohamad Omran';
 
-export const SEO_DESCRIPTION =
-    'Explore my fullstack portfolio showcasing AI and machine learning projects. With a passion for photography and travel, I approach problem-solving with creativity and attention to detail. Discover the power of technology in solving complex problems and bringing new ideas to life.';
-
-export const WORK_SEO_TITLE = 'Work Experience - Mohamad Omran';
-
+export const SEO_DESCRIPTION = 'Explore my fullstack portfolio showcasing AI and machine learning projects. With a passion for photography and travel, I approach problem-solving with creativity and attention to detail. Discover the power of technology in solving complex problems and bringing new ideas to life.';
 export const WORK_SEO_DESCRIPTION = `Explore my fullstack portfolio showcasing AI and machine learning projects. With a passion for photography and travel, I approach problem-solving with creativity and attention to detail. Discover the power of technology in solving complex problems and bringing new ideas to life.`;
+export const BLOG_SEO_DESCRIPTION = `My insights and commentary on the latest tech trends and topics on my personal blog. From in-depth analyses to personal stories, I share my thoughts on a wide range of tech-related topics`;
 
 export const SOCIAL_LINKS = {
     LINKEDIN: 'https://www.linkedin.com/in/mohamad-omran/',
@@ -19,8 +17,8 @@ export const SOCIAL_LINKS = {
 export const pages = [
     { link: '/', name: 'Home' },
     { link: '/about', name: 'About' },
+    { link: '/blog', name: 'Blog' },
     { link: '/work', name: 'Work' },
-    { link: '/writing', name: 'Writing' },
     { link: '/projects', name: 'Projects' },
     { link: '/github-projects', name: 'Github Projects' },
 ];
