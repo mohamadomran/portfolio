@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { SOCIAL_LINKS } from '@/Utils/constants';
+import { SOCIAL_LINKS } from '@/utils/constants';
 import { ArrowDownIcon } from '../icons/ArrowDownIcon';
 import { ArrowRightIcon } from '../icons/ArrowRightIcon';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons';
@@ -17,17 +17,17 @@ export const Intro = () => {
                     <h1 className='font-bold text-3xl md:text-5xl tracking-tight mb-1'>
                         Hi! I&apos;m Mohamad!
                     </h1>
-                    <h2 className='mb-4'>
+                    <h2 className='mb-4 text-base-content'>
                         Full-Stack Engineer based in{' '}
                         <span className='font-semibold'>Beirut 🇱🇧 </span>
                     </h2>
-                    <p className='mb-4'>
+                    <p className='mb-4 text-base-content'>
                         Full-stack engineer with a passion for AI, machine
                         learning, and capturing the world through photography.
                     </p>
                 </div>
 
-                <div className='w-[160px] h-[160px]  mr-auto flex-none rounded-full'>
+                <div className='w-[160px] h-[160px] mr-auto flex-none rounded-full'>
                     <Image
                         src={avatar}
                         alt='avatar'
@@ -39,7 +39,7 @@ export const Intro = () => {
             </div>
 
             <Link
-                className='flex items-center pt-4 pb-8 text-primary rounded-lg hover:text-secondary transition-all h-6'
+                className='flex items-center pt-4 pb-8 text-primary rounded-lg hover:text-primary-focus transition-all h-6'
                 href='/gallery'>
                 <p>Check my photo gallery</p>
 
