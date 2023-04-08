@@ -1,12 +1,13 @@
 import { createClient, groq } from 'next-sanity';
 import { Project } from '@/types/Project';
 import { Page } from '@/types/Page';
+import { Blog } from '@/types/Blog';
 
-const config = {
+export const config = {
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-    useCdn: true
+    useCdn: true,
 };
 
 export async function getFeaturedProject(): Promise<Project[]> {
@@ -22,16 +23,30 @@ export async function getFeaturedProject(): Promise<Project[]> {
     );
 }
 
-export async function getFeaturedBlogs(): Promise<Project[]> {
+export async function getBlogs(): Promise<Blog[]> {
     return createClient(config).fetch(
-        groq`*[_type == "project" && featured == true]{
+        groq`*[_type == "blog"]{
         _id,
         _createdAt,
-        name,
+        title,
+        slug,
+        "image": image.asset->url,
+        content
+      }`
+    );
+}
+
+export async function getBlog(slug: string): Promise<Project> {
+    return createClient(config).fetch(
+        groq`*[_type == "blog" && slug.current == $slug][0]{
+        _id,
+        _createdAt,
+        title,
         "image": image.asset->url,
         url,
         content
-      }`
+      }`,
+        { slug }
     );
 }
 
@@ -61,6 +76,8 @@ export async function getProject(slug: string): Promise<Project> {
         { slug }
     );
 }
+
+
 
 export async function getPages(): Promise<Page[]> {
     return createClient(config).fetch(
