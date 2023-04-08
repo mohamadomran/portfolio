@@ -13,5 +13,14 @@ export const SOCIAL_LINKS = {
     GITHUB: 'https://github.com/mohamadomran',
     TWITTER: 'https://twitter.com/itsMohamadOmran',
     EMAIL: 'mailto:mohamadomran_13@hotmail.com',
-    CV: '/mohamad-omran-CV.pdf'
+    CV: '/mohamad-omran-CV.pdf',
 };
+
+export const pages = [
+    { link: '/', name: 'Home' },
+    { link: '/about', name: 'About' },
+    { link: '/work', name: 'Work' },
+    { link: '/writing', name: 'Writing' },
+    { link: '/projects', name: 'Projects' },
+    { link: '/github-projects', name: 'Github Projects' },
+];
