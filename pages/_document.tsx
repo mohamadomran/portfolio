@@ -70,7 +70,7 @@ export default function Document() {
                 />
             </Head>
             <script dangerouslySetInnerHTML={{ __html: modeScript }} />
-            <body>
+            <body className='flex flex-col min-h-screen'>
                 <Main />
                 <NextScript />
             </body>
