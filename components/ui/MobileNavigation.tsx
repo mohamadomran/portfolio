@@ -4,13 +4,13 @@ import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon'
 import { CloseIcon } from '@/components/icons/CloseIcon'
 import { Props } from '@/types/icons'
 import { MobileNavItem } from './MobileNavItem'
-import { pages } from '@/Utils/constants'
+import { pages } from '@/utils/constants'
 
 
 export function MobileNavigation(props: Props) {
     return (
         <Popover {...props}>
-            <Popover.Button className='group flex items-center rounded-full bg-secondary px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur'>
+            <Popover.Button className='group flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur'>
                 Menu
                 <ChevronDownIcon className='ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700' />
             </Popover.Button>
