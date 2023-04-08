@@ -7,7 +7,7 @@ import { ProjectCard } from '../ui/ProjectCard';
 export const FeaturedProject = ({ project }: { project: Project }) => {
     return (
         <div className='py-1'>
-            <h3 className='font-bold text-2xl md:text-4xl tracking-tight pt-6 text-white z-10'>
+            <h3 className='font-bold text-3xl md:text-3xl tracking-tight pt-6 z-10'>
                 Featured Project
             </h3>
 

@@ -8,7 +8,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
     const { name, image, url, content } = project;
 
     return (
-        <div className='card card-compact shadow-xl mt-8 bg-base-100'>
+        <div className='card-compact shadow-xl mt-8 bg-base-100 rounded-xl overflow-hidden bg-accent-content'>
             <Image
                 src={image}
                 alt={name}
@@ -21,7 +21,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 <PortableText value={content} />
                 <div className='card-actions justify-end mt-4'>
                     <Link
-                        className='btn btn-primary'
+                        className='btn btn-outline btn-primary'
                         href={url}
                         target='_blank'>
                         Check it out
