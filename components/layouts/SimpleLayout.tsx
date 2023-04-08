@@ -1,11 +1,10 @@
-import { ReactNode } from 'react'
-import { Container } from '@/components/Container'
-import { twMerge } from 'tailwind-merge'
+import { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { SimpleLayout } from '@/types/icons';
 
 export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
     return (
-        <Container className='mt-16 sm:mt-32'>
+        <>
             <header className='max-w-2xl'>
                 <h1
                     className={twMerge(`
@@ -15,15 +14,16 @@ export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
                         text-zinc-800
                         dark:text-zinc-100
                         sm:text-5xl
-                        ${gradient
-                            ? `${gradient} bg-clip-text dark:text-transparent`
-                            : ''
+                        ${
+                            gradient
+                                ? `${gradient} bg-clip-text dark:text-transparent`
+                                : ''
                         }
                     `)}>
                     {title}
                 </h1>
             </header>
             <div className='mt-16 sm:mt-20'>{children}</div>
-        </Container>
-    )
+        </>
+    );
 }
