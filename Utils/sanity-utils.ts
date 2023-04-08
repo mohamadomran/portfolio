@@ -9,13 +9,38 @@ const config = {
     useCdn: true
 };
 
+export async function getFeaturedProject(): Promise<Project[]> {
+    return createClient(config).fetch(
+        groq`*[_type == "project" && featured == true]{
+        _id,
+        _createdAt,
+        name,
+        "image": image.asset->url,
+        url,
+        content
+      }`
+    );
+}
+
+export async function getFeaturedBlogs(): Promise<Project[]> {
+    return createClient(config).fetch(
+        groq`*[_type == "project" && featured == true]{
+        _id,
+        _createdAt,
+        name,
+        "image": image.asset->url,
+        url,
+        content
+      }`
+    );
+}
+
 export async function getProjects(): Promise<Project[]> {
     return createClient(config).fetch(
         groq`*[_type == "project"]{
         _id,
         _createdAt,
         name,
-        "slug": slug.current,
         "image": image.asset->url,
         url,
         content
@@ -29,7 +54,6 @@ export async function getProject(slug: string): Promise<Project> {
         _id,
         _createdAt,
         name,
-        "slug": slug.current,
         "image": image.asset->url,
         url,
         content
@@ -44,7 +68,6 @@ export async function getPages(): Promise<Page[]> {
         _id,
         _createdAt,
         title,
-        "slug": slug.current
       }`
     );
 }
