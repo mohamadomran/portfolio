@@ -37,7 +37,7 @@ const modeScript = `
 
 export default function Document() {
     return (
-        <Html className="h-full antialiased" lang="en">
+        <Html lang="en" data-theme="forest">
             <Head>
                 <script dangerouslySetInnerHTML={{ __html: modeScript }} />
                 <link
@@ -70,7 +70,7 @@ export default function Document() {
                 />
             </Head>
             <script dangerouslySetInnerHTML={{ __html: modeScript }} />
-            <body className="flex h-full flex-col dark:bg-black-950">
+            <body>
                 <Main />
                 <NextScript />
             </body>
