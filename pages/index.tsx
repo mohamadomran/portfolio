@@ -1,18 +1,20 @@
-import React from 'react';
-import { NextSeo } from 'next-seo';
+import React from 'react'
 
-import { SEO_DESCRIPTION } from '@/utils/constants';
-import { Intro } from '@/components/sections/Intro';
-import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs';
-import { FeaturedProject } from '@/components/sections/FeaturedProject';
-import { getFeaturedProject, getBlogs } from '@/utils/sanity-utils';
+import { NextSeo } from 'next-seo'
 
-import { Project } from '@/types/Project';
+import { SEO_DESCRIPTION } from '@/utils/constants'
+import { Intro } from '@/components/sections/Intro'
+import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs'
+import { FeaturedProject } from '@/components/sections/FeaturedProject'
+import { getFeaturedProject, getBlogs } from '@/utils/sanity-utils'
+
+import { Project } from '@/types/Project'
 import { Blog } from '@/types/Blog'
 
 interface HomeProps {
-    project: Project;
-    blogs: Blog[];
+    project: Project
+    blogs: Blog[]
+
 }
 
 const Home = ({ blogs, project }: HomeProps) => {
@@ -33,20 +35,19 @@ const Home = ({ blogs, project }: HomeProps) => {
             <FeaturedProject project={project} />
             <FeaturedBlogs blogs={blogs} />
         </>
-    );
-};
+    )
+}
 
 export const getStaticProps = async () => {
-    const project = await getFeaturedProject();
-    const blogs = await getBlogs();
+    const project = await getFeaturedProject()
+    const blogs = await getBlogs()
 
     return {
         props: {
             project: project[0],
             blogs,
         },
-        revalidate: 1,
-    };
-};
+    }
+}
 
-export default Home;
+export default Home

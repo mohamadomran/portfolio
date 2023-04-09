@@ -1,9 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
-import { Resume } from '@/components/ui/Resume';
-import { SimpleLayout } from '@/components/layouts/SimpleLayout';
+import React from 'react'
+import Head from 'next/head'
+import { Resume } from '@/components/ui/Resume'
+import { SimpleLayout } from '@/components/layouts/SimpleLayout'
 
-import { WORK_SEO_TITLE, WORK_SEO_DESCRIPTION } from '@/Utils/constants';
+import { WORK_SEO_TITLE, WORK_SEO_DESCRIPTION } from '@/utils/constants'
 
 export default function Work() {
     return (
@@ -25,5 +25,5 @@ export default function Work() {
                 </div>
             </SimpleLayout>
         </>
-    );
+    )
 }
