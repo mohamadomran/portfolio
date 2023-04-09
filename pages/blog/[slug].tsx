@@ -1,5 +1,5 @@
 import { Blog } from '@/types/Blog'
-import { config, getBlog } from '@/utils/sanity-utils'
+import { config, getBlog } from '@/sanity/sanity-utils'
 import { PortableText } from '@portabletext/react'
 import { GetStaticProps } from 'next'
 import { createClient } from 'next-sanity'

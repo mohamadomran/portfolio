@@ -6,7 +6,7 @@ import { SEO_DESCRIPTION } from '@/constants/constants'
 import { Intro } from '@/components/sections/Intro'
 import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs'
 import { FeaturedProject } from '@/components/sections/FeaturedProject'
-import { getFeaturedProject, getBlogs } from '@/utils/sanity-utils'
+import { getFeaturedProject, getBlogs } from '@/sanity/sanity-utils'
 
 import { Project } from '@/types/Project'
 import { Blog } from '@/types/Blog'

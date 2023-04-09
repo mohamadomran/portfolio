@@ -7,7 +7,7 @@ import { BlogCard } from '@/components/ui/BlogCard'
 
 import { formatDate } from '@/lib/formatDate'
 import { Article } from 'types/icons'
-import { getBlogs } from '@/utils/sanity-utils'
+import { getBlogs } from '@/sanity/sanity-utils'
 import { Blog } from '@/types/Blog'
 import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants'
 

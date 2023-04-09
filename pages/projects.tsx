@@ -1,13 +1,13 @@
-import { GetServerSideProps } from 'next';
-import Head from 'next/head';
+import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
-import { getProjects } from '@/utils/sanity-utils';
-import { SimpleLayout } from '@/components/layouts/SimpleLayout';
-import Link from 'next/link';
-import { Project } from '@/types/Project';
-import { PortableText } from '@portabletext/react';
+import { getProjects } from '@/sanity/sanity-utils'
+import { SimpleLayout } from '@/components/layouts/SimpleLayout'
+import Link from 'next/link'
+import { Project } from '@/types/Project'
+import { PortableText } from '@portabletext/react'
 
-export default function FeaturedProjects({ projects }: { projects: Project[]}) {
+export default function FeaturedProjects({ projects }: { projects: Project[] }) {
     return (
         <>
             <Head>
@@ -52,7 +52,7 @@ export default function FeaturedProjects({ projects }: { projects: Project[]}) {
                 </div>
             </SimpleLayout>
         </>
-    );
+    )
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
