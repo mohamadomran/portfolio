@@ -1,14 +1,15 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { PortableText } from '@portabletext/react';
+import { PortableText } from '@portabletext/react'
+
 import { Project } from '@/types/Project'
 
 export const ProjectCard = ({ project }: { project: Project }) => {
-    const { name, image, url, content } = project;
+    const { name, image, url, content } = project
 
     return (
-        <div className='card-compact shadow-xl mt-8 bg-base-100 rounded-xl overflow-hidden bg-accent-content'>
+        <div className='card-compact shadow-xl mt-8 bg-base-100 rounded-xl overflow-hidden bg-primary-content'>
             <Image
                 src={image}
                 alt={name}
@@ -29,5 +30,5 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
