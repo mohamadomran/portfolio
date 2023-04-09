@@ -1,8 +1,8 @@
-import { ElementType } from 'react'
+import { ElementType } from 'react';
 
 export type SocialLink = {
-    href: string
-    ariaLabel: string
-    icon: ElementType
-    className?: string
-}
+  href: string;
+  ariaLabel: string;
+  icon: ElementType;
+  className?: string;
+};
