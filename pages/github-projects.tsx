@@ -6,13 +6,13 @@ import { SparklesIcon } from '@/components/icons/SparklesIcon'
 import { ShareIcon } from '@/components/icons/ShareIcon'
 import { getPinnedRepos } from '@/lib/github'
 import { numberFormat } from '@/lib/numberFormat'
-import type { Repo } from '@/types/icons';
+import type { Repo } from '@/types/icons'
 
 export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[] }) {
     return (
         <>
             <Head>
-                <title>Projects - Mohamad Omran</title>
+                <title>Project - Mohamad Omran</title>
                 <meta
                     name="description"
                     content="Open Source Projects/Tinkering: My Contributions to the Community"
