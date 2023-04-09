@@ -2,10 +2,9 @@ import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon'
 import { CloseIcon } from '@/components/icons/CloseIcon'
-import { Props } from '@/types/icons'
+import { Props } from '@/types/Props'
 import { MobileNavItem } from './MobileNavItem'
 import { pages } from '@/constants/constants'
-
 
 export function MobileNavigation(props: Props) {
     return (

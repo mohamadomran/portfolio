@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { BlogCard } from '../ui/BlogCard';
-import { ArrowRightIcon } from '../icons/ArrowRightIcon';
-import { Blog } from '@/types/Blog';
+import Link from 'next/link'
+import { BlogCard } from '../ui/BlogCard'
+import { ArrowRightIcon } from '../icons/ArrowRightIcon'
+import { Blog } from '@/types/Blog'
 
 export const FeaturedBlogs = ({ blogs }: { blogs: Blog[] }) => {
     return (
@@ -22,5 +22,5 @@ export const FeaturedBlogs = ({ blogs }: { blogs: Blog[] }) => {
                 <ArrowRightIcon className='stroke-primary' />
             </Link>
         </div>
-    );
-};
+    )
+}

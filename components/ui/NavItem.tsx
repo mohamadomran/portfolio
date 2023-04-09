@@ -1,10 +1,9 @@
-import React from 'react'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { Props } from '@/types/icons'
+import { Props } from '@/types/Props'
 
-export const NavItem = ({ href, children }: { href: string}  & Props) => {
+export const NavItem = ({ href, children }: { href: string } & Props) => {
     const router = useRouter()
     let isActive = router.pathname === href
 

@@ -1,12 +1,5 @@
-import Link from 'next/link';
-import { ElementType } from 'react';
-
-type SocialLink = {
-    href: string;
-    ariaLabel: string;
-    icon: ElementType;
-    className?: string;
-};
+import Link from 'next/link'
+import { SocialLink } from '@/types/SocialLink'
 
 export function SocialLink({
     icon: Icon,
@@ -23,5 +16,5 @@ export function SocialLink({
                 group-hover:fill-primary'
             />
         </Link>
-    );
+    )
 }

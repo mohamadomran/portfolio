@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
 
-
-export const NavLink = ({ href, children }: { href: string; children: ReactNode} ) => {
+export const NavLink = ({ href, children }: { href: string; children: ReactNode }) => {
     return (
         <Link
             href={href}

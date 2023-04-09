@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { SimpleLayout } from '@/types/icons';
+import { ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
+import { SimpleLayout } from "@/types/SimpleLayout"
 
 export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
     return (
@@ -14,10 +14,9 @@ export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
                         text-zinc-800
                         dark:text-zinc-100
                         sm:text-5xl
-                        ${
-                            gradient
-                                ? `${gradient} bg-clip-text dark:text-transparent`
-                                : ''
+                        ${gradient
+                            ? `${gradient} bg-clip-text dark:text-transparent`
+                            : ''
                         }
                     `)}>
                     {title}
@@ -25,5 +24,5 @@ export function SimpleLayout({ title, children, gradient }: SimpleLayout) {
             </header>
             <div className='mt-16 sm:mt-20'>{children}</div>
         </>
-    );
+    )
 }

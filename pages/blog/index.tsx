@@ -1,12 +1,11 @@
 import { NextSeo } from 'next-seo'
 
 import { Card } from '@/components/ui/Card'
-import { SimpleLayout } from '@/components/layouts/SimpleLayout'
-import { Views } from '@/components/ui/Views'
+
 import { BlogCard } from '@/components/ui/BlogCard'
 
 import { formatDate } from '@/lib/formatDate'
-import { Article } from 'types/icons'
+import { Article } from "@/types/Article"
 import { getBlogs } from '@/sanity/sanity-utils'
 import { Blog } from '@/types/Blog'
 import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants'
