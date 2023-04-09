@@ -1,7 +1,7 @@
 import React from 'react'
 import { Props } from '@/types/icons'
 import { NavItem } from './NavItem'
-import { pages } from '@/utils/constants'
+import { pages } from '@/constants/constants'
 
 
 export function DesktopNavigation(props: Props) {

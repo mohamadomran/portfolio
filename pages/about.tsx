@@ -14,7 +14,7 @@ import {
     ABOUT_SEO_TITLE,
     ABOUT_SEO_DESCRIPTION,
     SOCIAL_LINKS,
-} from '@/utils/constants'
+} from '@/constants/constants'
 import { SocialLink } from '@/components/ui/SocialLink'
 
 export default function About() {

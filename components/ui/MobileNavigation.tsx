@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon'
 import { CloseIcon } from '@/components/icons/CloseIcon'
 import { Props } from '@/types/icons'
 import { MobileNavItem } from './MobileNavItem'
-import { pages } from '@/utils/constants'
+import { pages } from '@/constants/constants'
 
 
 export function MobileNavigation(props: Props) {

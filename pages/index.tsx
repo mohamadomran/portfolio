@@ -2,7 +2,7 @@ import React from 'react'
 
 import { NextSeo } from 'next-seo'
 
-import { SEO_DESCRIPTION } from '@/utils/constants'
+import { SEO_DESCRIPTION } from '@/constants/constants'
 import { Intro } from '@/components/sections/Intro'
 import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs'
 import { FeaturedProject } from '@/components/sections/FeaturedProject'

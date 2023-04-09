@@ -3,7 +3,7 @@ import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 
 import { getAllArticles } from './getAllArticles'
-import { SEO_DESCRIPTION } from '@/utils/constants'
+import { SEO_DESCRIPTION } from '@/constants/constants'
 
 export async function generateRssFeed() {
     let articles = await getAllArticles()

@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
 
-import { SOCIAL_LINKS } from '@/utils/constants';
-import { ArrowDownIcon } from '../icons/ArrowDownIcon';
-import { ArrowRightIcon } from '../icons/ArrowRightIcon';
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons';
-import { Button } from '../ui/Button';
-import { SocialLink } from '../ui/SocialLink';
-import avatar from '@/public/static/images/avatar.png';
+import { SOCIAL_LINKS } from '@/constants/constants'
+import { ArrowDownIcon } from '../icons/ArrowDownIcon'
+import { ArrowRightIcon } from '../icons/ArrowRightIcon'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons'
+import { Button } from '../ui/Button'
+import { SocialLink } from '../ui/SocialLink'
+import avatar from '@/public/static/images/avatar.png'
 
 export const Intro = () => {
     return (
@@ -70,5 +70,5 @@ export const Intro = () => {
                 </Button>
             </div>
         </>
-    );
-};
+    )
+}

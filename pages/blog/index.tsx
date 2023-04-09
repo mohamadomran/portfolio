@@ -1,15 +1,15 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 
-import { Card } from '@/components/ui/Card';
-import { SimpleLayout } from '@/components/layouts/SimpleLayout';
-import { Views } from '@/components/ui/Views';
-import { BlogCard } from '@/components/ui/BlogCard';
+import { Card } from '@/components/ui/Card'
+import { SimpleLayout } from '@/components/layouts/SimpleLayout'
+import { Views } from '@/components/ui/Views'
+import { BlogCard } from '@/components/ui/BlogCard'
 
-import { formatDate } from '@/lib/formatDate';
-import { Article } from 'types/icons';
-import { getBlogs } from '@/utils/sanity-utils';
-import { Blog } from '@/types/Blog';
-import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/utils/constants';
+import { formatDate } from '@/lib/formatDate'
+import { Article } from 'types/icons'
+import { getBlogs } from '@/utils/sanity-utils'
+import { Blog } from '@/types/Blog'
+import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants'
 
 const Blog = ({ article }: { article: Article }) => {
     return (
@@ -28,8 +28,8 @@ const Blog = ({ article }: { article: Article }) => {
                 </p>
             </Card>
         </article>
-    );
-};
+    )
+}
 
 const BlogIndex = ({ blogs }: { blogs: Blog[] }) => {
     return (
@@ -58,18 +58,18 @@ const BlogIndex = ({ blogs }: { blogs: Blog[] }) => {
                 ))}
             </div>
         </>
-    );
-};
+    )
+}
 
-export default BlogIndex;
+export default BlogIndex
 
 export const getStaticProps = async () => {
-    const blogs = await getBlogs();
+    const blogs = await getBlogs()
 
     return {
         props: {
             blogs,
         },
         revalidate: 1,
-    };
-};
+    }
+}
