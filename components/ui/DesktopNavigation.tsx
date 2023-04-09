@@ -1,5 +1,4 @@
-import React from 'react'
-import { Props } from '@/types/icons'
+import { Props } from '@/types/Props'
 import { NavItem } from './NavItem'
 import { pages } from '@/constants/constants'
 

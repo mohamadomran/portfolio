@@ -1,4 +1,4 @@
-import type { Repo } from '@/types/icons';
+import type { Repo } from '@/types/Repo';
 import fetcher from '@/lib/fetcher';
 
 const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;

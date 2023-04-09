@@ -1,4 +1,4 @@
-import { Props } from '@/types/icons';
+import { Props } from '@/types/Props'
 
 export function ArrowRightIcon(props: Props) {
     return (
@@ -14,5 +14,5 @@ export function ArrowRightIcon(props: Props) {
                 strokeWidth='2'
                 d='M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z'></path>
         </svg>
-    );
+    )
 }

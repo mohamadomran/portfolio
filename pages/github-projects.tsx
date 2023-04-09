@@ -6,7 +6,7 @@ import { SparklesIcon } from '@/components/icons/SparklesIcon'
 import { ShareIcon } from '@/components/icons/ShareIcon'
 import { getPinnedRepos } from '@/lib/github'
 import { numberFormat } from '@/lib/numberFormat'
-import type { Repo } from '@/types/icons'
+import type { Repo } from "@/types/Repo"
 
 export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[] }) {
     return (

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { NextSeo } from 'next-seo'
 
 import { SEO_DESCRIPTION } from '@/constants/constants'

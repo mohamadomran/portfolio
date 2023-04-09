@@ -1,4 +1,4 @@
-import {Props} from '@/types/icons';
+import { Props } from '@/types/Props'
 
 export function ChevronDownIcon(props: Props) {
     return (

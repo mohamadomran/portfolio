@@ -5,7 +5,6 @@ import { SOCIAL_LINKS } from '@/constants/constants'
 import { ArrowDownIcon } from '../icons/ArrowDownIcon'
 import { ArrowRightIcon } from '../icons/ArrowRightIcon'
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons'
-import { Button } from '../ui/Button'
 import { SocialLink } from '../ui/SocialLink'
 import avatar from '@/public/static/images/avatar.png'
 
@@ -62,12 +61,12 @@ export const Intro = () => {
                     ariaLabel='Follow on Twitter'
                     icon={TwitterIcon}
                 />
-                <Button
+                <Link
                     href={SOCIAL_LINKS.CV}
                     className='btn btn-outline btn-primary'>
                     Download CV
                     <ArrowDownIcon className='h-4 w-4 stroke-primary' />
-                </Button>
+                </Link>
             </div>
         </>
     )

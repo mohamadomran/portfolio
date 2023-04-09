@@ -1,19 +1,4 @@
-import React from 'react';
-
-type Work = {
-    company: string;
-    title: string;
-    start: {
-        label: string;
-        dateTime: string;
-    };
-    end: {
-        label: string;
-        dateTime: string;
-    };
-    companyURL?: string;
-    tasks: string[];
-};
+import { Work } from '@/types/Work'
 
 export function Resume() {
     const work: Work[] = [
@@ -81,7 +66,7 @@ export function Resume() {
                 'Provided ongoing maintenance and support for the frontend solution, ensuring that any issues or bugs were promptly resolved to ensure optimal performance of the platform, and delivering reliable and efficient software solutions that met client needs.',
             ],
         },
-    ];
+    ]
 
     return (
         <ol className='mt-6 space-y-16  text-lg'>
@@ -97,9 +82,8 @@ export function Resume() {
                         <dt className='sr-only'>Date</dt>
                         <dd
                             className='text-sm md:text-md mt-3 mb-3 font-bold bg-yellow-100 rounded-md p-1 text-black-950 dark:text-black-950'
-                            aria-label={`${
-                                role.start.label ?? role.start
-                            } until ${role.end.label ?? role.end}`}>
+                            aria-label={`${role.start.label ?? role.start
+                                } until ${role.end.label ?? role.end}`}>
                             <time dateTime={role.start.dateTime ?? role.start}>
                                 {role.start.label ?? role.start}
                             </time>
@@ -132,5 +116,5 @@ export function Resume() {
                 </li>
             ))}
         </ol>
-    );
+    )
 }

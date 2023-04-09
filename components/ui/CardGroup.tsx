@@ -1,11 +1,7 @@
-import React, {ReactNode, useId} from 'react'
+import React, { useId } from 'react'
+import { CardGroupProps } from '@/types/Card'
 
-type CardGroupProps = {
-    title: string
-    children: ReactNode
-}
-
-export function CardGroup({title, children}: CardGroupProps) {
+export function CardGroup({ title, children }: CardGroupProps) {
     const id = useId()
 
     return (

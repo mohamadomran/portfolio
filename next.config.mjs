@@ -1,16 +1,10 @@
-import nextMDX from '@next/mdx'
-import rehypePrism from '@mapbox/rehype-prism'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     pageExtensions: ['jsx', 'js', 'tsx', 'ts', 'mdx'],
     reactStrictMode: true,
     swcMinify: true,
-    experimental: {
-        mdxRs: true
-    },
     images: {
-        domains: ['i.scdn.co','cdn.sanity.io']
+        domains: ['i.scdn.co', 'cdn.sanity.io']
     },
     async rewrites() {
         if (process.env.NODE_ENV === 'production') {
@@ -26,12 +20,5 @@ const nextConfig = {
     },
 }
 
-const withMDX = nextMDX({
-    extension: /\.mdx?$/,
-    options: {
-        remarkPlugins: [],
-        rehypePlugins: [rehypePrism],
-    }
-})
 
-export default withMDX(nextConfig)
+export default nextConfig
