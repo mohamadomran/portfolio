@@ -11,16 +11,15 @@ export default function PreviewPostPage({
 }: {
   token: null | string;
 } & PostPageProps) {
-  const { post: postPreview, morePosts }: { post: Post; morePosts: Post[] } =
+  const { post: postPreview }: { post: Post; } =
     usePreview(token, allBlogsQuery, {
       slug: post.slug,
-    }) || { post: null, morePosts: [] };
+    }) || { post: null };
 
   return (
     <PostPage
       preview
       post={postPreview}
-      morePosts={morePosts}
       settings={settings}
     />
   );

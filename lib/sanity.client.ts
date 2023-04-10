@@ -56,7 +56,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
 export async function getPostAndMoreStories(
   slug: string,
   token?: string | null,
-): Promise<{ post: Post; morePosts: Post[] }> {
+): Promise<{ post: Post }> {
   if (projectId) {
     const client = createClient({
       projectId,
@@ -67,5 +67,5 @@ export async function getPostAndMoreStories(
     });
     return await client.fetch(allBlogsQuery, { slug });
   }
-  return { post: null as any, morePosts: [] };
+  return { post: null as any };
 }

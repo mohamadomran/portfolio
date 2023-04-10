@@ -18,7 +18,6 @@ const PreviewPostPage = lazy(() => import('@/components/ui/PreviewPostPage'));
 
 interface PageProps {
   post: Post;
-  morePosts: Post[];
   settings?: Settings;
   preview: boolean;
   token: string | null;
@@ -33,7 +32,7 @@ interface PreviewData {
 }
 
 export default function ProjectSlugRoute(props: PageProps) {
-  const { settings, post, morePosts, preview, token } = props;
+  const { settings, post, preview, token } = props;
 
   if (preview) {
     return (
@@ -43,7 +42,6 @@ export default function ProjectSlugRoute(props: PageProps) {
             loading
             preview
             post={post}
-            morePosts={morePosts}
             settings={settings!}
           />
         }
@@ -51,7 +49,6 @@ export default function ProjectSlugRoute(props: PageProps) {
         <PreviewPostPage
           token={token}
           post={post}
-          morePosts={morePosts}
           settings={settings!}
         />
       </PreviewSuspense>
@@ -60,7 +57,7 @@ export default function ProjectSlugRoute(props: PageProps) {
 
   return (
     <Layout>
-      <PostPage post={post} morePosts={morePosts} settings={settings!} />
+      <PostPage post={post} settings={settings!} />
     </Layout>
   );
 }
@@ -74,7 +71,7 @@ export const getStaticProps: GetStaticProps<
 
   const token = previewData.token;
 
-  const [settings, { post, morePosts }] = await Promise.all([
+  const [settings, { post }] = await Promise.all([
     getSettings(),
     getPostAndMoreStories(params.slug, token),
   ]);
@@ -88,7 +85,6 @@ export const getStaticProps: GetStaticProps<
   return {
     props: {
       post,
-      morePosts,
       settings,
       preview,
       token: previewData.token ?? null,
