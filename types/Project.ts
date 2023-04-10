@@ -1,10 +1,8 @@
-import { PortableTextBlock } from 'sanity';
-
-export type Project = {
+export interface Project {
   _id: string;
-  createdAt: Date;
-  name: string;
-  image: string;
-  url: string;
-  content: PortableTextBlock[];
-};
+  title?: string;
+  coverImage?: any;
+  date?: string;
+  url?: string;
+  description?: any;
+}
