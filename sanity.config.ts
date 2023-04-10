@@ -11,7 +11,6 @@ import {
   previewSecretId,
   projectId,
 } from '@/lib/sanity.api';
-import author from '@/schemas/author';
 import gallery from '@/schemas/gallery';
 import post from '@/schemas/post';
 import project from '@/schemas/project';
@@ -26,7 +25,7 @@ export default defineConfig({
   dataset: dataset!,
   title,
   schema: {
-    types: [author, post, settings, gallery, project, til],
+    types: [post, settings, gallery, project, til],
   },
   plugins: [
     deskTool({
