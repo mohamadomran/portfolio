@@ -9,23 +9,40 @@ const postFields = groq`
   "slug": slug.current,
 `;
 
+const projectFields = groq`
+  _id,
+  featured,
+  title,
+  coverImage,
+  description,
+  url,
+  technologies
+`;
+
 export const settingsQuery = groq`*[_type == "settings"][0]`;
 
-export const indexQuery = groq`
-*[_type == "post"] | order(date desc, _updatedAt desc) {
+export const featuredBlogsQuery = groq`
+*[_type == "post"] | order(date desc, _updatedAt desc)  {
   ${postFields}
 }`;
 
-export const postAndMoreStoriesQuery = groq`
+export const featuredProjectsQuery = groq`
+*[_type == "project"] {
+  ${projectFields}
+}`;
+
+export const allBlogsQuery = groq`
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
-    content,
+  "post": *[_type == "post"] | order(_updatedAt desc) [0] {
     ${postFields}
   },
-  "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
-    content,
+}`;
+
+export const allProjectsQuery = groq`
+{
+  "post": *[_type == "project" ] | order(_updatedAt desc) [0] {
     ${postFields}
-  }
+  },
 }`;
 
 export const postSlugsQuery = groq`
@@ -37,23 +54,3 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `;
-
-export interface Post {
-  _id: string;
-  title?: string;
-  coverImage?: any;
-  date?: string;
-  excerpt?: string;
-  slug?: string;
-  content?: any;
-}
-
-export interface Settings {
-  title?: string;
-  description?: any[];
-  ogImage?: {
-    title?: string;
-  };
-}
-
-export interface Project {}

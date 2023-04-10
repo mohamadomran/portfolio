@@ -1,18 +1,18 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api';
 import {
-  indexQuery,
-  type Post,
-  postAndMoreStoriesQuery,
+  allBlogsQuery,
+  featuredBlogsQuery,
+  featuredProjectsQuery,
   postBySlugQuery,
   postSlugsQuery,
-  type Settings,
   settingsQuery,
 } from 'lib/sanity.queries';
 import { createClient } from 'next-sanity';
 
-/**
- * Checks if it's safe to create a client instance, as `@sanity/client` will throw an error if `projectId` is false
- */
+import { type Post } from '@/types/Post';
+import { type Project } from '@/types/Project';
+import { type Settings } from '@/types/Settings';
+
 const client = projectId
   ? createClient({ projectId, dataset, apiVersion, useCdn })
   : null;
@@ -26,7 +26,14 @@ export async function getSettings(): Promise<Settings> {
 
 export async function getAllPosts(): Promise<Post[]> {
   if (client) {
-    return (await client.fetch(indexQuery)) || [];
+    return (await client.fetch(featuredBlogsQuery)) || [];
+  }
+  return [];
+}
+
+export async function getAllProjects(): Promise<Project[]> {
+  if (client) {
+    return (await client.fetch(featuredProjectsQuery)) || [];
   }
   return [];
 }
@@ -58,7 +65,7 @@ export async function getPostAndMoreStories(
       useCdn,
       token: token || undefined,
     });
-    return await client.fetch(postAndMoreStoriesQuery, { slug });
+    return await client.fetch(allBlogsQuery, { slug });
   }
   return { post: null as any, morePosts: [] };
 }
