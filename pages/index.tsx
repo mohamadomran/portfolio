@@ -7,9 +7,9 @@ import { FeaturedProject } from '@/components/sections/FeaturedProject';
 import { Intro } from '@/components/sections/Intro';
 import { SEO_DESCRIPTION } from '@/constants/constants';
 import { getAllPosts, getAllProjects, getSettings } from '@/lib/sanity.client';
-import { Post } from "@/types/Post";
+import { Post } from '@/types/Post';
 import { Project } from '@/types/Project';
-import { Settings } from "@/types/Settings";
+import { Settings } from '@/types/Settings';
 
 interface PageProps {
   posts: Post[];

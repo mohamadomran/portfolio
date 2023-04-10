@@ -1,8 +1,8 @@
 import { allBlogsQuery } from 'lib/sanity.queries';
 
 import PostPage, { PostPageProps } from '@/components/ui/PostPage';
-import { type Post } from "@/types/Post";
 import { usePreview } from '@/lib/sanity.preview';
+import { type Post } from '@/types/Post';
 
 export default function PreviewPostPage({
   token,
@@ -11,7 +11,7 @@ export default function PreviewPostPage({
 }: {
   token: null | string;
 } & PostPageProps) {
-  const { post: postPreview, morePosts }: { post: Post; morePosts: Post[]; } =
+  const { post: postPreview, morePosts }: { post: Post; morePosts: Post[] } =
     usePreview(token, allBlogsQuery, {
       slug: post.slug,
     }) || { post: null, morePosts: [] };

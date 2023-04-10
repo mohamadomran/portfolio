@@ -2,13 +2,10 @@ import Link from 'next/link';
 
 import CoverImage from '@/components/ui/CoverImage';
 import Date from '@/components/ui/PostDate';
-import type { Post } from "@/types/Post";
+import type { Post } from '@/types/Post';
 
 export default function HeroPost(
-  props: Pick<
-    Post,
-    'title' | 'coverImage' | 'date' | 'excerpt' | 'slug'
-  >,
+  props: Pick<Post, 'title' | 'coverImage' | 'date' | 'excerpt' | 'slug'>,
 ) {
   const { title, coverImage, date, excerpt, slug } = props;
   return (

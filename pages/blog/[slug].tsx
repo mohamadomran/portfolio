@@ -11,8 +11,8 @@ import { lazy } from 'react';
 import { Layout } from '@/components/layouts/Layout';
 import PostPage from '@/components/ui/PostPage';
 import { Blog } from '@/types/Blog';
-import { Post } from "@/types/Post";
-import { Settings } from "@/types/Settings";
+import { Post } from '@/types/Post';
+import { Settings } from '@/types/Settings';
 
 const PreviewPostPage = lazy(() => import('@/components/ui/PreviewPostPage'));
 
@@ -58,9 +58,11 @@ export default function ProjectSlugRoute(props: PageProps) {
     );
   }
 
-  return (<Layout>
-    <PostPage post={post} morePosts={morePosts} settings={settings!} />
-  </Layout>);
+  return (
+    <Layout>
+      <PostPage post={post} morePosts={morePosts} settings={settings!} />
+    </Layout>
+  );
 }
 
 export const getStaticProps: GetStaticProps<

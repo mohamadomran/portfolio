@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Date from '@/components/ui/PostDate';
-import { Post } from "@/types/Post";
+import { Post } from '@/types/Post';
 
 import { ArrowRightIcon } from '../icons/ArrowRightIcon';
 

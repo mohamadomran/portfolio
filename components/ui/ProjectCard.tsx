@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { Project } from '@/types/Project';
 
-export const ProjectCard = ({ project }: { project: Project; }) => {
+export const ProjectCard = ({ project }: { project: Project }) => {
   const { title, coverImage: source, url, description } = project;
 
   console.log(project);

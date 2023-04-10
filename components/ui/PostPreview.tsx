@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import CoverImage from '@/components/ui/CoverImage';
 import Date from '@/components/ui/PostDate';
-import type { Post } from "@/types/Post";
+import type { Post } from '@/types/Post';
 
 export default function PostPreview({
   title,

@@ -9,7 +9,7 @@ import {
   OpenGraphImage,
   width,
 } from '@/components/sanity/OpenGraphImage';
-import type { Settings } from "@/types/Settings";
+import type { Settings } from '@/types/Settings';
 
 async function init(): Promise<SatoriOptions['fonts']> {
   if (!globalThis?.Intl?.Segmenter) {

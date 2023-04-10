@@ -54,7 +54,7 @@ export default function FeaturedProjects({
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
-      projects: (await getAllProjects())
+      projects: await getAllProjects(),
     },
   };
 };

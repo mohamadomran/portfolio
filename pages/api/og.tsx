@@ -13,12 +13,12 @@ import {
   OpenGraphImage,
   width,
 } from '@/components/sanity/OpenGraphImage';
-import { Settings } from "@/types/Settings";
+import { Settings } from '@/types/Settings';
 
 export default async function og(req: NextRequest, res: NextResponse) {
-  const font = fetch(new URL('public/fonts/JetBrainsMono.ttf', import.meta.url)).then(
-    (res) => res.arrayBuffer(),
-  );
+  const font = fetch(
+    new URL('public/fonts/JetBrainsMono.ttf', import.meta.url),
+  ).then((res) => res.arrayBuffer());
   const { searchParams } = new URL(req.url);
 
   let title = searchParams.get('title');

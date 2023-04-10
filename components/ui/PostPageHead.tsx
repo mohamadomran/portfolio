@@ -1,9 +1,9 @@
 import { urlForImage } from 'lib/sanity.image';
-import { Settings } from "@/types/Settings";
 import Head from 'next/head';
 
 import BlogMeta from '@/components/ui/BlogMeta';
-import { Post } from "@/types/Post";
+import { Post } from '@/types/Post';
+import { Settings } from '@/types/Settings';
 
 export interface PostPageHeadProps {
   settings: Settings;

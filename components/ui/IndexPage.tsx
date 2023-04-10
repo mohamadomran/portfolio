@@ -1,12 +1,11 @@
-import type { Settings } from "@/types/Settings";
-
 import Container from '@/components/ui/BlogContainer';
 import BlogHeader from '@/components/ui/BlogHeader';
 import Layout from '@/components/ui/BlogLayout';
 import HeroPost from '@/components/ui/HeroPost';
 import IndexPageHead from '@/components/ui/IndexPageHead';
 import MoreStories from '@/components/ui/MoreStories';
-import type { Post } from "@/types/Post";
+import type { Post } from '@/types/Post';
+import type { Settings } from '@/types/Settings';
 
 export interface IndexPageProps {
   preview?: boolean;
