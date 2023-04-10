@@ -2,6 +2,8 @@ import { BookIcon } from '@sanity/icons';
 import { format, parseISO } from 'date-fns';
 import { defineField, defineType } from 'sanity';
 
+import authorType from './author';
+
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -29,7 +31,7 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'code' }],
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'excerpt',
@@ -49,6 +51,12 @@ export default defineType({
       title: 'Date',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: authorType.name }],
     }),
   ],
   preview: {
