@@ -15,7 +15,7 @@ import {
 } from '@/components/sanity/OpenGraphImage';
 
 export default async function og(req: NextRequest, res: NextResponse) {
-  const font = fetch(new URL('public/Inter-Bold.woff', import.meta.url)).then(
+  const font = fetch(new URL('public/fonts/JetBrainsMono.ttf', import.meta.url)).then(
     (res) => res.arrayBuffer(),
   );
   const { searchParams } = new URL(req.url);
