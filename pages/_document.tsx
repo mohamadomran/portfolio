@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 const modeScript = `
   darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -70,7 +70,7 @@ export default function Document() {
         />
       </Head>
       <script dangerouslySetInnerHTML={{ __html: modeScript }} />
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col">
         <Main />
         <NextScript />
       </body>

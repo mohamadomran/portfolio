@@ -1,4 +1,5 @@
 import { useId } from 'react';
+
 import { Section } from '@/types/Section';
 
 export function Section({ title, children }: Section) {

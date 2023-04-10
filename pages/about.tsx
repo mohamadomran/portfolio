@@ -2,24 +2,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
+import { MailIcon } from '@/components/icons/MailIcon';
 import {
   GitHubIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/icons/SocialIcons';
-
-import { MailIcon } from '@/components/icons/MailIcon';
-import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png';
+import { Layout } from '@/components/layouts/Layout';
+import { SocialLink } from '@/components/ui/SocialLink';
 import {
-  ABOUT_SEO_TITLE,
   ABOUT_SEO_DESCRIPTION,
+  ABOUT_SEO_TITLE,
   SOCIAL_LINKS,
 } from '@/constants/constants';
-import { SocialLink } from '@/components/ui/SocialLink';
+import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png';
 
 export default function About() {
   return (
-    <>
+    <Layout>
       <NextSeo title={ABOUT_SEO_TITLE} description={ABOUT_SEO_DESCRIPTION} />
 
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -48,7 +48,7 @@ export default function About() {
               private corporations. Notably, I contributed to the development of
               cutting-edge software solutions for various clients while working
               at{' '}
-              <a className="underline text-primary" href="https://speedlane.co">
+              <a className="text-primary underline" href="https://speedlane.co">
                 SpeedLane
               </a>{' '}
               (site is under construction and it&apos;s formerly called
@@ -102,6 +102,6 @@ export default function About() {
           </Link>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }

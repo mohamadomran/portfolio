@@ -1,7 +1,8 @@
 import { createClient, groq } from 'next-sanity';
-import { Project } from '@/types/Project';
-import { Page } from '@/types/Page';
+
 import { Blog } from '@/types/Blog';
+import { Page } from '@/types/Page';
+import { Project } from '@/types/Project';
 
 export const config = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,

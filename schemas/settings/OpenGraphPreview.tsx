@@ -5,7 +5,11 @@ import satori, { type SatoriOptions } from 'satori';
 import styled from 'styled-components';
 import useSWR from 'swr/immutable';
 
-import { height, OpenGraphImage, width } from '@/components/sanity/OpenGraphImage';
+import {
+  height,
+  OpenGraphImage,
+  width,
+} from '@/components/sanity/OpenGraphImage';
 
 async function init(): Promise<SatoriOptions['fonts']> {
   if (!globalThis?.Intl?.Segmenter) {
@@ -13,12 +17,12 @@ async function init(): Promise<SatoriOptions['fonts']> {
     globalThis.Intl = globalThis.Intl || {};
     //@ts-expect-error
     globalThis.Intl.Segmenter = await createIntlSegmenterPolyfill(
-      fetch(new URL('public/break_iterator.wasm', import.meta.url))
+      fetch(new URL('public/break_iterator.wasm', import.meta.url)),
     );
   }
 
   const fontData = await fetch(
-    new URL('public/fonts/JetBrainsMono.ttf', import.meta.url)
+    new URL('public/fonts/JetBrainsMono.ttf', import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return [{ name: 'Inter', data: fontData, style: 'normal', weight: 700 }];
@@ -62,7 +66,7 @@ export default function OpenGraphPreview(props: Settings['ogImage']) {
         fonts,
       });
     },
-    { suspense: true }
+    { suspense: true },
   );
 
   return <OpenGraphSvg dangerouslySetInnerHTML={{ __html }} />;

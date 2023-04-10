@@ -73,7 +73,7 @@ export function Resume() {
       {work.map((role, roleIndex) => (
         <li
           key={roleIndex}
-          className="flex gap-4 border-l pl-4 md:pl-12 border-mustard-500"
+          className="border-mustard-500 flex gap-4 border-l pl-4 md:pl-12"
         >
           <dl className="flex flex-auto flex-wrap gap-x-2">
             <dt className="sr-only">Role @ Company</dt>
@@ -82,7 +82,7 @@ export function Resume() {
             </dd>
             <dt className="sr-only">Date</dt>
             <dd
-              className="text-sm md:text-md mt-3 mb-3 font-bold bg-yellow-100 rounded-md p-1 text-black-950 dark:text-black-950"
+              className="md:text-md text-black-950 dark:text-black-950 mb-3 mt-3 rounded-md bg-yellow-100 p-1 text-sm font-bold"
               aria-label={`${role.start.label ?? role.start} until ${
                 role.end.label ?? role.end
               }`}
@@ -96,13 +96,13 @@ export function Resume() {
               </time>
             </dd>
             <dt className="sr-only">Tasks</dt>
-            <dd className="w-full flex-none text-md font-medium text-zinc-900 dark:text-zinc-100">
+            <dd className="text-md w-full flex-none font-medium text-zinc-900 dark:text-zinc-100">
               <ul className="mt-4 space-y-2">
                 {role.tasks?.map((task, taskIndex) => (
                   <li key={taskIndex} className="flex gap-4">
                     <span className="flex-shrink-0">
                       <svg
-                        className="h-4 w-4 mt-2 stroke-current text-zinc-500 dark:text-zinc-800"
+                        className="mt-2 h-4 w-4 stroke-current text-zinc-500 dark:text-zinc-800"
                         viewBox="0 0 4 4"
                         xmlns="http://www.w3.org/2000/svg"
                       >

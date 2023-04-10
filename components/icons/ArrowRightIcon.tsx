@@ -6,7 +6,7 @@ export function ArrowRightIcon(props: Props) {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      className="h-6 w-6 ml-1"
+      className="ml-1 h-6 w-6"
     >
       <path
         stroke="currentColor"

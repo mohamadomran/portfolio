@@ -1,6 +1,7 @@
-import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import { Props } from '@/types/Props';
 
 export const NavItem = ({ href, children }: { href: string } & Props) => {

@@ -1,11 +1,12 @@
 {
   "name": "portfolio",
-  "author": "Mohamad Omran",
   "version": "2.5.0",
   "private": true,
+  "author": "Mohamad Omran",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
+    "format": "npx prettier --write . --ignore-path .gitignore --cache",
     "lint": "next lint",
     "lint:fix": "npm run format && npm run lint -- --fix",
     "start": "next start",

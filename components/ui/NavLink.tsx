@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 
 export const NavLink = ({
   href,
@@ -9,7 +9,7 @@ export const NavLink = ({
   children: ReactNode;
 }) => {
   return (
-    <Link href={href} className="transition text-primary hover:link-hover">
+    <Link href={href} className="text-primary transition hover:link-hover">
       {children}
     </Link>
   );

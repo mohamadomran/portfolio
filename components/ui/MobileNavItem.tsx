@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import { Popover } from '@headlessui/react';
+import Link from 'next/link';
+
 import { Props } from '@/types/Props';
 
 export const MobileNavItem = ({ href, children }: { href: string } & Props) => {

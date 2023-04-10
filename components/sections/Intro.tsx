@@ -1,19 +1,20 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { SOCIAL_LINKS } from '@/constants/constants';
+import avatar from '@/public/static/images/avatar.png';
+
 import { ArrowDownIcon } from '../icons/ArrowDownIcon';
 import { ArrowRightIcon } from '../icons/ArrowRightIcon';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons';
 import { SocialLink } from '../ui/SocialLink';
-import avatar from '@/public/static/images/avatar.png';
 
 export const Intro = () => {
   return (
     <>
       <div className="flex flex-row items-start">
         <div className="flex flex-col pr-8">
-          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1">
+          <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
             Hi! I&apos;m Mohamad!
           </h1>
           <h2 className="mb-4 text-base-content">
@@ -26,7 +27,7 @@ export const Intro = () => {
           </p>
         </div>
 
-        <div className="w-[160px] h-[160px] mr-auto flex-none rounded-full">
+        <div className="mr-auto h-[160px] w-[160px] flex-none rounded-full">
           <Image
             src={avatar}
             alt="avatar"
@@ -38,7 +39,7 @@ export const Intro = () => {
       </div>
 
       <Link
-        className="flex items-center pt-4 pb-8 text-primary rounded-lg hover:text-primary-focus transition-all h-6"
+        className="flex h-6 items-center rounded-lg pb-8 pt-4 text-primary transition-all hover:text-primary-focus"
         href="/gallery"
       >
         <p>Check my photo gallery</p>
@@ -62,7 +63,7 @@ export const Intro = () => {
           ariaLabel="Follow on Twitter"
           icon={TwitterIcon}
         />
-        <Link href={SOCIAL_LINKS.CV} className="btn btn-outline btn-primary">
+        <Link href={SOCIAL_LINKS.CV} className="btn-outline btn-primary btn">
           Download CV
           <ArrowDownIcon className="h-4 w-4 stroke-primary" />
         </Link>

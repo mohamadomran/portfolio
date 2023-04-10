@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer className="mt-8 mb-8">
-      <div className="flex flex-col items-center justify-between gap-6 mt-12 ">
+    <footer className="mb-8 mt-8">
+      <div className="mt-12 flex flex-col items-center justify-between gap-6 ">
         <div className="flex flex-col">
           <p className="text-sm text-base-content">
             &copy; {new Date().getFullYear()} Mohamad Omran. All rights
