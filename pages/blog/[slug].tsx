@@ -1,19 +1,18 @@
-import { PortableText } from '@portabletext/react';
 import { PreviewSuspense } from '@sanity/preview-kit';
 import {
   getAllPostsSlugs,
   getPostAndMoreStories,
   getSettings,
 } from 'lib/sanity.client';
-import { Post, Settings } from 'lib/sanity.queries';
 import { GetStaticProps } from 'next';
 import { createClient } from 'next-sanity';
 import { lazy } from 'react';
 
 import { Layout } from '@/components/layouts/Layout';
 import PostPage from '@/components/ui/PostPage';
-import { config } from '@/sanity/sanity-utils';
 import { Blog } from '@/types/Blog';
+import { Post } from "@/types/Post";
+import { Settings } from "@/types/Settings";
 
 const PreviewPostPage = lazy(() => import('@/components/ui/PreviewPostPage'));
 

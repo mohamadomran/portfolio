@@ -18,7 +18,7 @@ export const config: PageConfig = { runtime: 'nodejs' };
 function redirectToPreview(
   res: NextApiResponse<string | void>,
   previewData: { token?: string },
-  Location: '/' | `/posts/${string}`,
+  Location: '/' | `/blog/${string}`,
 ): void {
   // Enable Preview Mode by setting the cookies
   res.setPreviewData(previewData);
@@ -84,5 +84,5 @@ export default async function preview(
 
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  redirectToPreview(res, previewData, `/posts/${post.slug}`);
+  redirectToPreview(res, previewData, `/blog/${post.slug}`);
 }

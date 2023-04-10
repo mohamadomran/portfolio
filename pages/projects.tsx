@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components/layouts/Layout';
-import { getProjects } from '@/sanity/sanity-utils';
+import { getAllProjects } from '@/lib/sanity.client';
 import { Project } from '@/types/Project';
 
 export default function FeaturedProjects({
@@ -21,7 +21,7 @@ export default function FeaturedProjects({
         <meta property="og:title" content="Projects - Mohamad Omran" />
         <meta property="og:description" content="Featured Projects" />
       </Head>
-      <div className="mt-5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {/* <div className="mt-5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project: Project) => (
           <Link
             href={project.url}
@@ -46,7 +46,7 @@ export default function FeaturedProjects({
             </div>
           </Link>
         ))}
-      </div>
+      </div> */}
     </Layout>
   );
 }
@@ -54,7 +54,7 @@ export default function FeaturedProjects({
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
-      projects: (await getProjects()) || [],
+      projects: (await getAllProjects())
     },
   };
 };

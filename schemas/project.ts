@@ -14,8 +14,8 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
-      name: 'name',
-      title: 'Name',
+      name: 'title',
+      title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
