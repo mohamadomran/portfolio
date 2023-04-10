@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Date from '@/components/ui/PostDate';
-import { Post } from '@/lib/sanity.queries';
+import { Post } from "@/types/Post";
 
 import { ArrowRightIcon } from '../icons/ArrowRightIcon';
 
@@ -39,7 +39,7 @@ export const FeaturedBlogs = (
 
       <Link
         className="flex h-6 items-center rounded-lg pb-8 pt-8 text-primary transition-all hover:text-secondary"
-        href="/blogs"
+        href="/blog"
       >
         <p>Read more Articles</p>
         <ArrowRightIcon className="stroke-primary" />
