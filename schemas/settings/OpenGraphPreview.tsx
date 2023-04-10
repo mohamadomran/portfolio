@@ -1,6 +1,5 @@
 import { Card } from '@sanity/ui';
 import { createIntlSegmenterPolyfill } from 'intl-segmenter-polyfill';
-import type { Settings } from 'lib/sanity.queries';
 import satori, { type SatoriOptions } from 'satori';
 import styled from 'styled-components';
 import useSWR from 'swr/immutable';
@@ -10,6 +9,7 @@ import {
   OpenGraphImage,
   width,
 } from '@/components/sanity/OpenGraphImage';
+import type { Settings } from "@/types/Settings";
 
 async function init(): Promise<SatoriOptions['fonts']> {
   if (!globalThis?.Intl?.Segmenter) {

@@ -6,21 +6,15 @@ import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs';
 import { FeaturedProject } from '@/components/sections/FeaturedProject';
 import { Intro } from '@/components/sections/Intro';
 import { SEO_DESCRIPTION } from '@/constants/constants';
-import { getAllPosts, getSettings } from '@/lib/sanity.client';
-import { Post, Settings } from '@/lib/sanity.queries';
-import { getBlogs, getFeaturedProject } from '@/sanity/sanity-utils';
-import { Blog } from '@/types/Blog';
+import { getAllPosts, getAllProjects, getSettings } from '@/lib/sanity.client';
+import { Post } from "@/types/Post";
 import { Project } from '@/types/Project';
-
-interface HomeProps {
-  project: Project;
-  blogs: Blog[];
-}
+import { Settings } from "@/types/Settings";
 
 interface PageProps {
   posts: Post[];
   settings: Settings;
-  project: Project;
+  projects: Project[];
   preview: boolean;
   token: string | null;
 }
@@ -33,8 +27,8 @@ interface PreviewData {
   token?: string;
 }
 
-const Home = ({ posts, project }: PageProps) => {
-  const [heroPost, ...morePosts] = posts || [];
+const Home = ({ posts, projects }: PageProps) => {
+  const [heroPost] = posts;
 
   return (
     <Layout>
@@ -49,6 +43,8 @@ const Home = ({ posts, project }: PageProps) => {
       />
 
       <Intro />
+
+      <FeaturedProject project={projects[0]} />
 
       {heroPost && (
         <FeaturedBlogs
@@ -71,18 +67,18 @@ export const getStaticProps: GetStaticProps<
 > = async (ctx) => {
   const { preview = false, previewData = {} } = ctx;
 
-  const [settings, posts = [], project] = await Promise.all([
+  const [settings, posts = [], projects = []] = await Promise.all([
     getSettings(),
     getAllPosts(),
-    getFeaturedProject(),
+    getAllProjects(),
   ]);
 
   return {
     props: {
       posts,
+      projects,
       settings,
       preview,
-      project: project[0],
       token: previewData.token ?? null,
     },
   };

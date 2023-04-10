@@ -6,13 +6,14 @@ import { createClient } from 'next-sanity';
 
 export const config: PageConfig = { runtime: 'edge' };
 
-import { Settings, settingsQuery } from 'lib/sanity.queries';
+import { settingsQuery } from 'lib/sanity.queries';
 
 import {
   height,
   OpenGraphImage,
   width,
 } from '@/components/sanity/OpenGraphImage';
+import { Settings } from "@/types/Settings";
 
 export default async function og(req: NextRequest, res: NextResponse) {
   const font = fetch(new URL('public/fonts/JetBrainsMono.ttf', import.meta.url)).then(
