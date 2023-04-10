@@ -1,8 +1,8 @@
-import type { Post } from 'lib/sanity.queries';
 import Link from 'next/link';
 
 import CoverImage from '@/components/ui/CoverImage';
 import Date from '@/components/ui/PostDate';
+import type { Post } from "@/types/Post";
 
 export default function HeroPost(
   props: Pick<
@@ -19,7 +19,7 @@ export default function HeroPost(
       <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
         <div>
           <h3 className="mb-4 text-4xl leading-tight lg:text-6xl">
-            <Link href={`/posts/${slug}`} className="hover:underline">
+            <Link href={`/blog/${slug}`} className="hover:underline">
               {title || 'Untitled'}
             </Link>
           </h3>

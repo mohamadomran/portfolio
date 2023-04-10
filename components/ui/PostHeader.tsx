@@ -1,8 +1,7 @@
-import type { Post } from 'lib/sanity.queries';
-
 import CoverImage from '@/components/ui/CoverImage';
 import Date from '@/components/ui/PostDate';
 import PostTitle from '@/components/ui/PostTitle';
+import type { Post } from "@/types/Post";
 
 export default function PostHeader(
   props: Pick<Post, 'title' | 'coverImage' | 'date' | 'slug'>,

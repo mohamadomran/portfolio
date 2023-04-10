@@ -1,4 +1,4 @@
-import type { Post, Settings } from 'lib/sanity.queries';
+import type { Settings } from "@/types/Settings";
 import { notFound } from 'next/navigation';
 
 import Container from '@/components/ui/BlogContainer';
@@ -10,6 +10,7 @@ import PostHeader from '@/components/ui/PostHeader';
 import PostPageHead from '@/components/ui/PostPageHead';
 import PostTitle from '@/components/ui/PostTitle';
 import SectionSeparator from '@/components/ui/SectionSeparator';
+import type { Post } from "@/types/Post";
 
 export interface PostPageProps {
   preview?: boolean;

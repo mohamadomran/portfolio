@@ -1,8 +1,8 @@
-import type { Post } from 'lib/sanity.queries';
 import Link from 'next/link';
 
 import CoverImage from '@/components/ui/CoverImage';
 import Date from '@/components/ui/PostDate';
+import type { Post } from "@/types/Post";
 
 export default function PostPreview({
   title,
@@ -22,7 +22,7 @@ export default function PostPreview({
         />
       </div>
       <h3 className="mb-3 text-3xl leading-snug">
-        <Link href={`/posts/${slug}`} className="hover:underline">
+        <Link href={`/blog/${slug}`} className="hover:underline">
           {title}
         </Link>
       </h3>
