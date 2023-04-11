@@ -1,27 +1,25 @@
-# Portfolio
+# Mohamad Omran Portfolio
 
-This website was built using TypeScript, React, Next.js and Tailwind CSS. It is designed to showcase my professional experience and skills, as well as provide information about me and my interests.
+[![Mohamad Omran - Full-stack Engineer](./portfolio_header.png)](https://mohamadomran.dev/)
 
-## Project structure
+## Getting this project up and running
 
-- `components/` - All the components of the website in tsx format.
-- `lib/` - Useful functions and scripts for connecting to external services and so on.
-- `pages/writing/` - Blog posts written in MDX format (Markdown in JSX).
-- `pages/` - Contains all other static pages like about, projects and tools.
-- `prisma/` - Prisma schema which describes the structure of the Supabase postgres database.
-- `public/` - Used for static files such as icons and images.
-- `styles/` - Contains the stylesheets for Tailwind and Prism.
-- `types/` - Types for various components in the project.
+1.  **Fork or Clone**
+    Fork or clone this project from Github to get your own copy of it.
+2.  **Start developing.**
+    Navigate into your new site’s directory and start it up.
 
-## Running locally
+    ```sh
+    cd portfolio/
+    yarn install
+    ```
+    then
+    ```sh
+    yarn dev
+    ```
 
-This application requires node v16.14+.
+3.  **Open the source code and start editing!**
+    Your site is now running at `http://localhost:3000`!
+    Open the `portfolio` directory in your code editor of choice and edit `src/pages/index.tsx`. Save your changes and the browser will update in real time!
 
-```bash
-git clone https://github.com/mohamadomran/portfolio.git
-cd portfolio/
-npm i
-npm run dev
-```
-
-Create a `.env.local` file using `.env.example` as a template.
+4. Create a `.env.local` file using `.env.example` as a template.

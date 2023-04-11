@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "2.5.0",
-  "private": true,
+  "private": false,
   "author": "Mohamad Omran",
   "scripts": {
     "build": "next build",
