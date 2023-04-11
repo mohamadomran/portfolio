@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from 'lib/sanity.image';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,11 +9,12 @@ import { GridLayout } from '@/components/layouts/Grid_Layout';
 import { getAllProjects } from '@/lib/sanity.client';
 import { Project } from '@/types/Project';
 
-export default function FeaturedProjects({
-  projects,
-}: {
+interface PageProps {
   projects: Project[];
-}) {
+}
+
+const FeaturedProjects = ({ projects }: PageProps) => {
+
   return (
     <GridLayout>
       <Head>
@@ -52,12 +53,21 @@ export default function FeaturedProjects({
       </div>
     </GridLayout >
   );
-}
+};
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export default FeaturedProjects;
+
+export const getStaticProps: GetStaticProps<
+  PageProps
+> = async (ctx) => {
+
+  const [projects = []] = await Promise.all([
+    getAllProjects(),
+  ]);
+
   return {
     props: {
-      projects: await getAllProjects(),
+      projects,
     },
   };
 };

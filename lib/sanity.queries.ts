@@ -27,7 +27,7 @@ export const featuredBlogsQuery = groq`
 }`;
 
 export const featuredProjectsQuery = groq`
-*[_type == "project"] {
+*[_type == "project" && featured == true] {
   ${projectFields}
 }`;
 
@@ -39,10 +39,8 @@ export const allBlogsQuery = groq`
 }`;
 
 export const allProjectsQuery = groq`
-{
-  "post": *[_type == "project" ] | order(_updatedAt desc) [0] {
-    ${postFields}
-  },
+*[_type == "project" ] {
+  ${projectFields}
 }`;
 
 export const postSlugsQuery = groq`

@@ -6,7 +6,7 @@ import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs';
 import { FeaturedProject } from '@/components/sections/FeaturedProject';
 import { Intro } from '@/components/sections/Intro';
 import { SEO_DESCRIPTION } from '@/constants/constants';
-import { getAllPosts, getAllProjects, getSettings } from '@/lib/sanity.client';
+import { getAllPosts, getFeaturedtProject, getSettings } from '@/lib/sanity.client';
 import { Post } from '@/types/Post';
 import { Project } from '@/types/Project';
 import { Settings } from '@/types/Settings';
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps<
   const [settings, posts = [], projects = []] = await Promise.all([
     getSettings(),
     getAllPosts(),
-    getAllProjects(),
+    getFeaturedtProject(),
   ]);
 
   return {

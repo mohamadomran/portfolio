@@ -8,8 +8,6 @@ import { Project } from '@/types/Project';
 export const ProjectCard = ({ project }: { project: Project; }) => {
   const { title, coverImage: source, url, description } = project;
 
-  console.log(project);
-
   return (
     <div className="card-compact mt-8 overflow-hidden rounded-xl bg-base-100 bg-primary-content shadow-xl">
       <Image

@@ -1,6 +1,7 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api';
 import {
   allBlogsQuery,
+  allProjectsQuery,
   featuredBlogsQuery,
   featuredProjectsQuery,
   postBySlugQuery,
@@ -31,9 +32,16 @@ export async function getAllPosts(): Promise<Post[]> {
   return [];
 }
 
-export async function getAllProjects(): Promise<Project[]> {
+export async function getFeaturedtProject(): Promise<Project[]> {
   if (client) {
     return (await client.fetch(featuredProjectsQuery)) || [];
+  }
+  return [];
+}
+
+export async function getAllProjects(): Promise<Project[]> {
+  if (client) {
+    return (await client.fetch(allProjectsQuery)) || [];
   }
   return [];
 }
