@@ -1,11 +1,12 @@
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from 'lib/sanity.image';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 
 import { GridLayout } from '@/components/layouts/Grid_Layout';
+import { WORK_SEO_DESCRIPTION, WORK_SEO_TITLE } from '@/constants/constants';
 import { getAllProjects } from '@/lib/sanity.client';
 import { Project } from '@/types/Project';
 
@@ -17,12 +18,23 @@ const FeaturedProjects = ({ projects }: PageProps) => {
 
   return (
     <GridLayout>
-      <Head>
-        <title>Featured Projects - Mohamad Omran</title>
-        <meta name="description" content="Featured Projects" />
-        <meta property="og:title" content="Projects - Mohamad Omran" />
-        <meta property="og:description" content="Featured Projects" />
-      </Head>
+      <NextSeo
+        title={WORK_SEO_TITLE}
+        description={WORK_SEO_DESCRIPTION}
+        twitter={{
+          handle: '@itsmohamadomran',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+      <div className="flex flex-row items-start">
+        <div className="flex flex-col pr-8">
+          <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
+            Featured Projects
+          </h1>
+
+        </div>
+      </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project: Project) => (
           <div key={project._id} className="mt-8 shadow-sm card rounded-xl bg-primary-content">
