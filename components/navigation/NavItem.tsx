@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Props } from '@/types/Props';
 
-export const NavItem = ({ href, children }: { href: string; } & Props) => {
+export const NavItem = ({ href, children }: { href: string } & Props) => {
   const router = useRouter();
   let isActive = router.pathname === href;
 
