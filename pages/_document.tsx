@@ -37,7 +37,7 @@ const modeScript = `
 
 export default function Document() {
   return (
-    <Html lang="en" data-theme="forest">
+    <Html lang="en" data-theme="night">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
