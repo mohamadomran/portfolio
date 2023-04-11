@@ -12,7 +12,7 @@ import {
   height,
   OpenGraphImage,
   width,
-} from '@/components/sanity/OpenGraphImage';
+} from '@/components/pages/sanity/OpenGraphImage';
 import { Settings } from '@/types/Settings';
 
 export default async function og(req: NextRequest, res: NextResponse) {

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import Container from '@/components/ui/BlogContainer';
+import Container from '@/components/pages/sanity/BlogContainer';
 
 export default function Alert({
   preview,

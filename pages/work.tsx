@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { Layout } from '@/components/layouts/Layout';
-import { Resume } from '@/components/ui/Resume';
+import { Resume } from '@/components/pages/work/Resume';
 import { WORK_SEO_DESCRIPTION, WORK_SEO_TITLE } from '@/constants/constants';
 
 export default function Work() {

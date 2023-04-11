@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import Date from '@/components/ui/PostDate';
+import Date from '@/components/pages/blog/PostDate';
 import { Post } from '@/types/Post';
 
-import { ArrowRightIcon } from '../icons/ArrowRightIcon';
+import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
 
 export const FeaturedBlogs = (
   props: Pick<Post, 'title' | 'date' | 'excerpt' | 'slug'>,

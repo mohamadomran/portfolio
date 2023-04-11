@@ -1,7 +1,7 @@
 import { usePreview } from 'lib/sanity.preview';
 import { featuredBlogsQuery, settingsQuery } from 'lib/sanity.queries';
 
-import IndexPage from '@/components/ui/IndexPage';
+import IndexPage from '@/components/pages/blog/IndexPage';
 import { type Post } from '@/types/Post';
 import { type Settings } from '@/types/Settings';
 

@@ -33,19 +33,22 @@ const FeaturedProjects = ({ projects }: PageProps) => {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projects.map((project: Project) => (
-          <div key={project._id} className="mt-8 shadow-sm card rounded-xl bg-primary-content">
+          <div
+            key={project._id}
+            className="card mt-8 rounded-xl bg-primary-content shadow-sm"
+          >
             <Image
               src={urlForImage(project.coverImage).url()}
               alt={`Cover Image for ${project.title}`}
               width={600}
               height={500}
-              className="aspect-rectangle w-full h-full rounded-t-lg object-cover"
+              className="aspect-rectangle h-full w-full rounded-t-lg object-cover"
             />
             <div className="card-body">
               <h2 className="card-title">{project.title}</h2>
-              <span className='text-sm'>
+              <span className="text-sm">
                 <PortableText value={project.description[0]} />
               </span>
               <div className="card-actions mt-4 justify-end">

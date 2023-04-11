@@ -1,7 +1,7 @@
 import { urlForImage } from 'lib/sanity.image';
 import Head from 'next/head';
 
-import BlogMeta from '@/components/ui/BlogMeta';
+import BlogMeta from '@/components/pages/blog/BlogMeta';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
 

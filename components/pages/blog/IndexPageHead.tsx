@@ -1,7 +1,6 @@
-import { toPlainText } from '@portabletext/react';
 import Head from 'next/head';
 
-import BlogMeta from '@/components/ui/BlogMeta';
+import BlogMeta from '@/components/pages/blog/BlogMeta';
 import { Settings } from '@/types/Settings';
 
 export interface IndexPageHeadProps {
@@ -19,10 +18,6 @@ export default function IndexPageHead({ settings }: IndexPageHeadProps) {
       <meta key="description" name="description" />
       <meta
         property="og:image"
-        // Because OG images must have a absolute URL, we use the
-        // `VERCEL_URL` environment variable to get the deployment’s URL.
-        // More info:
-        // https://vercel.com/docs/concepts/projects/environment-variables
         content={`${
           process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : ''
         }/api/og?${new URLSearchParams({ title: ogImageTitle! })}`}

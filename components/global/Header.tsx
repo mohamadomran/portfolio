@@ -1,5 +1,5 @@
-import { DesktopNavigation } from './ui/DesktopNavigation';
-import { MobileNavigation } from './ui/MobileNavigation';
+import { DesktopNavigation } from '../navigation/DesktopNavigation';
+import { MobileNavigation } from '../navigation/MobileNavigation';
 
 export function Header() {
   return (

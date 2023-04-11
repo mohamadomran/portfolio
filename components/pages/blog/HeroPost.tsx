@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import CoverImage from '@/components/ui/CoverImage';
-import Date from '@/components/ui/PostDate';
+import CoverImage from '@/components/pages/blog/CoverImage';
+import Date from '@/components/pages/blog/PostDate';
 import type { Post } from '@/types/Post';
 
 export default function HeroPost(

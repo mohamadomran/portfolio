@@ -1,14 +1,11 @@
 import { notFound } from 'next/navigation';
 
-import Container from '@/components/ui/BlogContainer';
-import BlogHeader from '@/components/ui/BlogHeader';
-import Layout from '@/components/ui/BlogLayout';
-import MoreStories from '@/components/ui/MoreStories';
-import PostBody from '@/components/ui/PostBody';
-import PostHeader from '@/components/ui/PostHeader';
-import PostPageHead from '@/components/ui/PostPageHead';
-import PostTitle from '@/components/ui/PostTitle';
-import SectionSeparator from '@/components/ui/SectionSeparator';
+import BlogHeader from '@/components/pages/blog/BlogHeader';
+import Layout from '@/components/pages/blog/BlogLayout';
+import PostBody from '@/components/pages/blog/PostBody';
+import PostHeader from '@/components/pages/blog/PostHeader';
+import PostPageHead from '@/components/pages/blog/PostPageHead';
+import Container from '@/components/pages/sanity/BlogContainer';
 import type { Post } from '@/types/Post';
 import type { Settings } from '@/types/Settings';
 
@@ -18,8 +15,6 @@ export interface PostPageProps {
   post: Post;
   settings: Settings;
 }
-
-const NO_POSTS: Post[] = [];
 
 export default function PostPage(props: PostPageProps) {
   const { preview, loading, post, settings } = props;
@@ -39,7 +34,7 @@ export default function PostPage(props: PostPageProps) {
         <Container>
           <BlogHeader title={title!} level={2} />
           {preview && !post ? (
-            <PostTitle>Loading…</PostTitle>
+            <div>Loading</div>
           ) : (
             <>
               <article>
@@ -50,7 +45,6 @@ export default function PostPage(props: PostPageProps) {
                 />
                 <PostBody content={post.content} />
               </article>
-              <SectionSeparator />
             </>
           )}
         </Container>

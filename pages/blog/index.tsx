@@ -3,11 +3,13 @@ import { getAllPosts, getSettings } from 'lib/sanity.client';
 import { GetStaticProps } from 'next';
 import { lazy } from 'react';
 
-import IndexPage from '@/components/ui/IndexPage';
+import IndexPage from '@/components/pages/blog/IndexPage';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
 
-const PreviewIndexPage = lazy(() => import('@/components/ui/PreviewIndexPage'));
+const PreviewIndexPage = lazy(
+  () => import('@/components/pages/blog/PreviewIndexPage'),
+);
 
 interface PageProps {
   posts: Post[];

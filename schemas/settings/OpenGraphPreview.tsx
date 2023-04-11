@@ -8,7 +8,7 @@ import {
   height,
   OpenGraphImage,
   width,
-} from '@/components/sanity/OpenGraphImage';
+} from '@/components/pages/sanity/OpenGraphImage';
 import type { Settings } from '@/types/Settings';
 
 async function init(): Promise<SatoriOptions['fonts']> {

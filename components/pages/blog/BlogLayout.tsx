@@ -1,4 +1,4 @@
-import AlertBanner from '@/components/ui/AlertBanner';
+import AlertBanner from '@/components/pages/sanity/AlertBanner';
 
 export default function BlogLayout({
   preview,

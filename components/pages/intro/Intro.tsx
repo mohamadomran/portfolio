@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SocialLink } from '@/components/global/SocialLink';
 import { SOCIAL_LINKS } from '@/constants/constants';
 import avatar from '@/public/static/images/avatar.png';
 
-import { ArrowDownIcon } from '../icons/ArrowDownIcon';
-import { ArrowRightIcon } from '../icons/ArrowRightIcon';
-import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../icons/SocialIcons';
-import { SocialLink } from '../ui/SocialLink';
+import { ArrowDownIcon } from '../../icons/ArrowDownIcon';
+import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../../icons/SocialIcons';
 
 export const Intro = () => {
   return (

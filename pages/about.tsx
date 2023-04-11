@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
+import { SocialLink } from '@/components/global/SocialLink';
 import { MailIcon } from '@/components/icons/MailIcon';
 import {
   GitHubIcon,
@@ -9,7 +10,6 @@ import {
   TwitterIcon,
 } from '@/components/icons/SocialIcons';
 import { Layout } from '@/components/layouts/Layout';
-import { SocialLink } from '@/components/ui/SocialLink';
 import {
   ABOUT_SEO_DESCRIPTION,
   ABOUT_SEO_TITLE,

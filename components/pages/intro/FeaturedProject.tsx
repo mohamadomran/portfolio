@@ -1,9 +1,8 @@
 import Link from 'next/link';
 
+import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
+import { ProjectCard } from '@/components/pages/projects/ProjectCard';
 import { Project } from '@/types/Project';
-
-import { ArrowRightIcon } from '../icons/ArrowRightIcon';
-import { ProjectCard } from '../ui/ProjectCard';
 
 export const FeaturedProject = ({ project }: { project: Project }) => {
   return (

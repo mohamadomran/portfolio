@@ -9,12 +9,14 @@ import { createClient } from 'next-sanity';
 import { lazy } from 'react';
 
 import { Layout } from '@/components/layouts/Layout';
-import PostPage from '@/components/ui/PostPage';
+import PostPage from '@/components/pages/blog/PostPage';
 import { Blog } from '@/types/Blog';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
 
-const PreviewPostPage = lazy(() => import('@/components/ui/PreviewPostPage'));
+const PreviewPostPage = lazy(
+  () => import('@/components/pages/blog/PreviewPostPage'),
+);
 
 interface PageProps {
   post: Post;
@@ -37,20 +39,9 @@ export default function ProjectSlugRoute(props: PageProps) {
   if (preview) {
     return (
       <PreviewSuspense
-        fallback={
-          <PostPage
-            loading
-            preview
-            post={post}
-            settings={settings!}
-          />
-        }
+        fallback={<PostPage loading preview post={post} settings={settings!} />}
       >
-        <PreviewPostPage
-          token={token}
-          post={post}
-          settings={settings!}
-        />
+        <PreviewPostPage token={token} post={post} settings={settings!} />
       </PreviewSuspense>
     );
   }

@@ -2,11 +2,15 @@ import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import { Layout } from '@/components/layouts/Layout';
-import { FeaturedBlogs } from '@/components/sections/FeaturedBlogs';
-import { FeaturedProject } from '@/components/sections/FeaturedProject';
-import { Intro } from '@/components/sections/Intro';
+import { FeaturedBlogs } from '@/components/pages/intro/FeaturedBlogs';
+import { FeaturedProject } from '@/components/pages/intro/FeaturedProject';
+import { Intro } from '@/components/pages/intro/Intro';
 import { SEO_DESCRIPTION } from '@/constants/constants';
-import { getAllPosts, getFeaturedtProject, getSettings } from '@/lib/sanity.client';
+import {
+  getAllPosts,
+  getFeaturedtProject,
+  getSettings,
+} from '@/lib/sanity.client';
 import { Post } from '@/types/Post';
 import { Project } from '@/types/Project';
 import { Settings } from '@/types/Settings';

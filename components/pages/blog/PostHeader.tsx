@@ -1,6 +1,5 @@
-import CoverImage from '@/components/ui/CoverImage';
-import Date from '@/components/ui/PostDate';
-import PostTitle from '@/components/ui/PostTitle';
+import CoverImage from '@/components/pages/blog/CoverImage';
+import Date from '@/components/pages/blog/PostDate';
 import type { Post } from '@/types/Post';
 
 export default function PostHeader(
@@ -9,7 +8,7 @@ export default function PostHeader(
   const { title, coverImage, date, slug } = props;
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      Title: {title}
       <div className="mb-8 sm:mx-0 md:mb-16">
         <CoverImage title={title!} image={coverImage} priority slug={slug} />
       </div>

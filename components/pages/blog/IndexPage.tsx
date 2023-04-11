@@ -1,9 +1,8 @@
-import Container from '@/components/ui/BlogContainer';
-import BlogHeader from '@/components/ui/BlogHeader';
-import Layout from '@/components/ui/BlogLayout';
-import HeroPost from '@/components/ui/HeroPost';
-import IndexPageHead from '@/components/ui/IndexPageHead';
-import MoreStories from '@/components/ui/MoreStories';
+import BlogHeader from '@/components/pages/blog/BlogHeader';
+import Layout from '@/components/pages/blog/BlogLayout';
+import HeroPost from '@/components/pages/blog/HeroPost';
+import IndexPageHead from '@/components/pages/blog/IndexPageHead';
+import Container from '@/components/pages/sanity/BlogContainer';
 import type { Post } from '@/types/Post';
 import type { Settings } from '@/types/Settings';
 
