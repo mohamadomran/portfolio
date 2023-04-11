@@ -15,7 +15,6 @@ interface PageProps {
 }
 
 const FeaturedProjects = ({ projects }: PageProps) => {
-
   return (
     <GridLayout>
       <NextSeo
@@ -32,24 +31,23 @@ const FeaturedProjects = ({ projects }: PageProps) => {
           <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
             Featured Projects
           </h1>
-
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
         {projects.map((project: Project) => (
           <div key={project._id} className="mt-8 shadow-sm card rounded-xl bg-primary-content">
             <Image
-              src={urlForImage(project.coverImage).height(1000).width(2000).url()}
+              src={urlForImage(project.coverImage).url()}
               alt={`Cover Image for ${project.title}`}
-              width={400}
-              height={300}
+              width={600}
+              height={500}
               className="aspect-rectangle w-full h-full rounded-t-lg object-cover"
             />
             <div className="card-body">
               <h2 className="card-title">{project.title}</h2>
-
-              <PortableText value={project.description[0]} />
-
+              <span className='text-sm'>
+                <PortableText value={project.description[0]} />
+              </span>
               <div className="card-actions mt-4 justify-end">
                 <Link
                   className="btn-outline btn-primary btn"
@@ -63,19 +61,14 @@ const FeaturedProjects = ({ projects }: PageProps) => {
           </div>
         ))}
       </div>
-    </GridLayout >
+    </GridLayout>
   );
 };
 
 export default FeaturedProjects;
 
-export const getStaticProps: GetStaticProps<
-  PageProps
-> = async (ctx) => {
-
-  const [projects = []] = await Promise.all([
-    getAllProjects(),
-  ]);
+export const getStaticProps: GetStaticProps<PageProps> = async (ctx) => {
+  const [projects = []] = await Promise.all([getAllProjects()]);
 
   return {
     props: {
