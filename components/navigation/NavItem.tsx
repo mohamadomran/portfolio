@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Props } from '@/types/Props';
 
-export const NavItem = ({ href, children }: { href: string } & Props) => {
+export const NavItem = ({ href, children }: { href: string; } & Props) => {
   const router = useRouter();
   let isActive = router.pathname === href;
 
@@ -14,7 +14,7 @@ export const NavItem = ({ href, children }: { href: string } & Props) => {
         href={href}
         className={clsx(
           'relative block px-3 py-2 transition',
-          isActive ? 'text-primary' : 'hover:link-hover',
+          isActive ? 'text-secondary' : 'hover:link-hover',
         )}
       >
         {children}
