@@ -1,9 +1,12 @@
 import { PreviewSuspense } from '@sanity/preview-kit';
 import { getAllPosts, getSettings } from 'lib/sanity.client';
 import { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 import { lazy } from 'react';
 
+import { Layout } from '@/components/layouts/Layout';
 import IndexPage from '@/components/pages/blog/IndexPage';
+import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
 
@@ -41,7 +44,20 @@ export default function Page(props: PageProps) {
     );
   }
 
-  return <IndexPage posts={posts} settings={settings} />;
+  return (
+    <Layout>
+      <NextSeo
+        title={BLOG_SEO_TITLE}
+        description={BLOG_SEO_DESCRIPTION}
+        twitter={{
+          handle: '@itsmohamadomran',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+      <IndexPage posts={posts} settings={settings} />
+    </Layout>
+  );
 }
 
 export const getStaticProps: GetStaticProps<
