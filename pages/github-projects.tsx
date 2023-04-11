@@ -1,25 +1,32 @@
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
+import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { ShareIcon } from '@/components/icons/ShareIcon';
 import { SparklesIcon } from '@/components/icons/SparklesIcon';
-import { GridLayout } from '@/components/layouts/Grid_Layout';
-import { GITHUB_SEO_DESCRIPTION, GITHUB_SEO_TITLE } from '@/constants/constants';
+import { Layout } from '@/components/layouts/Layout';
+import {
+  GITHUB_SEO_DESCRIPTION,
+  GITHUB_SEO_TITLE,
+} from '@/constants/constants';
 import { getPinnedRepos } from '@/lib/github';
 import { numberFormat } from '@/lib/numberFormat';
 import type { Repo } from '@/types/Repo';
 
 export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[]; }) {
   return (
-    <GridLayout>
+    <Layout>
       <NextSeo title={GITHUB_SEO_TITLE} description={GITHUB_SEO_DESCRIPTION} />
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-4 md:grid-cols-2"
-      >
+      <div className="flex flex-col pr-8">
+        <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
+          Open-soruce Projects
+        </h1>
+      </div>
+      <ul role="list" className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {pinnedRepos.map((repo) => (
           <>
-            <div className="card mt-8 rounded-xl bg-primary-content shadow-sm">
+            <div className="card-compact mt-8 rounded-xl bg-primary-content shadow-sm">
               <div className="card-body">
                 <h2 className="card-title">{repo.name}</h2>
                 <p>{repo.description}</p>
@@ -39,7 +46,7 @@ export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[]; }) {
           </>
         ))}
       </ul>
-    </GridLayout>
+    </Layout>
   );
 }
 

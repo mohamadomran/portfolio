@@ -32,8 +32,8 @@ interface PreviewData {
 }
 
 const Home = ({ posts, projects }: PageProps) => {
-  const [heroPost] = posts;
-
+  const [featuredBlog] = posts;
+  const [featuredProject] = projects;
   return (
     <Layout>
       <NextSeo
@@ -47,17 +47,13 @@ const Home = ({ posts, projects }: PageProps) => {
       />
 
       <Intro />
-
-      <FeaturedProject project={projects[0]} />
-
-      {heroPost && (
-        <FeaturedBlogs
-          title={heroPost.title}
-          date={heroPost.date}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-      )}
+      <FeaturedProject project={featuredProject} />
+      <FeaturedBlogs
+        title={featuredBlog.title}
+        date={featuredBlog.date}
+        slug={featuredBlog.slug}
+        excerpt={featuredBlog.excerpt}
+      />
     </Layout>
   );
 };
