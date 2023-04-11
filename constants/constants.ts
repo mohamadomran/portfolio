@@ -26,5 +26,4 @@ export const pages = [
   { link: '/blog', name: 'Blog' },
   { link: '/work', name: 'Work' },
   { link: '/projects', name: 'Projects' },
-  { link: '/github-projects', name: 'Github Projects' },
 ];
