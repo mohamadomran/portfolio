@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo';
 import { lazy } from 'react';
 
 import { Layout } from '@/components/layouts/Layout';
-import IndexPage from '@/components/pages/blog/IndexPage';
+import IndexPage from '@/components/pages/blog/BlogIndexPage';
 import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';

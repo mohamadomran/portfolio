@@ -1,11 +1,9 @@
+import { PortableText } from '@portabletext/react';
 import { notFound } from 'next/navigation';
+import { NextSeo } from 'next-seo';
 
-import BlogHeader from '@/components/pages/blog/BlogHeader';
 import Layout from '@/components/pages/blog/BlogLayout';
-import PostBody from '@/components/pages/blog/PostBody';
 import PostHeader from '@/components/pages/blog/PostHeader';
-import PostPageHead from '@/components/pages/blog/PostPageHead';
-import Container from '@/components/pages/sanity/BlogContainer';
 import type { Post } from '@/types/Post';
 import type { Settings } from '@/types/Settings';
 
@@ -18,7 +16,6 @@ export interface PostPageProps {
 
 export default function PostPage(props: PostPageProps) {
   const { preview, loading, post, settings } = props;
-  const { title } = settings || {};
 
   const slug = post?.slug;
 
@@ -28,26 +25,38 @@ export default function PostPage(props: PostPageProps) {
 
   return (
     <>
-      <PostPageHead settings={settings} post={post} />
+      <NextSeo
+        title={post.title}
+        description={post.excerpt}
+        openGraph={{
+          title: post.title,
+          description: post.excerpt,
+          images: [
+            {
+              url: post.coverImage,
+              width: 800,
+              height: 600,
+              alt: post.title,
+            },
+          ],
+        }}
+      />
 
       <Layout preview={preview!} loading={loading}>
-        <Container>
-          <BlogHeader title={title!} level={2} />
-          {preview && !post ? (
-            <div>Loading</div>
-          ) : (
-            <>
-              <article>
-                <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                />
-                <PostBody content={post.content} />
-              </article>
-            </>
-          )}
-        </Container>
+        {preview && !post ? (
+          <div>Loading</div>
+        ) : (
+          <>
+            <article className="text-white [&>p]:mt-12">
+              <PostHeader
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+              />
+              <PortableText value={post.content} />
+            </article>
+          </>
+        )}
       </Layout>
     </>
   );

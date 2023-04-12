@@ -29,8 +29,20 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          styles: [
+            { title: 'H1', value: 'h1' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'P', value: 'p' },
+          ],
+        },
+      ],
     }),
+
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
