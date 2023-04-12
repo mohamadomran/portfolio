@@ -48,7 +48,7 @@ export function Resume() {
       ],
     },
     {
-      company: 'PSPlatform (International Diamond Trading Platform',
+      company: 'PSPlatform (IDTP)',
       title: 'Frontend Developer (Freelance)',
       start: {
         label: 'June 2018',
@@ -69,54 +69,20 @@ export function Resume() {
   ];
 
   return (
-    <ol className="mt-6 space-y-16  text-lg">
+    <ol className="relative border-l border-secondary z-[-1]">
       {work.map((role, roleIndex) => (
-        <li
-          key={roleIndex}
-          className="border-mustard-500 flex gap-4 border-l pl-4 md:pl-12"
-        >
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Role @ Company</dt>
-            <dd className="w-full text-xl text-zinc-900 dark:text-zinc-100">
-              {role.title} @ {role.company}
-            </dd>
-            <dt className="sr-only">Date</dt>
-            <dd
-              className="md:text-md text-black-950 dark:text-black-950 mb-3 mt-3 rounded-md bg-yellow-100 p-1 text-sm font-bold"
-              aria-label={`${role.start.label ?? role.start} until ${
-                role.end.label ?? role.end
-              }`}
-            >
-              <time dateTime={role.start.dateTime ?? role.start}>
-                {role.start.label ?? role.start}
-              </time>
-              <span aria-hidden="true"> – </span>
-              <time dateTime={role.end.dateTime ?? role.end}>
-                {role.end.label ?? role.end}
-              </time>
-            </dd>
-            <dt className="sr-only">Tasks</dt>
-            <dd className="text-md w-full flex-none font-medium text-zinc-900 dark:text-zinc-100">
-              <ul className="mt-4 space-y-2">
-                {role.tasks?.map((task, taskIndex) => (
-                  <li key={taskIndex} className="flex gap-4">
-                    <span className="flex-shrink-0">
-                      <svg
-                        className="mt-2 h-4 w-4 stroke-current text-zinc-500 dark:text-zinc-800"
-                        viewBox="0 0 4 4"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M0 2h4" />
-                      </svg>
-                    </span>
-                    <span className="text-sm text-zinc-900 dark:text-zinc-100">
-                      {task}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </dl>
+        <li key={roleIndex} className="mb-10 ml-6">
+          <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-1 ring-primary-content bg-secondary text-primary-content">
+            ●
+          </span>
+          <time className="block mb-2 text-lg font-bold leading-none text-white">{role.title} @ {role.company}</time>
+          <time className="block mb-2 text-md font-light leading-none text-grey-300">{role.start.label} - {role.end.label}</time>
+          {role.tasks?.map((task, taskIndex) => (
+            <p key={taskIndex} className="mt-4 mb-4 text-base font-sm font-normal ">
+              - {task}
+            </p>
+          ))}
+
         </li>
       ))}
     </ol>
