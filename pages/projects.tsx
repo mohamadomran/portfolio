@@ -50,8 +50,8 @@ const FeaturedProjects = ({ projects }: PageProps) => {
               src={urlForImage(project.coverImage).url()}
               alt={`Cover Image for ${project.title}`}
               width={600}
-              height={480}
-              className="aspect-rectangle h-[300px] h-full w-full w-full rounded-xl object-cover"
+              height={300}
+              className="aspect-rectangle h-[290px] w-full rounded-xl object-cover"
             />
             <div className="card-body">
               <h2 className="card-title">{project.title}</h2>
