@@ -25,11 +25,11 @@ export default function BlogIndexPage(props: IndexPageProps) {
       <Layout preview={preview!} loading={loading}>
         <BlogHeader title={title!} description={description} />
         <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
+          title={heroPost.title!}
+          coverImage={heroPost.coverImage!}
+          date={heroPost.date!}
+          slug={heroPost.slug!}
+          excerpt={heroPost.excerpt!}
         />
       </Layout>
     </>
