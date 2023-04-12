@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Date from '@/components/pages/blog/PostDate';
+import PostDate from '@/components/pages/blog/PostDate';
 import { Post } from '@/types/Post';
 
 import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
@@ -30,7 +30,7 @@ export const FeaturedBlogs = (
                 <ArrowRightIcon className="stroke-primary" />
               </div>
               <div className="mb-4 text-lg md:mb-0">
-                <Date dateString={date!} />
+                <PostDate dateString={date!} />
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@ export const FeaturedBlogs = (
       </div>
 
       <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-primary transition-all hover:text-secondary"
+        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-white transition-all hover:text-secondary"
         href="/blog"
       >
         <p>Read more Articles</p>

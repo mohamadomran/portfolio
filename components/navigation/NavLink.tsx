@@ -9,7 +9,7 @@ export const NavLink = ({
   children: ReactNode;
 }) => {
   return (
-    <Link href={href} className="text-primary transition hover:link-hover">
+    <Link href={href} className="text-white transition hover:link-hover">
       {children}
     </Link>
   );

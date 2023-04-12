@@ -4,10 +4,7 @@ import { NextSeo } from 'next-seo';
 
 import { LinkIcon } from '@/components/icons/LinkIcon';
 import { Layout } from '@/components/layouts/Layout';
-import {
-  ABOUT_SEO_DESCRIPTION,
-  ABOUT_SEO_TITLE,
-} from '@/constants/constants';
+import { ABOUT_SEO_DESCRIPTION, ABOUT_SEO_TITLE } from '@/constants/constants';
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png';
 
 export default function About() {
@@ -36,7 +33,7 @@ export default function About() {
           clients across the globe, including governments and private
           corporations. Notably, I contributed to the development of
           cutting-edge software solutions for various clients while working at{' '}
-          <a className="text-primary underline" href="https://speedlane.co">
+          <a className="text-white underline" href="https://speedlane.co">
             SpeedLane
           </a>{' '}
           (site is under construction and it&apos;s formerly called Postlight
@@ -57,9 +54,7 @@ export default function About() {
 
         <h2 className="mt-4 text-5xl font-bold">My Certifications!</h2>
 
-        <Link
-          href="https://www.credly.com/badges/62b0dd07-a75e-400f-a2ea-f42243f42c90/public_url"
-        >
+        <Link href="https://www.credly.com/badges/62b0dd07-a75e-400f-a2ea-f42243f42c90/public_url">
           <Image
             src={awsCCPBadge}
             width="170"
@@ -67,8 +62,9 @@ export default function About() {
             alt="AWS Certified Cloud Practitioner"
             className="mt-8"
           />
-          <span className='flex items-center'>
-            AWS Certified Cloud Practitioner <LinkIcon className="h-4 w-4 ml-1" />
+          <span className="flex items-center">
+            AWS Certified Cloud Practitioner{' '}
+            <LinkIcon className="ml-1 h-4 w-4" />
           </span>
         </Link>
       </div>

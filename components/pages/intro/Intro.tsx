@@ -39,7 +39,7 @@ export const Intro = () => {
       </div>
 
       <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-4 text-primary transition-all hover:text-primary-focus"
+        className="hover:text-white-focus flex h-6 items-center rounded-lg pb-8 pt-4 text-white transition-all"
         href="/gallery"
       >
         <p>Check my photo gallery</p>

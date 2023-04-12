@@ -14,7 +14,7 @@ export const FeaturedProject = ({ project }: { project: Project }) => {
       <ProjectCard project={project} />
 
       <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-primary transition-all hover:text-secondary"
+        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-white transition-all hover:text-secondary"
         href="/projects"
       >
         <p>Explore all projects</p>
