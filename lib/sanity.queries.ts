@@ -6,6 +6,7 @@ const postFields = groq`
   date,
   excerpt,
   coverImage,
+  content,
   "slug": slug.current,
 `;
 
