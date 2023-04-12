@@ -1,8 +1,6 @@
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { ShareIcon } from '@/components/icons/ShareIcon';
 import { SparklesIcon } from '@/components/icons/SparklesIcon';
 import { Layout } from '@/components/layouts/Layout';
