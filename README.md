@@ -1,6 +1,6 @@
 # Mohamad Omran Portfolio
 
-[![Mohamad Omran - Full-stack Engineer](./portfolio_header.png)](https://mohamadomran.dev/)
+[![Mohamad Omran - Full-stack Engineer](./public/portfolio_header.png)](https://mohamadomran.dev/)
 
 ## Getting this project up and running
 
