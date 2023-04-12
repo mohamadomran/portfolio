@@ -14,7 +14,7 @@ import { getPinnedRepos } from '@/lib/github';
 import { numberFormat } from '@/lib/numberFormat';
 import type { Repo } from '@/types/Repo';
 
-export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[]; }) {
+export default function Projects({ pinnedRepos }: { pinnedRepos: Repo[] }) {
   return (
     <Layout>
       <NextSeo title={GITHUB_SEO_TITLE} description={GITHUB_SEO_DESCRIPTION} />

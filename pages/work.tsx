@@ -4,15 +4,16 @@ import { NextSeo } from 'next-seo';
 import { ArrowDownIcon } from '@/components/icons/ArrowDownIcon';
 import { Layout } from '@/components/layouts/Layout';
 import { Resume } from '@/components/pages/work/Resume';
-import { SOCIAL_LINKS, WORK_SEO_DESCRIPTION, WORK_SEO_TITLE } from '@/constants/constants';
+import {
+  SOCIAL_LINKS,
+  WORK_SEO_DESCRIPTION,
+  WORK_SEO_TITLE,
+} from '@/constants/constants';
 
 export default function Work() {
   return (
     <Layout>
-      <NextSeo
-        title={WORK_SEO_TITLE}
-        description={WORK_SEO_DESCRIPTION}
-      />
+      <NextSeo title={WORK_SEO_TITLE} description={WORK_SEO_DESCRIPTION} />
       <div className="flex flex-col pr-8">
         <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
           Work Experience
