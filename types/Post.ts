@@ -1,9 +1,9 @@
 export interface Post {
   _id: string;
-  title?: string;
+  title: string;
   coverImage?: any;
   date?: string;
-  excerpt?: string;
+  excerpt: string;
   slug?: string;
   content?: any;
 }

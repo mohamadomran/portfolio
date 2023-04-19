@@ -1,11 +1,7 @@
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ShareIcon } from '@/components/icons/ShareIcon';
-import { SparklesIcon } from '@/components/icons/SparklesIcon';
 import { Layout } from '@/components/layouts/Layout';
-import { numberFormat } from '@/lib/numberFormat';
 import { urlForImage } from '@/lib/sanity.image';
 import type { Post } from '@/types/Post';
 import type { Settings } from '@/types/Settings';
@@ -41,7 +37,7 @@ export const BlogsLandingPage = (props: IndexPageProps) => {
                   className="aspect-rectangle h-[290px] w-full rounded-xl object-cover"
                 />
                 <div className="card-body">
-                  <h2 className="card-title h-[90px]">{post.title!}</h2>
+                  <h2 className="card-title h-[90px]">{post.title}</h2>
                   <span className="h-[140px] text-sm">
                     {post.excerpt && (
                       <p className="text-md mb-4 leading-relaxed">
