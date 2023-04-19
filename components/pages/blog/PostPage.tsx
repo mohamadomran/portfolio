@@ -60,9 +60,9 @@ export default function PostPage(props: PostPageProps) {
           <>
             <article className="text-white [&>p]:mt-12">
               <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
+                title={post.title!}
+                coverImage={post.coverImage!}
+                date={post.date!}
               />
               <PortableText value={post.content} components={components} />
             </article>

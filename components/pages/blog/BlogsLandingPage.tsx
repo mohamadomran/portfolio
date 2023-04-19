@@ -37,7 +37,9 @@ export const BlogsLandingPage = (props: IndexPageProps) => {
                   className="aspect-rectangle h-[290px] w-full rounded-xl object-cover"
                 />
                 <div className="card-body">
-                  <h2 className="card-title h-[90px]">{post.title}</h2>
+                  {post.title && (
+                    <h2 className="card-title h-[90px]">{post.title!}</h2>
+                  )}
                   <span className="h-[140px] text-sm">
                     {post.excerpt && (
                       <p className="text-md mb-4 leading-relaxed">

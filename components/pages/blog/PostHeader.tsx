@@ -8,9 +8,11 @@ export default function PostHeader(
   const { title, coverImage, date, slug } = props;
   return (
     <>
-      <h1 className="mb-1 mb-8 text-3xl font-bold tracking-tight md:text-5xl">
-        {title}
-      </h1>
+      {title && (
+        <h1 className="mb-1 mb-8 text-3xl font-bold tracking-tight md:text-5xl">
+          {title}
+        </h1>
+      )}
       <div className="mx-auto mb-8 max-w-2xl sm:mx-0 md:mb-16 ">
         <CoverImage title={title!} image={coverImage} priority slug={slug} />
       </div>
