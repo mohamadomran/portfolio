@@ -35,13 +35,13 @@ export const BlogsLandingPage = (props: IndexPageProps) => {
               <div className="card-compact mt-8 h-full overflow-hidden rounded-xl bg-primary-content shadow-sm">
                 <Image
                   src={urlForImage(post.coverImage).url()}
-                  alt={`Cover Image for ${post.title}`}
+                  alt={`Cover Image for ${post.title!}`}
                   width={600}
                   height={300}
                   className="aspect-rectangle h-[290px] w-full rounded-xl object-cover"
                 />
                 <div className="card-body">
-                  <h2 className="card-title h-[90px]">{post.title}</h2>
+                  <h2 className="card-title h-[90px]">{post.title!}</h2>
                   <span className="h-[140px] text-sm">
                     {post.excerpt && (
                       <p className="text-md mb-4 leading-relaxed">
