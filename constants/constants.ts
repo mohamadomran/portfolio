@@ -3,6 +3,7 @@ export const ABOUT_SEO_TITLE = 'About / Mohamad Omran';
 export const WORK_SEO_TITLE = 'Work Experience / Mohamad Omran';
 export const BLOG_SEO_TITLE = 'Blog / Mohamad Omran';
 export const GITHUB_SEO_TITLE = 'Open Source Projects / Mohamad Omran';
+export const GALLERY_SEO_TITLE = 'Gallery / Mohamad Omran';
 
 export const SEO_DESCRIPTION =
   'Explore my fullstack portfolio showcasing AI and machine learning projects. With a passion for photography and travel, I approach problem-solving with creativity and attention to detail. Discover the power of technology in solving complex problems and bringing new ideas to life.';

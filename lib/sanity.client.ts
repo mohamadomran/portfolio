@@ -4,6 +4,7 @@ import {
   allProjectsQuery,
   featuredBlogsQuery,
   featuredProjectsQuery,
+  galleryQuery,
   postBySlugQuery,
   postSlugsQuery,
   settingsQuery,
@@ -76,4 +77,11 @@ export async function getPostAndMoreStories(
     return await client.fetch(allBlogsQuery, { slug });
   }
   return { post: null as any };
+}
+
+export async function fetchGallery(): Promise<Post[]> {
+  if (client) {
+    return (await client.fetch(galleryQuery)) || [];
+  }
+  return [];
 }

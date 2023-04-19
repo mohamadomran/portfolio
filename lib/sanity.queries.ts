@@ -20,6 +20,14 @@ const projectFields = groq`
   technologies
 `;
 
+const galleryFields = groq`
+  _id,
+  caption,
+  date,
+  "image": image.asset->url,
+  "dimensions": image.asset->metadata.dimensions
+`;
+
 export const settingsQuery = groq`*[_type == "settings"][0]`;
 
 export const featuredBlogsQuery = groq`
@@ -51,5 +59,11 @@ export const postSlugsQuery = groq`
 export const postBySlugQuery = groq`
 *[_type == "post" && slug.current == $slug][0] {
   ${postFields}
+}
+`;
+
+export const galleryQuery = groq`
+*[_type == "gallery"] | order(date desc) {
+  ${galleryFields}
 }
 `;

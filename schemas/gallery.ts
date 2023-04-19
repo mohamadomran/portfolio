@@ -14,6 +14,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'date',
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -22,7 +27,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'caption',
       date: 'date',
       media: 'coverImage',
     },
