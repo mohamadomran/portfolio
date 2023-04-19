@@ -5,11 +5,7 @@ import { Post } from '@/types/Post';
 
 import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
 
-export const FeaturedBlogs = (
-  props: Pick<Post, 'title' | 'date' | 'excerpt' | 'slug'>,
-) => {
-  const { title, date, excerpt, slug } = props;
-
+export const FeaturedBlogs = ({ post }: { post: Post }) => {
   return (
     <div className="py-5">
       <h3 className="z-10 pt-6 text-3xl font-bold tracking-tight md:text-3xl">
@@ -17,20 +13,21 @@ export const FeaturedBlogs = (
       </h3>
 
       <div className="py-5">
-        <Link href={`/post/${slug}`}>
+        <Link href={`/blog/${post.slug!}`}>
           <div className="flex flex-col justify-between overflow-hidden rounded-xl bg-primary-content py-4 pr-4 leading-normal shadow-lg duration-200">
             <div className="mx-8">
-              <div className="flex items-center justify-between text-lg font-semibold text-white">
-                <p>{title}</p>
-              </div>
               <div className="flex items-center justify-between">
-                {excerpt && (
-                  <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
-                )}
+                <p className="mb-4 text-lg leading-relaxed">{post.excerpt}</p>
+
                 <ArrowRightIcon className="stroke-primary" />
               </div>
               <div className="mb-4 text-lg md:mb-0">
-                {date && formatDate(date)}
+                {new Date(post.date).toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
               </div>
             </div>
           </div>

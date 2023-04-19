@@ -16,19 +16,9 @@ import { Project } from '@/types/Project';
 import { Settings } from '@/types/Settings';
 
 interface PageProps {
-  posts: Post[];
   settings: Settings;
   projects: Project[];
-  preview: boolean;
-  token: string | null;
-}
-
-interface Query {
-  [key: string]: string;
-}
-
-interface PreviewData {
-  token?: string;
+  posts: Post[];
 }
 
 const Home = ({ posts, projects }: PageProps) => {
@@ -48,25 +38,14 @@ const Home = ({ posts, projects }: PageProps) => {
 
       <Intro />
       <FeaturedProject project={featuredProject} />
-      <FeaturedBlogs
-        title={featuredBlog.title}
-        date={featuredBlog.date}
-        slug={featuredBlog.slug}
-        excerpt={featuredBlog.excerpt}
-      />
+      <FeaturedBlogs post={featuredBlog} />
     </Layout>
   );
 };
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<
-  PageProps,
-  Query,
-  PreviewData
-> = async (ctx) => {
-  const { preview = false, previewData = {} } = ctx;
-
+export const getServerSideProps: GetStaticProps<PageProps> = async (ctx) => {
   const [settings, posts = [], projects = []] = await Promise.all([
     getSettings(),
     getAllPosts(),
@@ -78,8 +57,6 @@ export const getStaticProps: GetStaticProps<
       posts,
       projects,
       settings,
-      preview,
-      token: previewData.token ?? null,
     },
   };
 };
