@@ -30,8 +30,10 @@ export default function PostPage(props: PostPageProps) {
       h1: ({ children }: any) => <h1 className="text-4xl">{children}</h1>,
     },
     marks: {
-      code: ({ children }: any) => <code className='bg-primary-content rounded-lg px-2'>{children}</code>,
-    }
+      code: ({ children }: any) => (
+        <code className="rounded-lg bg-primary-content px-2">{children}</code>
+      ),
+    },
   };
 
   return (

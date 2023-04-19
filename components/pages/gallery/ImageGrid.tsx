@@ -17,7 +17,11 @@ export default function ImageGrid({ images, setSelectedImg }: ImageGridProps) {
           className="relative overflow-hidden rounded-xl px-0 py-[50%]"
           onClick={() => setSelectedImg(image)}
         >
-          <Suspense fallback={<div className='absolute left-0 top-0 h-full w-full max-w-[150%] object-cover' />}>
+          <Suspense
+            fallback={
+              <div className="absolute left-0 top-0 h-full w-full max-w-[150%] object-cover" />
+            }
+          >
             <Image
               src={image.image}
               alt={image.caption}

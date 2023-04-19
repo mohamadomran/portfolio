@@ -22,14 +22,12 @@ export default function Gallery({ images }: GalleryProps) {
     <Layout>
       <NextSeo title={GALLERY_SEO_TITLE} />
       <div className="max-w-full">
-      <PreviewSuspense
-        fallback={<Loading/>}
-      >
+        <PreviewSuspense fallback={<Loading />}>
           <ImageGrid images={images} setSelectedImg={setSelectedImg!} />
           {selectedImg && (
             <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg!} />
           )}
-      </PreviewSuspense>
+        </PreviewSuspense>
       </div>
     </Layout>
   );

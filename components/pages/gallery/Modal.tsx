@@ -23,7 +23,7 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
           opacity: 1,
           scale: 1,
           transition: {
-            ease: "easeOut",
+            ease: 'easeOut',
             duration: 0.15,
           },
         }}
@@ -31,14 +31,14 @@ export default function Modal({ selectedImg, setSelectedImg }: ModalProps) {
           opacity: 0,
           scale: 1,
           transition: {
-            ease: "easeIn",
+            ease: 'easeIn',
             duration: 0.15,
           },
         }}
         transition={{ duration: 0.6 }}
         src={selectedImg.image}
         alt={selectedImg.caption}
-        className="mx-auto mb-4 mt-16 block max-h-[80%] max-w-[100%] border-4 border-secondary rounded-xl drop-shadow-md"
+        className="mx-auto mb-4 mt-16 block max-h-[80%] max-w-[100%] rounded-xl border-4 border-secondary drop-shadow-md"
       />
       <motion.figcaption className="mx-auto inline-block rounded-full bg-white/50 px-4 py-2 font-bold text-accent-content drop-shadow-md backdrop-blur">
         {selectedImg.caption} in {formatDate(selectedImg.date)}
