@@ -1,5 +1,5 @@
 import CoverImage from '@/components/pages/blog/CoverImage';
-import PostDate from '@/components/pages/blog/PostDate';
+import { formatDate } from '@/lib/formatDate';
 import type { Post } from '@/types/Post';
 
 export default function PostHeader(
@@ -14,9 +14,7 @@ export default function PostHeader(
       <div className="mx-auto mb-8 max-w-2xl sm:mx-0 md:mb-16 ">
         <CoverImage title={title!} image={coverImage} priority slug={slug} />
       </div>
-      <div className="mb-6 text-lg">
-        <PostDate dateString={date!} />
-      </div>
+      <div className="mb-6 text-lg">{date && formatDate(date)}</div>
     </>
   );
 }

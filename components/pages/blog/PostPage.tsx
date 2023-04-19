@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { notFound } from 'next/navigation';
 import { NextSeo } from 'next-seo';
 
-import Layout from '@/components/pages/blog/BlogLayout';
+import { Layout } from '@/components/layouts/Layout';
 import PostHeader from '@/components/pages/blog/PostHeader';
 import type { Post } from '@/types/Post';
 import type { Settings } from '@/types/Settings';
@@ -22,8 +22,6 @@ export default function PostPage(props: PostPageProps) {
   if (!slug && !preview) {
     notFound();
   }
-
-  console.log(post.content);
 
   const components = {
     block: {
@@ -55,7 +53,7 @@ export default function PostPage(props: PostPageProps) {
         }}
       />
 
-      <Layout preview={preview!} loading={loading}>
+      <Layout>
         {preview && !post ? (
           <div>Loading</div>
         ) : (

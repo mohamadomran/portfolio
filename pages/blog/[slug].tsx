@@ -5,12 +5,10 @@ import {
   getSettings,
 } from 'lib/sanity.client';
 import { GetStaticProps } from 'next';
-import { createClient } from 'next-sanity';
 import { lazy } from 'react';
 
 import { Layout } from '@/components/layouts/Layout';
 import PostPage from '@/components/pages/blog/PostPage';
-import { Blog } from '@/types/Blog';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
 
@@ -46,11 +44,7 @@ export default function ProjectSlugRoute(props: PageProps) {
     );
   }
 
-  return (
-    <Layout>
-      <PostPage post={post} settings={settings!} />
-    </Layout>
-  );
+  return <PostPage post={post} settings={settings!} />;
 }
 
 export const getStaticProps: GetStaticProps<

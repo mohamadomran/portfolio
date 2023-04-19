@@ -4,8 +4,7 @@ import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 import { lazy } from 'react';
 
-import { Layout } from '@/components/layouts/Layout';
-import IndexPage from '@/components/pages/blog/BlogIndexPage';
+import { BlogsLandingPage } from '@/components/pages/blog/BlogsLandingPage';
 import { BLOG_SEO_DESCRIPTION, BLOG_SEO_TITLE } from '@/constants/constants';
 import { Post } from '@/types/Post';
 import { Settings } from '@/types/Settings';
@@ -36,7 +35,7 @@ export default function Page(props: PageProps) {
     return (
       <PreviewSuspense
         fallback={
-          <IndexPage loading preview posts={posts} settings={settings} />
+          <BlogsLandingPage loading preview posts={posts} settings={settings} />
         }
       >
         <PreviewIndexPage token={token} />
@@ -45,7 +44,7 @@ export default function Page(props: PageProps) {
   }
 
   return (
-    <Layout>
+    <>
       <NextSeo
         title={BLOG_SEO_TITLE}
         description={BLOG_SEO_DESCRIPTION}
@@ -55,8 +54,8 @@ export default function Page(props: PageProps) {
           cardType: 'summary_large_image',
         }}
       />
-      <IndexPage posts={posts} settings={settings} />
-    </Layout>
+      <BlogsLandingPage posts={posts} settings={settings} />
+    </>
   );
 }
 

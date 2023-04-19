@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import PostDate from '@/components/pages/blog/PostDate';
+import { formatDate } from '@/lib/formatDate';
 import { Post } from '@/types/Post';
 
 import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
@@ -30,7 +30,7 @@ export const FeaturedBlogs = (
                 <ArrowRightIcon className="stroke-primary" />
               </div>
               <div className="mb-4 text-lg md:mb-0">
-                <PostDate dateString={date!} />
+                {date && formatDate(date)}
               </div>
             </div>
           </div>
