@@ -1,3 +1,4 @@
+import { codeInput } from '@sanity/code-input';
 import { visionTool } from '@sanity/vision';
 import { previewDocumentNode } from 'plugins/previewPane';
 import { productionUrl } from 'plugins/productionUrl';
@@ -35,6 +36,7 @@ export default defineConfig({
         previewSecretId: previewSecretId!,
       }),
     }),
+    codeInput(),
     settingsPlugin({ type: settings.name }),
     productionUrl({
       apiVersion,

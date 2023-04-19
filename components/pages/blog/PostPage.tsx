@@ -23,6 +23,17 @@ export default function PostPage(props: PostPageProps) {
     notFound();
   }
 
+  console.log(post.content);
+
+  const components = {
+    block: {
+      h1: ({ children }: any) => <h1 className="text-4xl">{children}</h1>,
+    },
+    marks: {
+      code: ({ children }: any) => <code className='bg-primary-content rounded-lg px-2'>{children}</code>,
+    }
+  };
+
   return (
     <>
       <NextSeo
@@ -53,7 +64,7 @@ export default function PostPage(props: PostPageProps) {
                 coverImage={post.coverImage}
                 date={post.date}
               />
-              <PortableText value={post.content} />
+              <PortableText value={post.content} components={components} />
             </article>
           </>
         )}
