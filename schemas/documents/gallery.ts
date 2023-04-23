@@ -3,40 +3,32 @@ import { format, parseISO } from 'date-fns';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'til',
-  title: 'TIL',
+  name: 'gallery',
+  title: 'Gallery',
   icon: BookIcon,
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'caption',
+      title: 'Caption',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-        isUnique: (value, context) => context.defaultIsUnique(value, context),
-      },
-      validation: (rule) => rule.required(),
+      name: 'date',
+      title: 'Date',
+      type: 'date',
     }),
     defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [{ type: 'block' }],
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'caption',
       date: 'date',
-      media: 'coverImage',
+      media: 'image',
     },
     prepare({ title, media, date }) {
       const subtitles = [
