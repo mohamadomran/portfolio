@@ -3,8 +3,8 @@ import { definePreview } from 'next-sanity/preview';
 
 let alerted = false;
 export const usePreview = definePreview({
-  projectId: projectId!,
-  dataset: dataset!,
+  projectId: projectId || '',
+  dataset: dataset || '',
   onPublicAccessOnly: () => {
     if (!alerted) {
       // eslint-disable-next-line no-alert
