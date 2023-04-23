@@ -1,17 +1,25 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  pageExtensions: ['jsx', 'js', 'tsx', 'ts', 'mdx'],
-  reactStrictMode: true,
-  swcMinify: true,
+const config = {
+  // @TODO turn swcMinify back on once the agressive dead code elimination bug that casues
+  // `ReferenceError: FieldPresenceWithOverlay is not defined` is fixed
+  swcMinify: false,
+  experimental: {
+    appDir: true,
+  },
+
   images: {
-    domains: ['i.scdn.co', 'cdn.sanity.io'],
+    remotePatterns: [
+      { hostname: 'cdn.sanity.io' },
+    ],
   },
   typescript: {
-    ignoreBuildErrors: false,
+    // Set this to false if you want production builds to abort if there's type errors
+    ignoreBuildErrors: process.env.VERCEL_ENV === 'production',
   },
   eslint: {
-    ignoreDuringBuilds: false,
+    /// Set this to false if you want production builds to abort if there's lint errors
+    ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
   },
-};
+}
 
-export default nextConfig;
+export default config
