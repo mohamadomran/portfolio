@@ -5,11 +5,12 @@ import {
   projectId,
   useCdn,
 } from 'lib/sanity.api';
-import { postBySlugQuery } from 'lib/sanity.queries';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { PageConfig } from 'next/types';
 import { createClient } from 'next-sanity';
-import { getSecret } from 'plugins/productionUrl/utils';
+
+import { resolveHref } from '@/lib/sanity.links';
+import { getSecret } from '@/plugins/productionUrl/utils';
 
 // res.setPreviewData only exists in the nodejs runtime, setting the config here allows changing the global runtime
 // option in next.config.mjs without breaking preview mode
@@ -18,12 +19,12 @@ export const config: PageConfig = { runtime: 'nodejs' };
 function redirectToPreview(
   res: NextApiResponse<string | void>,
   previewData: { token?: string },
-  Location: '/' | `/blog/${string}`,
+  Location: string,
 ): void {
   // Enable Preview Mode by setting the cookies
   res.setPreviewData(previewData);
   // Redirect to a preview capable route
-  res.writeHead(307, { Location });
+  res.writeHead(307, { Location: Location });
   res.end();
 }
 
@@ -61,28 +62,18 @@ export default async function preview(
     previewData.token = token;
   }
 
-  // If no slug is provided open preview mode on the frontpage
-  if (!req.query.slug) {
-    return redirectToPreview(res, previewData, '/');
+  const href = resolveHref(
+    req.query.documentType as string,
+    req.query.slug as string,
+  );
+
+  if (!href) {
+    return res
+      .status(400)
+      .send(
+        'Unable to resolve preview URL based on the current document type and slug',
+      );
   }
 
-  // Check if the post with the given `slug` exists
-  const client = _client.withConfig({
-    // Fallback to using the WRITE token until https://www.sanity.io/docs/vercel-integration starts shipping a READ token.
-    // As this client only exists on the server and the token is never shared with the browser, we don't risk escalating permissions to untrustworthy users
-    token:
-      process.env.SANITY_API_READ_TOKEN || process.env.SANITY_API_WRITE_TOKEN,
-  });
-  const post = await client.fetch(postBySlugQuery, {
-    slug: req.query.slug,
-  });
-
-  // If the slug doesn't exist prevent preview mode from being enabled
-  if (!post) {
-    return res.status(401).send('Invalid slug');
-  }
-
-  // Redirect to the path from the fetched post
-  // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  redirectToPreview(res, previewData, `/blog/${post.slug}`);
+  return redirectToPreview(res, previewData, href);
 }
