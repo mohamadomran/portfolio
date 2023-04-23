@@ -1,8 +1,4 @@
-import { codeInput } from '@sanity/code-input';
 import { visionTool } from '@sanity/vision';
-import { previewDocumentNode } from 'plugins/previewPane';
-import { productionUrl } from 'plugins/productionUrl';
-import { settingsPlugin, settingsStructure } from 'plugins/settings';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 
@@ -12,37 +8,66 @@ import {
   previewSecretId,
   projectId,
 } from '@/lib/sanity.api';
-import gallery from '@/schemas/gallery';
-import post from '@/schemas/post';
-import project from '@/schemas/project';
-import settings from '@/schemas/settings';
-import til from '@/schemas/til';
+import { previewDocumentNode } from '@/plugins/previewPane';
+import { productionUrl } from '@/plugins/productionUrl';
+import { pageStructure, singletonPlugin } from '@/plugins/settings';
+import blog from '@/schemas/documents/blog';
+import gallery from '@/schemas/documents/gallery';
+import project from '@/schemas/documents/project';
+import duration from '@/schemas/objects/duration';
+import milestone from '@/schemas/objects/milestone';
+import home from '@/schemas/singletons/home';
+import settings from '@/schemas/singletons/settings';
 
-const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || '';
+const title =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
+  'Next.js Personal Website with Sanity.io';
+
+export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
+  home.name,
+  blog.name,
+  project.name,
+];
 
 export default defineConfig({
   basePath: '/studio',
-  projectId: projectId!,
-  dataset: dataset!,
+  projectId: projectId || '',
+  dataset: dataset || '',
   title,
   schema: {
-    types: [post, settings, gallery, project, til],
+    // If you want more content types, you can add them to this array
+    types: [
+      // Singletons
+      home,
+      settings,
+      // Documents
+      duration,
+      blog,
+      project,
+      gallery,
+      // Objects
+      milestone,
+    ],
   },
   plugins: [
     deskTool({
-      structure: settingsStructure(settings),
+      structure: pageStructure([home, settings]),
+      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({
-        apiVersion: apiVersion!,
-        previewSecretId: previewSecretId!,
+        apiVersion: apiVersion || '',
+        previewSecretId,
       }),
     }),
-    codeInput(),
-    settingsPlugin({ type: settings.name }),
+    // Configures the global "new document" button, and document actions, to suit the Settings document singleton
+    singletonPlugin([home.name, blog.name, settings.name]),
+    // Add the "Open preview" action
     productionUrl({
       apiVersion,
       previewSecretId,
-      types: [post.name, settings.name, project.name, til.name],
+      types: PREVIEWABLE_DOCUMENT_TYPES,
     }),
+    // Vision lets you query your content with GROQ in the studio
+    // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
   ],
 });
