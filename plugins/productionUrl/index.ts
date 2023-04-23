@@ -1,9 +1,3 @@
-/**
- * This plugin sets up the "Open preview (CTRL + ALT + O)" in the dropdown menu that hosts
- * other actions like "Review changes" and "Inspect"
- * @TODO the code in this plugin is a candidate for moving into `@sanity/preview-kit/studio`
- */
-
 import { definePlugin, type Slug } from 'sanity';
 
 import { getSecret } from './utils';
@@ -42,7 +36,7 @@ export const productionUrl = definePlugin<{
         }
 
         if (types.has(document._type)) {
-          url.searchParams.set('type', document._type);
+          url.searchParams.set('documentType', document._type);
           console.log('Open preview URL', url.toString());
           return url.toString();
         }

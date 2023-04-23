@@ -1,11 +1,13 @@
+import type { SanityClient } from '@sanity/client';
+
 // updated within the hour, if it's older it'll create a new secret or return null
-const query = (ttl: any) =>
+const query = (ttl: number) =>
   /* groq */ `*[_id == $id && dateTime(_updatedAt) > dateTime(now()) - ${ttl}][0].secret`;
 
 const tag = 'preview.secret';
 
 export async function getSecret(
-  client: import('next-sanity').SanityClient | import('sanity').SanityClient,
+  client: SanityClient,
   id: `${string}.${string}`,
   createIfNotExists?: true | (() => string),
 ): Promise<string | null> {
