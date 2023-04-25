@@ -8,9 +8,7 @@ const config = {
   },
 
   images: {
-    remotePatterns: [
-      { hostname: 'cdn.sanity.io' },
-    ],
+    remotePatterns: [{ hostname: 'cdn.sanity.io' }],
   },
   typescript: {
     // Set this to false if you want production builds to abort if there's type errors
@@ -20,6 +18,6 @@ const config = {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
   },
-}
+};
 
-export default config
+export default config;
