@@ -40,6 +40,7 @@ export default async function RootLayout({
         sizes="32x32"
       />
       <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+      <title key="title">Portfolio - Mohamad Omran</title>
       <body>{children}</body>
     </html>
   );
