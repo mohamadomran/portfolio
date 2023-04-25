@@ -1,3 +1,5 @@
+'use client';
+
 import { Popover, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
 
@@ -11,9 +13,9 @@ import { MobileNavItem } from './MobileNavItem';
 export function MobileNavigation(props: Props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur">
+      <Popover.Button className="group flex items-center text-white rounded-full bg-base-100/70 px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-secondary backdrop-blur">
         Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700" />
+        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-white" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -25,7 +27,7 @@ export function MobileNavigation(props: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="z-100 bg-black-950/40 dark:bg-black-950/80 fixed inset-0 backdrop-blur" />
+          <Popover.Overlay className="z-100 bg-base-100/30 fixed inset-0 backdrop-blur" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -38,18 +40,16 @@ export function MobileNavigation(props: Props) {
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-base-100/90 p-8 text-white ring-1 ring-secondary"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+                <CloseIcon className="h-6 w-6 text-white" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
+              <h2 className="text-sm font-medium text-white">Navigation</h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+              <ul className="-my-2 divide-y divide-secondary text-base text-white">
                 {pages.map(({ name, link }) => (
                   <MobileNavItem key={name} href={link}>
                     {name}

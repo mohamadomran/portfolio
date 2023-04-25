@@ -1,12 +1,15 @@
+"use client";
+
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import { Props } from '@/types/Props';
 
 export const NavItem = ({ href, children }: { href: string } & Props) => {
-  const router = useRouter();
-  let isActive = router.pathname === href;
+  const pathname = usePathname();
+  ;
+  let isActive = pathname === href;
 
   return (
     <li>
