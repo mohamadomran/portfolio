@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -8,7 +8,6 @@ import { Props } from '@/types/Props';
 
 export const NavItem = ({ href, children }: { href: string } & Props) => {
   const pathname = usePathname();
-  ;
   let isActive = pathname === href;
 
   return (

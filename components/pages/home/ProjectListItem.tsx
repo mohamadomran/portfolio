@@ -23,7 +23,7 @@ export function ProjectListItem(props: ProjectProps) {
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper='rounded-2xl'
+          classesWrapper="rounded-2xl"
         />
 
         <div className="card-body mx-4">

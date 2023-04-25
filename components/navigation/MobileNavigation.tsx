@@ -13,7 +13,7 @@ import { MobileNavItem } from './MobileNavItem';
 export function MobileNavigation(props: Props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center text-white rounded-full bg-base-100/70 px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-secondary backdrop-blur">
+      <Popover.Button className="group flex items-center rounded-full bg-base-100/70 px-4 py-2 text-sm font-medium text-white shadow-lg ring-1 ring-secondary backdrop-blur">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-white" />
       </Popover.Button>
@@ -27,7 +27,7 @@ export function MobileNavigation(props: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="z-100 bg-base-100/30 fixed inset-0 backdrop-blur" />
+          <Popover.Overlay className="z-100 fixed inset-0 bg-base-100/30 backdrop-blur" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}

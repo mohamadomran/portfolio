@@ -9,16 +9,14 @@ export function GalleryPage({ images = [] }: { images?: GalleryItem[] }) {
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <header>
-        <h2 className="text-4xl font-bold sm:text-5xl">
-          Gallery
-        </h2>
+        <h2 className="text-4xl font-bold sm:text-5xl">Gallery</h2>
 
         <p className="mt-4 max-w-md">
           A collection of my favorite photos taken by my S22 Ultra.
         </p>
       </header>
       {images && (
-        <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {images.map(({ image, date, caption }, key) => {
             const imageUrl =
               image && urlForImage(image)?.height(2000).width(3000).url();
@@ -26,9 +24,8 @@ export function GalleryPage({ images = [] }: { images?: GalleryItem[] }) {
             return (
               <div
                 key={key}
-                className="block overflow-hidden group rounded-lg mt-8"
+                className="group mt-8 block overflow-hidden rounded-lg"
               >
-
                 <Image
                   height={400}
                   width={600}

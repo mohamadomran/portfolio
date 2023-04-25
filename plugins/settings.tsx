@@ -23,7 +23,7 @@ export const singletonPlugin = (types: string[]) => {
       // Removes the "duplicate" action on the Singletons (such as Home)
       actions: (prev: any, { schemaType }: any) => {
         if (types.includes(schemaType)) {
-          return prev.filter(({ action } : any) => action !== 'duplicate');
+          return prev.filter(({ action }: any) => action !== 'duplicate');
         }
 
         return prev;

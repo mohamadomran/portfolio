@@ -1,14 +1,14 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import { urlForImage } from '@/lib/sanity.image'
+import { urlForImage } from '@/lib/sanity.image';
 
 interface ImageBoxProps {
-  image?: { asset?: any }
-  alt?: string
-  width?: number
-  height?: number
-  size?: string
-  classesWrapper?: string
+  image?: { asset?: any };
+  alt?: string;
+  width?: number;
+  height?: number;
+  size?: string;
+  classesWrapper?: string;
 }
 
 export default function ImageBox({
@@ -19,12 +19,10 @@ export default function ImageBox({
   classesWrapper,
 }: ImageBoxProps) {
   const imageUrl =
-    image && urlForImage(image)?.height(height).width(width).url()
+    image && urlForImage(image)?.height(height).width(width).url();
 
   return (
-    <div
-      className={`overflow-hidden ${classesWrapper}`}
-    >
+    <div className={`overflow-hidden ${classesWrapper}`}>
       {imageUrl && (
         <Image
           className="aspect-rectangle h-full w-full object-cover"
@@ -35,5 +33,5 @@ export default function ImageBox({
         />
       )}
     </div>
-  )
+  );
 }
