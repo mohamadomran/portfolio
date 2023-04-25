@@ -7,6 +7,7 @@ import {
   galleryPageQuery,
   homePageQuery,
   pagesBySlugQuery,
+  projectsPageQuery,
   settingsQuery,
 } from '@/lib/sanity.queries';
 import type {
@@ -28,6 +29,14 @@ export async function getHomePage({
   token?: string;
 }): Promise<HomePagePayload | undefined> {
   return await sanityClient(token)?.fetch(homePageQuery);
+}
+
+export async function getProjectsPage({
+  token,
+}: {
+  token?: string;
+}): Promise<GalleryPagePayload | undefined> {
+  return await sanityClient(token)?.fetch(projectsPageQuery);
 }
 
 export async function getGalleryPage({

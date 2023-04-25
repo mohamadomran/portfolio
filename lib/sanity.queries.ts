@@ -16,6 +16,17 @@ export const homePageQuery = groq`
   }
 `;
 
+export const projectsPageQuery = groq`
+  *[_type == "project"]{
+    _type,
+    coverImage,
+    overview,
+    site,
+    tags,
+    title,
+  }
+`;
+
 export const galleryPageQuery = groq`
   *[_type == "gallery"]{
       caption,

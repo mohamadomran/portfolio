@@ -49,6 +49,17 @@ export interface SettingsPayload {
   ogImage?: Image;
 }
 
+export interface PorjectsPagePayload {
+  projectsItems?: ProjectPayload[];
+}
+export interface ProjectsPayload {
+  _type: string;
+  caption?: string;
+  date?: string;
+  image?: Image;
+}
+[];
+
 export interface GalleryPagePayload {
   galleryItems?: GalleryItem[];
 }
