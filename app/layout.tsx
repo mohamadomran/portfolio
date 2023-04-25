@@ -1,12 +1,20 @@
 import 'tailwindcss/tailwind.css';
 
+import { Space_Mono } from 'next/font/google';
+
+const mono = Space_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${mono.variable} font-mono`}>
       <link
         rel="alternate"
         type="application/rss+xml"
