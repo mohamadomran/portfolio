@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import ScrollUp from '@/components/global/ScrollUp';
-import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
+// import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { CustomPortableText } from '@/components/shared/CustomPortableText';
 import { urlForImage } from '@/lib/sanity.image';
 import type { ProjectPayload } from '@/types';
@@ -14,22 +14,20 @@ export function ProjectsPage({
 }: {
   projects?: ProjectPayload[];
 }) {
-  console.log(projects);
-
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <header>
         <h2 className="text-4xl font-bold sm:text-5xl">Projects</h2>
 
         <p className="mt-4 max-w-md">Projects that I&apos;ve Worked On</p>
-        <Link
+        {/* <Link
           className="flex h-6 items-center rounded-lg pb-8 pt-4 text-primary transition-all hover:text-primary-focus"
-          href="/github-projects"
+          href="/projects/github"
         >
           <p>My Github Projects</p>
 
           <ArrowRightIcon className="stroke-primary" />
-        </Link>
+        </Link> */}
       </header>
 
       <div className="mt-8 grid gap-8 md:grid-cols-2">
