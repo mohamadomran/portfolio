@@ -34,7 +34,7 @@ export function ProjectListItem(props: ProjectProps) {
           <div className="card-actions mt-4 justify-end">
             <Link
               className="btn-outline btn-primary btn"
-              href={project.slug!}
+              href={project.site!}
               target="_blank"
             >
               Check it out
