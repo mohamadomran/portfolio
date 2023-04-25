@@ -4,10 +4,8 @@ module.exports = {
   darkMode: 'class',
   plugins: [require('daisyui')],
   theme: {
-    extend: {
-      fontFamily: {
-        mono: ['JetBrains Mono', 'monospace'],
-      },
+    fontFamily: {
+      mono: 'var(--font-mono)',
     },
   },
   daisyui: {
