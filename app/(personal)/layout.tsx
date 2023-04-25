@@ -1,4 +1,4 @@
-// import 'styles/index.css';
+import 'styles/tailwind.css';
 
 import { Footer } from '@/components/global/Footer';
 import { Header } from '@/components/global/Header';
