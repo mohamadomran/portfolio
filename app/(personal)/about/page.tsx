@@ -1,16 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { NextSeo } from 'next-seo';
 
 import { LinkIcon } from '@/components/icons/LinkIcon';
-import { Layout } from '@/components/layouts/Layout';
-import { ABOUT_SEO_DESCRIPTION, ABOUT_SEO_TITLE } from '@/constants/constants';
 import awsCCPBadge from '@/public/static/images/aws-certified-cloud-practitioner-badge.png';
 
-export default function About() {
+export default async function About() {
   return (
-    <Layout>
-      <NextSeo title={ABOUT_SEO_TITLE} description={ABOUT_SEO_DESCRIPTION} />
+    <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <h1 className="text-5xl font-bold">About Me!</h1>
       <div className="mt-6 space-y-7 text-base">
         <p>
@@ -18,6 +14,7 @@ export default function About() {
           have always been fascinated by technology and coding, and I knew from
           a young age that I wanted to pursue a career in software engineering.
         </p>
+        <br />
         <p>
           I obtained my Bachelor&apos;s and Master&apos;s degrees in Science of
           Computer and Communication Engineering, with a specialization in AI
@@ -26,6 +23,7 @@ export default function About() {
           Machine Learning methodologies, which have gained immense relevance in
           the field of software engineering
         </p>
+        <br />
         <p>
           After completing my academic qualifications, I began my professional
           journey in software development. With extensive experience in
@@ -39,12 +37,16 @@ export default function About() {
           (site is under construction and it&apos;s formerly called Postlight
           Lebanon).
         </p>
+        <br />
+
         <p>
           In addition to my work as a software engineer, I&apos;m also an avid
           traveler and photographer. I love exploring new places, meeting new
           people, and checking out different cultures. I&apos;m always on the
           lookout for new adventures to embark on.
         </p>
+        <br />
+
         <p>
           I&apos;m constantly seeking new challenges and opportunities to
           improve my skills and expand my knowledge. I&apos;m passionate about
@@ -68,6 +70,6 @@ export default function About() {
           </span>
         </Link>
       </div>
-    </Layout>
+    </div>
   );
 }
