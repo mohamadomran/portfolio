@@ -25,9 +25,42 @@ export const Intro = () => {
             Full-stack engineer with a passion for AI, machine learning, and
             capturing the world through photography.
           </p>
+          <Link
+            className="hover:text-primary flex h-6 items-center rounded-lg pb-8 pt-4 text-white transition-all"
+            href="/gallery"
+          >
+            <p>Check my photo gallery</p>
+
+            <ArrowRightIcon className="stroke-primary" />
+          </Link>
+
+          <div className="flex items-center gap-6 ">
+            <SocialLink
+              href={SOCIAL_LINKS.GITHUB}
+              ariaLabel="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href={SOCIAL_LINKS.LINKEDIN}
+              ariaLabel="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+            <SocialLink
+              href={SOCIAL_LINKS.TWITTER}
+              ariaLabel="Follow on Twitter"
+              icon={TwitterIcon}
+            />
+            <Link
+              href={SOCIAL_LINKS.CV}
+              className="btn-outline btn-primary btn"
+            >
+              Download CV
+              <ArrowDownIcon className="h-4 w-4 stroke-primary" />
+            </Link>
+          </div>
         </div>
 
-        <div className="mr-auto h-[160px] w-[160px] flex-none rounded-full">
+        <div className="mr-auto h-[200px] w-[200px] flex-none rounded-full md:h-[340px] md:w-[340px]">
           <Image
             src={avatar}
             alt="avatar"
@@ -36,37 +69,6 @@ export const Intro = () => {
             className="aspect-square rounded-full border-4 border-primary bg-zinc-100 object-cover shadow-inner"
           />
         </div>
-      </div>
-
-      <Link
-        className="hover:text-white-focus flex h-6 items-center rounded-lg pb-8 pt-4 text-white transition-all"
-        href="/gallery"
-      >
-        <p>Check my photo gallery</p>
-
-        <ArrowRightIcon className="stroke-primary" />
-      </Link>
-
-      <div className="flex items-center gap-6 ">
-        <SocialLink
-          href={SOCIAL_LINKS.GITHUB}
-          ariaLabel="Follow on GitHub"
-          icon={GitHubIcon}
-        />
-        <SocialLink
-          href={SOCIAL_LINKS.LINKEDIN}
-          ariaLabel="Follow on LinkedIn"
-          icon={LinkedInIcon}
-        />
-        <SocialLink
-          href={SOCIAL_LINKS.TWITTER}
-          ariaLabel="Follow on Twitter"
-          icon={TwitterIcon}
-        />
-        <Link href={SOCIAL_LINKS.CV} className="btn-outline btn-primary btn">
-          Download CV
-          <ArrowDownIcon className="h-4 w-4 stroke-primary" />
-        </Link>
       </div>
     </>
   );
