@@ -24,7 +24,7 @@ export const SOCIAL_LINKS = {
 export const pages = [
   { link: '/', name: 'Home' },
   { link: '/about', name: 'About' },
-  { link: '/blog', name: 'Blog' },
+  // { link: '/blog', name: 'Blog' },
   { link: '/work', name: 'Work' },
   { link: '/projects', name: 'Projects' },
 ];
