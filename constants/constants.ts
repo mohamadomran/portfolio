@@ -18,7 +18,7 @@ export const SOCIAL_LINKS = {
   GITHUB: 'https://github.com/mohamadomran',
   TWITTER: 'https://twitter.com/itsMohamadOmran',
   EMAIL: 'mailto:mohamadomran_13@hotmail.com',
-  CV: '/mohamad-omran-CV.pdf',
+  CV: '/mohamad-omran_CV.pdf',
 };
 
 export const pages = [
