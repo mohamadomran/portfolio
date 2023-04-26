@@ -24,7 +24,6 @@ export function ProjectListItem(props: ProjectProps) {
       </h3>
 
       <div className="card mt-8 bg-secondary-content shadow-xl lg:card-side">
-
         <div className={`overflow-hidden rounded-2xl lg:w-[50%]`}>
           {imageUrl && (
             <Image

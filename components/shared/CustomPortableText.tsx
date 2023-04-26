@@ -43,9 +43,7 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9]"
             />
             {value?.caption && (
-              <div className="text-white">
-                {value.caption}
-              </div>
+              <div className="text-white">{value.caption}</div>
             )}
           </div>
         );

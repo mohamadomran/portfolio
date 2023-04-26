@@ -6,7 +6,7 @@ const mono = Space_Mono({
   variable: '--font-mono',
   subsets: ['latin'],
   weight: ['400'],
-})
+});
 
 import { Footer } from '@/components/global/Footer';
 import { Header } from '@/components/global/Header';

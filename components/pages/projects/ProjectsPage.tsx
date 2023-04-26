@@ -35,7 +35,11 @@ export function ProjectsPage({
           projects.map(({ coverImage, overview, site, title }, key) => {
             const imageUrl =
               coverImage &&
-              urlForImage(coverImage)?.height(1800).width(3000).fit('min').url();
+              urlForImage(coverImage)
+                ?.height(1800)
+                .width(3000)
+                .fit('min')
+                .url();
 
             return (
               <div

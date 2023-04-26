@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { SocialLink } from '@/components/global/SocialLink';
+import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { SOCIAL_LINKS } from '@/constants/constants';
 import avatar from '@/public/static/images/avatar.png';
 
@@ -26,12 +27,12 @@ export const Intro = () => {
             capturing the world through photography.
           </p>
           <Link
-            className="flex h-6 items-center rounded-lg pb-8 pt-4  transition-all hover:text-secondary"
+            className="group mt-4 inline-flex items-center gap-1 font-medium text-secondary transition-colors hover:text-primary"
             href="/gallery"
           >
-            Check my photo gallery
+            Check my photo gallery <ArrowRightIcon />
           </Link>
-          <div className="flex items-center gap-6 ">
+          <div className="mt-4 flex items-center gap-6">
             <SocialLink
               href={SOCIAL_LINKS.GITHUB}
               ariaLabel="Follow on GitHub"

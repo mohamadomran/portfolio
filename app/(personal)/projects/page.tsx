@@ -22,14 +22,18 @@ export default async function Projects() {
         <PreviewSuspense
           fallback={
             <PreviewWrapper>
-              <ProjectsPage projects={projects! as unknown as Array<ProjectPayload>} />
+              <ProjectsPage
+                projects={projects! as unknown as Array<ProjectPayload>}
+              />
             </PreviewWrapper>
           }
         >
           <ProjectsPreview token={token} />
         </PreviewSuspense>
       ) : (
-        <ProjectsPage projects={projects! as unknown as Array<ProjectPayload>} />
+        <ProjectsPage
+          projects={projects! as unknown as Array<ProjectPayload>}
+        />
       )}
     </>
   );

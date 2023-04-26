@@ -78,13 +78,13 @@ export function Resume() {
           <time className="mb-2 block text-lg font-bold leading-none text-white">
             {role.title} @ {role.company}
           </time>
-          <time className="text-md text-white mb-2 block font-light leading-none">
+          <time className="text-md mb-2 block font-light leading-none text-white">
             {role.start.label} - {role.end.label}
           </time>
           {role.tasks?.map((task, taskIndex) => (
             <p
               key={taskIndex}
-              className="font-sm mb-4 mt-4 text-white font-normal "
+              className="font-sm mb-4 mt-4 font-normal text-white "
             >
               - {task}
             </p>
