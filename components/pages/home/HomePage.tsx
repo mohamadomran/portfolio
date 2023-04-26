@@ -1,3 +1,4 @@
+import { Layout } from '@/components/global/Layout';
 import ScrollUp from '@/components/global/ScrollUp';
 import { Intro } from '@/components/pages/home/Intro';
 import { ProjectListItem } from '@/components/pages/home/ProjectListItem';
@@ -7,7 +8,7 @@ export function HomePage({ data }: { data: HomePagePayload }) {
   const { showcaseProjects } = data;
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4">
+    <Layout>
       <Intro />
 
       {showcaseProjects &&
@@ -17,6 +18,6 @@ export function HomePage({ data }: { data: HomePagePayload }) {
         ))}
 
       <ScrollUp />
-    </div>
+    </Layout>
   );
 }

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Layout } from '@/components/global/Layout';
 import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { CustomPortableText } from '@/components/shared/CustomPortableText';
 import { urlForImage } from '@/lib/sanity.image';
@@ -18,10 +19,16 @@ export function ProjectListItem(props: ProjectProps) {
     project.coverImage &&
     urlForImage(project.coverImage)?.height(1200).width(2100).url();
   return (
-    <>
-      <h3 className="pt-6 text-3xl tracking-tight md:text-3xl">
-        Featured Project
-      </h3>
+    <Layout>
+      <h2 className="pt-6 text-4xl">Featured Project</h2>
+
+      <Link
+        className="group mt-4 inline-flex items-center gap-1 text-xl font-bold text-secondary transition-colors hover:text-primary"
+        href="/projects"
+      >
+        Browse all projects
+        <ArrowRightIcon className="stroke-primary" />
+      </Link>
 
       <div className="card mt-8 bg-secondary-content shadow-xl lg:card-side">
         <div className={`overflow-hidden rounded-2xl lg:w-[50%]`}>
@@ -50,15 +57,6 @@ export function ProjectListItem(props: ProjectProps) {
           </div>
         </div>
       </div>
-
-      <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-white transition-all hover:text-secondary"
-        href="/projects"
-      >
-        <p>Explore all projects</p>
-
-        <ArrowRightIcon className="stroke-primary" />
-      </Link>
-    </>
+    </Layout>
   );
 }
