@@ -17,8 +17,6 @@ module.exports = {
       {
         light: {
           ...require('daisyui/src/colors/themes')['[data-theme=night]'],
-          'primary-content': '#134074',
-          secondary: '#facc15',
         },
       },
     ],

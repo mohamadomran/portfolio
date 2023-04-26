@@ -14,12 +14,12 @@ export const FeaturedBlogs = ({ post }: { post: Post }) => {
 
       <div className="py-5">
         <Link href={`/blog/${post.slug!}`}>
-          <div className="flex flex-col justify-between overflow-hidden rounded-xl bg-primary-content py-4 pr-4 leading-normal shadow-lg duration-200">
+          <div className="flex flex-col justify-between overflow-hidden rounded-xl bg-secondary-content py-4 pr-4 leading-normal shadow-lg duration-200">
             <div className="mx-8">
               <div className="flex items-center justify-between">
                 <p className="mb-4 text-lg leading-relaxed">{post.excerpt}</p>
 
-                <ArrowRightIcon className="stroke-primary" />
+                <ArrowRightIcon className="stroke-secondary" />
               </div>
               <div className="mb-4 text-lg md:mb-0">
                 {new Date(post.date).toLocaleDateString('en-US', {
@@ -35,11 +35,11 @@ export const FeaturedBlogs = ({ post }: { post: Post }) => {
       </div>
 
       <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-8 text-white transition-all hover:text-secondary"
+        className="flex h-6 items-center rounded-lg pb-8 pt-8  transition-all hover:text-secondary"
         href="/blog"
       >
         <p>Read more Articles</p>
-        <ArrowRightIcon className="stroke-primary" />
+        <ArrowRightIcon className="stroke-secondary" />
       </Link>
     </div>
   );

@@ -13,7 +13,7 @@ import { MobileNavItem } from './MobileNavItem';
 export function MobileNavigation(props: Props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-base-100/70 px-4 py-2 text-sm font-medium text-white shadow-lg ring-1 ring-secondary backdrop-blur">
+      <Popover.Button className="group flex items-center rounded-full bg-base-100/70 px-4 py-2 text-sm font-medium  shadow-lg ring-1 ring-secondary backdrop-blur">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-white" />
       </Popover.Button>
@@ -40,16 +40,16 @@ export function MobileNavigation(props: Props) {
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-base-100/90 p-8 text-white ring-1 ring-secondary"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-base-100/90 p-8  ring-1 ring-secondary"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <CloseIcon className="h-6 w-6 text-white" />
+                <CloseIcon className="h-6 w-6 " />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-white">Navigation</h2>
+              <h2 className="text-sm font-medium ">Navigation</h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-secondary text-base text-white">
+              <ul className="-my-2 divide-y divide-secondary text-base ">
                 {pages.map(({ name, link }) => (
                   <MobileNavItem key={name} href={link}>
                     {name}

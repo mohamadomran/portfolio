@@ -72,19 +72,19 @@ export function Resume() {
     <ol className="relative z-[-1] border-l border-secondary">
       {work.map((role, roleIndex) => (
         <li key={roleIndex} className="mb-10 ml-6">
-          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-primary-content ring-1 ring-primary-content">
+          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-white ring-1 ring-secondary-content">
             ●
           </span>
           <time className="mb-2 block text-lg font-bold leading-none text-white">
             {role.title} @ {role.company}
           </time>
-          <time className="text-md text-grey-300 mb-2 block font-light leading-none">
+          <time className="text-md text-white mb-2 block font-light leading-none">
             {role.start.label} - {role.end.label}
           </time>
           {role.tasks?.map((task, taskIndex) => (
             <p
               key={taskIndex}
-              className="font-sm mb-4 mt-4 text-base font-normal "
+              className="font-sm mb-4 mt-4 text-white font-normal "
             >
               - {task}
             </p>

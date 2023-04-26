@@ -19,7 +19,7 @@ export function ProjectListItem(props: ProjectProps) {
         Featured Project
       </h3>
 
-      <div className="card-compact mt-8 overflow-hidden rounded-2xl bg-primary-content">
+      <div className="card-compact mt-8 overflow-hidden rounded-2xl bg-secondary-content">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}

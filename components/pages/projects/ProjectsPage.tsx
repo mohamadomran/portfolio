@@ -21,12 +21,12 @@ export function ProjectsPage({
 
         <p className="mt-4 max-w-md">Projects that I&apos;ve Worked On</p>
         {/* <Link
-          className="flex h-6 items-center rounded-lg pb-8 pt-4 text-primary transition-all hover:text-primary-focus"
+          className="flex h-6 items-center rounded-lg pb-8 pt-4 text-secondary transition-all hover:text-secondary-focus"
           href="/projects/github"
         >
           <p>My Github Projects</p>
 
-          <ArrowRightIcon className="stroke-primary" />
+          <ArrowRightIcon className="stroke-secondary" />
         </Link> */}
       </header>
 
@@ -40,7 +40,7 @@ export function ProjectsPage({
             return (
               <div
                 key={key}
-                className="card-compact mt-8 overflow-hidden rounded-xl bg-primary-content shadow-sm"
+                className="card-compact mt-8 overflow-hidden rounded-xl bg-secondary-content shadow-sm"
               >
                 <Image
                   src={imageUrl!}
