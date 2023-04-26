@@ -72,7 +72,7 @@ export function Resume() {
     <ol className="relative z-[-1] border-l border-secondary">
       {work.map((role, roleIndex) => (
         <li key={roleIndex} className="mb-10 ml-6">
-          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-white ring-1 ring-secondary-content">
+          <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-2xl bg-secondary text-white ring-1 ring-secondary-content">
             ●
           </span>
           <time className="mb-2 block text-lg font-bold leading-none text-white">

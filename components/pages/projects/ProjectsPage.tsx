@@ -21,7 +21,7 @@ export function ProjectsPage({
 
         <p className="mt-4 max-w-md">Projects that I&apos;ve Worked On</p>
         {/* <Link
-          className="flex h-6 items-center rounded-lg pb-8 pt-4 text-secondary transition-all hover:text-secondary-focus"
+          className="flex h-6 items-center rounded-2xl pb-8 pt-4 text-secondary transition-all hover:text-secondary-focus"
           href="/projects/github"
         >
           <p>My Github Projects</p>
@@ -44,7 +44,7 @@ export function ProjectsPage({
             return (
               <div
                 key={key}
-                className="card-compact mt-8 overflow-hidden rounded-xl bg-secondary-content shadow-sm"
+                className="card-compact mt-8 overflow-hidden rounded-2xl bg-secondary-content shadow-sm"
               >
                 <Image
                   src={imageUrl!}
@@ -52,7 +52,7 @@ export function ProjectsPage({
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="aspect-rectangle h-auto w-full rounded-xl object-cover"
+                  className="aspect-rectangle h-auto w-full rounded-2xl object-cover"
                 />
                 <div className="card-body">
                   <h2 className="card-title">{title}</h2>

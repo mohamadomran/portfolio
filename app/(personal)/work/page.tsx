@@ -10,7 +10,7 @@ export default async function About() {
       <h1 className="text-5xl font-bold"> Work Experience!</h1>
 
       <Link
-        className="flex h-6 items-center rounded-lg pb-8 pt-4 text-primary transition-all hover:text-primary"
+        className="flex h-6 items-center rounded-2xl pb-8 pt-4 text-primary transition-all hover:text-primary"
         href={SOCIAL_LINKS.CV}
       >
         <p>Download CV</p>

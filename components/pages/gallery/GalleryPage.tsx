@@ -24,7 +24,7 @@ export function GalleryPage({ images = [] }: { images?: GalleryItem[] }) {
             return (
               <div
                 key={key}
-                className="group mt-8 block overflow-hidden rounded-lg"
+                className="group mt-8 block overflow-hidden rounded-2xl"
               >
                 <Image
                   height={400}

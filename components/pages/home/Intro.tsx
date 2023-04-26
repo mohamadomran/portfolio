@@ -18,16 +18,16 @@ export const Intro = () => {
           alt="avatar"
           priority
           placeholder="blur"
-          className="max-w-sm rounded-3xl border-4 border-primary shadow-2xl"
+          className="max-w-sm rounded-2xl border-4 border-primary shadow-2xl"
         />
         <div>
           <h1 className="text-5xl font-bold">Hi! I&apos;m Mohamad!</h1>
-          <p className="py-6">
+          <p className="py-6 text-xl font-bold">
             A Full-stack engineer with a passion for AI, machine learning, and
             capturing the world through photography.
           </p>
           <Link
-            className="group mt-4 inline-flex items-center gap-1 font-medium text-secondary transition-colors hover:text-primary"
+            className="group mt-4 inline-flex items-center gap-1 text-xl font-bold text-secondary transition-colors hover:text-primary"
             href="/gallery"
           >
             Check my photo gallery <ArrowRightIcon />
@@ -50,7 +50,7 @@ export const Intro = () => {
             />
             <Link
               href={SOCIAL_LINKS.CV}
-              className="btn-outline btn-primary btn"
+              className="btn-outline btn-primary btn font-bold"
             >
               Download CV
               <ArrowDownIcon className="h-4 w-4 stroke-primary" />
