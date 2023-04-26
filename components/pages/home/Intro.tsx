@@ -6,34 +6,31 @@ import { SOCIAL_LINKS } from '@/constants/constants';
 import avatar from '@/public/static/images/avatar.png';
 
 import { ArrowDownIcon } from '../../icons/ArrowDownIcon';
-import { ArrowRightIcon } from '../../icons/ArrowRightIcon';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../../icons/SocialIcons';
 
 export const Intro = () => {
   return (
-    <>
-      <div className="flex flex-row items-start">
-        <div className="flex flex-col pr-8">
-          <h1 className="mb-1 text-3xl font-bold tracking-tight md:text-5xl">
-            Hi! I&apos;m Mohamad!
-          </h1>
-          <h2 className="mb-4 text-base-content">
-            Full-Stack Engineer based in{' '}
-            <span className="font-semibold">Beirut 🇱🇧 </span>
-          </h2>
-          <p className="mb-4 text-base-content">
-            Full-stack engineer with a passion for AI, machine learning, and
+    <div className="hero">
+      <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+        <Image
+          src={avatar}
+          alt="avatar"
+          priority
+          placeholder="blur"
+          className="max-w-sm rounded-3xl border-4 border-primary shadow-2xl"
+        />
+        <div>
+          <h1 className="text-5xl font-bold">Hi! I&apos;m Mohamad!</h1>
+          <p className="py-6">
+            A Full-stack engineer with a passion for AI, machine learning, and
             capturing the world through photography.
           </p>
           <Link
-            className="hover:text-primary flex h-6 items-center rounded-lg pb-8 pt-4 text-white transition-all"
+            className="flex h-6 items-center rounded-lg pb-8 pt-4  transition-all hover:text-secondary"
             href="/gallery"
           >
-            <p>Check my photo gallery</p>
-
-            <ArrowRightIcon className="stroke-primary" />
+            Check my photo gallery
           </Link>
-
           <div className="flex items-center gap-6 ">
             <SocialLink
               href={SOCIAL_LINKS.GITHUB}
@@ -59,17 +56,7 @@ export const Intro = () => {
             </Link>
           </div>
         </div>
-
-        <div className="mr-auto h-[200px] w-[200px] flex-none rounded-full md:h-[340px] md:w-[340px]">
-          <Image
-            src={avatar}
-            alt="avatar"
-            priority
-            placeholder="blur"
-            className="aspect-square rounded-full border-4 border-primary bg-zinc-100 object-cover shadow-inner"
-          />
-        </div>
       </div>
-    </>
+    </div>
   );
 };
