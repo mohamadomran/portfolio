@@ -1,13 +1,11 @@
 import { DesktopNavigation } from '../navigation/DesktopNavigation';
-import { MobileNavigation } from '../navigation/MobileNavigation';
 
 export function Header() {
   return (
     <>
-      <header className="pointer-events-none relative sticky top-0">
-        <div className="top-0 z-10 flex h-16 justify-end pb-16 pr-12 pt-6 md:justify-center md:pb-24 md:pr-0">
-          <DesktopNavigation className="pointer-events-auto hidden md:block" />
-          <MobileNavigation className="pointer-events-auto md:hidden" />
+      <header className="pointer-events-none relative sticky top-0 z-50">
+        <div className="top-0 z-10 flex h-16 justify-end pb-16 pr-12 pt-6 justify-center pb-24 pr-0">
+          <DesktopNavigation className="pointer-events-auto block" />
         </div>
       </header>
     </>
