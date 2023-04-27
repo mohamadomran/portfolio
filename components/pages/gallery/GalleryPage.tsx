@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { Layout } from '@/components/global/Layout';
 import ScrollUp from '@/components/global/ScrollUp';
 import { formatDate } from '@/lib/formatDate';
 import { urlForImage } from '@/lib/sanity.image';
@@ -7,11 +8,10 @@ import type { GalleryItem } from '@/types';
 
 export function GalleryPage({ images = [] }: { images?: GalleryItem[] }) {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <Layout>
       <header>
-        <h2 className="text-4xl font-bold sm:text-5xl">Gallery</h2>
-
-        <p className="mt-4 max-w-md">
+        <h1 className="text-5xl font-bold">Gallery</h1>
+        <p className="py-6 text-xl font-bold">
           A collection of my favorite photos taken by my S22 Ultra.
         </p>
       </header>
@@ -40,6 +40,6 @@ export function GalleryPage({ images = [] }: { images?: GalleryItem[] }) {
       )}
 
       <ScrollUp />
-    </div>
+    </Layout>
   );
 }

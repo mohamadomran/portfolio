@@ -16,15 +16,15 @@ export const GITHUB_SEO_DESCRIPTION = `Open Source Projects/Tinkering: My Contri
 export const SOCIAL_LINKS = {
   LINKEDIN: 'https://www.linkedin.com/in/mohamad-omran/',
   GITHUB: 'https://github.com/mohamadomran',
-  TWITTER: 'https://twitter.com/itsMohamadOmran',
+  TWITTER: 'https://twitter.com/itsMoProjectshamadOmran',
   EMAIL: 'mailto:mohamadomran_13@hotmail.com',
   CV: '/mohamad-omran_CV.pdf',
 };
 
 export const pages = [
   { link: '/', name: 'Home' },
-  { link: '/about', name: 'About' },
+  { link: '/about', name: 'About/Experience' },
   // { link: '/blog', name: 'Blog' },
-  { link: '/work', name: 'Work' },
   { link: '/projects', name: 'Projects' },
+  { link: '/mohamad-omran_CV.pdf', name: 'Resumé' },
 ];

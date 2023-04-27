@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Layout } from '@/components/global/Layout';
 import ScrollUp from '@/components/global/ScrollUp';
 // import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
 import { CustomPortableText } from '@/components/shared/CustomPortableText';
@@ -15,11 +16,13 @@ export function ProjectsPage({
   projects?: ProjectPayload[];
 }) {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <Layout>
       <header>
-        <h2 className="text-4xl font-bold sm:text-5xl">Projects</h2>
+        <h1 className="text-5xl font-bold">Projects</h1>
+        <p className="py-6 text-xl font-bold">
+          Projects that I&apos;ve Worked On
+        </p>
 
-        <p className="mt-4 max-w-md">Projects that I&apos;ve Worked On</p>
         {/* <Link
           className="flex h-6 items-center rounded-2xl pb-8 pt-4 text-secondary transition-all hover:text-secondary-focus"
           href="/projects/github"
@@ -72,6 +75,6 @@ export function ProjectsPage({
       </div>
 
       <ScrollUp />
-    </div>
+    </Layout>
   );
 }
