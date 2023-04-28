@@ -71,7 +71,7 @@ export function Resume() {
   return (
     <>
       <h2 className="mb-8 mt-8 text-3xl">Experience </h2>
-      <ol className="relative z-[-1] border-l border-secondary md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+      <ol className="relative border-l border-secondary">
         {work.map((role, roleIndex) => (
           <li key={roleIndex} className="mb-10 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-2xl bg-secondary text-white ring-1 ring-secondary-content">
