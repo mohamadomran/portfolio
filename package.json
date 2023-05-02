@@ -19,6 +19,7 @@
     "trailingComma": "all"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@portabletext/react": "^2.0.2",
     "@sanity/image-url": "1.0.2",
     "@sanity/vision": "3.8.3",
