@@ -1,5 +1,8 @@
 import 'tailwindcss/tailwind.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
+
 export default async function RootLayout({
   children,
 }: {
@@ -34,6 +37,7 @@ export default async function RootLayout({
       <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
       <title key="title">Portfolio - Mohamad Omran</title>
       <body>{children}</body>
+      <Analytics  />
     </html>
   );
 }
