@@ -16,6 +16,8 @@ export const Intro = () => {
         <Image
           src={avatar}
           alt="avatar"
+          width={300}
+          height={300}
           priority
           placeholder="blur"
           className="max-w-sm rounded-2xl border-4 border-primary shadow-2xl"
