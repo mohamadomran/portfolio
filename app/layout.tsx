@@ -8,7 +8,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="night">
       <link
         rel="alternate"
         type="application/rss+xml"
