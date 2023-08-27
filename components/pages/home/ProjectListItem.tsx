@@ -1,62 +1,57 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-import { Layout } from '@/components/global/Layout';
-import { ArrowRightIcon } from '@/components/icons/ArrowRightIcon';
-import { CustomPortableText } from '@/components/shared/CustomPortableText';
-import { urlForImage } from '@/lib/sanity.image';
-import type { ShowcaseProject } from '@/types';
+import type { PortableTextBlock } from '@portabletext/types'
+import { CustomPortableText } from 'components/shared/CustomPortableText'
+import ImageBox from 'components/shared/ImageBox'
+import type { ShowcaseProject } from 'types'
 
 interface ProjectProps {
-  project: ShowcaseProject;
-  odd?: number;
+  project: ShowcaseProject
+  odd: number
 }
 
 export function ProjectListItem(props: ProjectProps) {
-  const { project } = props;
+  const { project, odd } = props
 
-  const imageUrl =
-    project.coverImage &&
-    urlForImage(project.coverImage)?.height(1200).width(2100).url();
   return (
-    <Layout>
-      <h2 className="pt-6 text-4xl">Featured Project</h2>
+    <div
+      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
+        odd && 'border-b border-t xl:flex-row-reverse'
+      }`}
+    >
+      <div className="w-full xl:w-9/12">
+        <ImageBox
+          image={project.coverImage}
+          alt={`Cover image from ${project.title}`}
+          classesWrapper="relative aspect-[16/9]"
+        />
+      </div>
+      <div className="flex xl:w-1/4">
+        <TextBox project={project} />
+      </div>
+    </div>
+  )
+}
 
-      <Link
-        className="group mt-4 inline-flex items-center gap-1 text-xl font-bold text-secondary transition-colors hover:text-primary"
-        href="/projects"
-      >
-        Browse all projects
-        <ArrowRightIcon className="stroke-primary" />
-      </Link>
-
-      <div className="card mt-8 bg-secondary-content shadow-xl lg:card-side">
-        <div className={`overflow-hidden rounded-2xl lg:w-[50%]`}>
-          {imageUrl && (
-            <Image
-              className="aspect-rectangle h-full w-full object-cover"
-              alt={project.title!}
-              width="2100"
-              height="1200"
-              src={imageUrl}
-            />
-          )}
+function TextBox({ project }: { project: ShowcaseProject }) {
+  return (
+    <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
+      <div>
+        {/* Title */}
+        <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
+          {project.title}
         </div>
-
-        <div className="card-body lg:w-[50%] ">
-          <h2 className="card-title">{project.title!}</h2>
-          <CustomPortableText value={project.overview!} />
-          <div className="card-actions justify-end">
-            <Link
-              className="btn-primary btn"
-              href={project.site!}
-              target="_blank"
-            >
-              Check it out
-            </Link>
-          </div>
+        {/* Overview  */}
+        <div className="font-serif text-gray-500">
+          <CustomPortableText value={project.overview as PortableTextBlock[]} />
         </div>
       </div>
-    </Layout>
-  );
+      {/* Tags */}
+      <div className="mt-4 flex flex-row gap-x-2">
+        {project.tags?.map((tag, key) => (
+          <div className="text-sm font-medium lowercase md:text-lg" key={key}>
+            #{tag}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }

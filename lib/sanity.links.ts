@@ -4,13 +4,13 @@ export function resolveHref(
 ): string | undefined {
   switch (documentType) {
     case 'home':
-      return '/';
-    case 'blog':
-      return slug ? `/blog/${slug}` : undefined;
+      return '/'
+    case 'page':
+      return slug ? `/${slug}` : undefined
     case 'project':
-      return slug ? `/projects/${slug}` : undefined;
+      return slug ? `/projects/${slug}` : undefined
     default:
-      console.warn('Invalid document type:', documentType);
-      return undefined;
+      console.warn('Invalid document type:', documentType)
+      return undefined
   }
 }

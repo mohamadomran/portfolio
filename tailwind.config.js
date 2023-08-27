@@ -1,25 +1,20 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { theme } = require('@sanity/demo/tailwind')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,jsx,tsx}', './components/**/*.{js,jsx,tsx}'],
-  darkMode: 'class',
-  plugins: [require('daisyui')],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './intro-template/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    extend: {
-      fontFamily: {
-        mono: ['var(--font-mono)', ...fontFamily.mono],
-      },
+    ...theme,
+    // Overriding fontFamily to use @next/font loaded families
+    fontFamily: {
+      mono: 'var(--font-mono)',
+      sans: 'var(--font-sans)',
+      serif: 'var(--font-serif)',
     },
   },
-  daisyui: {
-    themes: ["night"], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "night", // name of one of the included themes for dark mode
-    base: true, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
-    rtl: false, // rotate style direction from left-to-right to right-to-left. You also need to add dir="rtl" to your html tag and install `tailwindcss-flip` plugin for Tailwind CSS.
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-  },
-};
+  plugins: [require('@tailwindcss/typography')],
+}

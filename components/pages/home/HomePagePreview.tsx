@@ -1,21 +1,22 @@
-'use client';
+'use client'
 
-import { usePreview } from 'lib/sanity.preview';
-import { homePageQuery } from 'lib/sanity.queries';
-import type { HomePagePayload } from 'types';
+import dynamic from 'next/dynamic'
 
-import { HomePage } from './HomePage';
+import type { HomePageProps } from './HomePage'
 
-export function HomePagePreview({ token }: { token: null | string }) {
-  const home: HomePagePayload = usePreview(token, homePageQuery);
+// Re-exported components using next/dynamic ensures they're not bundled
+// and sent to the browser unless actually used, with draftMode().enabled.
 
-  if (!home) {
+const HomePage = dynamic(() => import('./HomePage'))
+
+export default function HomePagePreview({ data }: HomePageProps) {
+  if (!data) {
     return (
       <div className="text-center">
         Please start editing your Home document to see the preview!
       </div>
-    );
+    )
   }
 
-  return <HomePage data={home} />;
+  return <HomePage data={data} />
 }

@@ -1,33 +1,42 @@
-import 'styles/tailwind.css';
+import 'styles/index.css';
 
-import { Space_Mono } from 'next/font/google';
+import { Footer } from 'components/global/Footer';
+import { Navbar } from 'components/global/Navbar';
+import { PreviewBanner } from 'components/preview/PreviewBanner';
+import { token } from 'lib/sanity.fetch';
+import dynamic from 'next/dynamic';
+import { draftMode } from 'next/headers';
+import { Suspense } from 'react';
 
-const mono = Space_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-import { Footer } from '@/components/global/Footer';
-import { Header } from '@/components/global/Header';
-import { PreviewBanner } from '@/components/preview/PreviewBanner';
-import { getPreviewToken } from '@/lib/sanity.server.preview';
+const PreviewProvider = dynamic(
+  () => import('components/preview/PreviewProvider'),
+);
 
 export default async function IndexRoute({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const token = getPreviewToken();
+  const isDraftMode = draftMode().isEnabled;
 
-  return (
-    <div className={`${mono.variable} flex min-h-screen flex-col`}>
-      {token && <PreviewBanner />}
-      <Header />
-      <main className="mx-auto min-h-screen w-screen max-w-6xl px-10 py-5 sm:px-11 sm:py-6 md:px-12 md:py-0">
-        {children}
-      </main>
-      <Footer />
+  const layout = (
+    <div className="flex min-h-screen flex-col bg-white text-black">
+      {isDraftMode && <PreviewBanner />}
+      <Suspense>
+        <Navbar />
+      </Suspense>
+      <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
+        <Suspense>{children}</Suspense>
+      </div>
+      <Suspense>
+        <Footer />
+      </Suspense>
     </div>
   );
+
+  if (isDraftMode) {
+    return <PreviewProvider token={token!}>{layout}</PreviewProvider>;
+  }
+
+  return layout;
 }

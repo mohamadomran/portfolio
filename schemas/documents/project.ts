@@ -1,5 +1,5 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons';
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { DocumentIcon, ImageIcon } from '@sanity/icons'
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'project',
@@ -116,6 +116,11 @@ export default defineType({
           },
           styles: [],
         }),
+        // Custom blocks
+        defineArrayMember({
+          name: 'timeline',
+          type: 'timeline',
+        }),
         defineField({
           type: 'image',
           icon: ImageIcon,
@@ -148,4 +153,4 @@ export default defineType({
       ],
     }),
   ],
-});
+})
