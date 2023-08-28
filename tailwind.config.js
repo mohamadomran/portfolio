@@ -1,20 +1,15 @@
-const { theme } = require('@sanity/demo/tailwind')
+import { nextui } from '@nextui-org/theme';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './intro-template/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    ...theme,
-    // Overriding fontFamily to use @next/font loaded families
-    fontFamily: {
-      mono: 'var(--font-mono)',
-      sans: 'var(--font-sans)',
-      serif: 'var(--font-serif)',
-    },
+    extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
-}
+  darkMode: 'class',
+  plugins: [nextui()],
+};
