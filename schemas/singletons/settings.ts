@@ -1,5 +1,5 @@
-import { CogIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { CogIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'settings',
@@ -23,7 +23,7 @@ export default defineType({
               type: 'home',
             },
             {
-              type: 'page',
+              type: 'blog',
             },
             {
               type: 'project',
@@ -74,7 +74,7 @@ export default defineType({
     prepare() {
       return {
         title: 'Menu Items',
-      }
+      };
     },
   },
-})
+});

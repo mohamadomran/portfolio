@@ -1,13 +1,11 @@
-import { HomeIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { HomeIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'home',
   title: 'Home',
   type: 'document',
   icon: HomeIcon,
-  // Uncomment below to have edits publish automatically as you type
-  // liveEdit: true,
   fields: [
     defineField({
       name: 'title',
@@ -71,6 +69,19 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'showcaseBlogs',
+      title: 'Showcase blogs',
+      description:
+        'These are the blogs that will appear first on your landing page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'blog' }],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {
@@ -80,7 +91,7 @@ export default defineType({
       return {
         subtitle: 'Home',
         title,
-      }
+      };
     },
   },
-})
+});

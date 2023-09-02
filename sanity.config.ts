@@ -2,52 +2,57 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
-import { visionTool } from '@sanity/vision'
-import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
-import { pageStructure, singletonPlugin } from 'plugins/settings'
-import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import { visionTool } from '@sanity/vision';
+import {
+  apiVersion,
+  dataset,
+  previewSecretId,
+  projectId,
+} from 'lib/sanity.api';
+import { pageStructure, singletonPlugin } from 'plugins/settings';
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
 import Iframe, {
   defineUrlResolver,
   IframeOptions,
-} from 'sanity-plugin-iframe-pane'
-import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
-import page from 'schemas/documents/page'
-import project from 'schemas/documents/project'
-import duration from 'schemas/objects/duration'
-import milestone from 'schemas/objects/milestone'
-import timeline from 'schemas/objects/timeline'
-import home from 'schemas/singletons/home'
-import settings from 'schemas/singletons/settings'
+} from 'sanity-plugin-iframe-pane';
+import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url';
+import blog from 'schemas/documents/blog';
+import project from 'schemas/documents/project';
+import duration from 'schemas/objects/duration';
+import milestone from 'schemas/objects/milestone';
+import timeline from 'schemas/objects/timeline';
+import home from 'schemas/singletons/home';
+import settings from 'schemas/singletons/settings';
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+  'Next.js Personal Website with Sanity.io';
 
 export const PREVIEWABLE_DOCUMENT_TYPES = [
   home.name,
-  page.name,
+  blog.name,
   project.name,
-] satisfies string[]
+] satisfies string[];
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
-  page.name,
+  blog.name,
   project.name,
-] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES
+] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES;
 
 // Used to generate URLs for drafts and live previews
-export const PREVIEW_BASE_URL = '/api/draft'
+export const PREVIEW_BASE_URL = '/api/draft';
 
 export const urlResolver = defineUrlResolver({
   base: PREVIEW_BASE_URL,
   requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
-})
+});
 
 export const iframeOptions = {
   url: urlResolver,
   urlSecretId: previewSecretId,
-} satisfies IframeOptions
+} satisfies IframeOptions;
 
 export default defineConfig({
   basePath: '/studio',
@@ -62,7 +67,7 @@ export default defineConfig({
       settings,
       // Documents
       duration,
-      page,
+      blog,
       project,
       // Objects
       milestone,
@@ -84,10 +89,10 @@ export default defineConfig({
             S.view.form(),
             // Preview
             S.view.component(Iframe).options(iframeOptions).title('Preview'),
-          ])
+          ]);
         }
 
-        return null
+        return null;
       },
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
@@ -105,4 +110,4 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
   ],
-})
+});

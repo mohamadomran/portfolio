@@ -1,4 +1,4 @@
-import { groq } from 'next-sanity'
+import { groq } from 'next-sanity';
 
 export const homePageQuery = groq`
   *[_type == "home"][0]{
@@ -12,23 +12,30 @@ export const homePageQuery = groq`
       tags,
       title,
     },
+    showcaseBlogs[]->{
+     _type,
+     overview,
+     "slug": slug.current,
+     tags,
+     title,
+    },
     title,
   }
-`
+`;
 
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
-`
+`;
 
-export const pagesBySlugQuery = groq`
-  *[_type == "page" && slug.current == $slug][0] {
+export const blogsBySlugQuery = groq`
+  *[_type == "blog" && slug.current == $slug][0] {
     _id,
     body,
     overview,
     title,
     "slug": slug.current,
   }
-`
+`;
 
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
@@ -43,15 +50,15 @@ export const projectBySlugQuery = groq`
     tags,
     title,
   }
-`
+`;
 
 export const projectPaths = groq`
   *[_type == "project" && slug.current != null].slug.current
-`
+`;
 
-export const pagePaths = groq`
-  *[_type == "page" && slug.current != null].slug.current
-`
+export const blogPaths = groq`
+  *[_type == "blog" && slug.current != null].slug.current
+`;
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
@@ -63,4 +70,4 @@ export const settingsQuery = groq`
     },
     ogImage,
   }
-`
+`;
