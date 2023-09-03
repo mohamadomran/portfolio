@@ -6,63 +6,124 @@ export default defineType({
   title: 'Settings',
   type: 'document',
   icon: CogIcon,
-  // Uncomment below to have edits publish automatically as you type
-  // liveEdit: true,
+  fieldsets: [
+    {
+      title: 'SEO & metadata',
+      name: 'metadata',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      title: 'Social Media',
+      name: 'social',
+    },
+    {
+      title: 'Website Logo',
+      name: 'logos',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
-      description: 'This field is the title of your personal website.',
-      title: 'Title',
       type: 'string',
-      validation: (rule) => rule.required(),
+      title: 'Site title',
     }),
     defineField({
-      name: 'overview',
-      description:
-        'Used both for the <meta> description tag for SEO, and the personal website subheader.',
-      title: 'Description',
+      title: 'URL',
+      name: 'url',
+      type: 'url',
+      description: 'The main site url. Used to create canonical url',
+    }),
+    defineField({
+      title: 'Main logo',
+      description: 'Upload your main logo here. SVG preferred. ',
+      name: 'logo',
+      type: 'image',
+      fieldset: 'logos',
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'email',
+      type: 'string',
+      title: 'Email',
+      validation: (Rule) =>
+        Rule.regex(
+          /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+          {
+            name: 'email', // Error message is "Does not match email-pattern"
+            invert: false, // Boolean to allow any value that does NOT match pattern
+          },
+        ),
+    }),
+
+    defineField({
+      name: 'social',
       type: 'array',
+      title: 'Social Links',
+      description: 'Enter your Social Media URLs',
+      validation: (Rule) => Rule.unique(),
       of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
+        {
+          type: 'object',
+          fields: [
+            {
+              type: 'string',
+              name: 'media',
+              title: 'Choose Social Media',
+              options: {
+                list: [
+                  { title: 'Linkedin', value: 'linkedin' },
+                  { title: 'Instagram', value: 'instagram' },
+                  { title: 'Github', value: 'github' },
                 ],
               },
-            ],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
+            },
+            {
+              type: 'url',
+              name: 'url',
+              title: 'Full Profile URL',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'media',
+              subtitle: 'url',
+            },
           },
-          styles: [],
-          type: 'block',
-        }),
+        },
       ],
+    }),
+
+    defineField({
+      title: 'Meta Description',
+      name: 'description',
+      description: 'Enter SEO Meta Description',
+      fieldset: 'metadata',
+      type: 'text',
+      rows: 5,
       validation: (rule) => rule.max(155).required(),
     }),
+
     defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',
-      description: 'Displayed on social cards and search engine results.',
+      description: 'Image for sharing previews on Facebook, Twitter etc.',
+      fieldset: 'metadata',
       options: {
         hotspot: true,
       },

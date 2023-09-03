@@ -1,62 +1,48 @@
-import * as demo from 'lib/demo.data'
-import { urlForImage } from 'lib/sanity.image'
-import type { Metadata } from 'next'
-import type { Image } from 'sanity'
+import { Metadata } from 'next';
 
-/**
- * All the shared stuff that goes into <head> on `(personal)` routes, can be be imported by `page.tsx` files and used by `generateMetadata` functions.
- */
-export function defineMetadata({
-  baseTitle,
-  description,
-  image,
-  title,
-}: {
-  baseTitle?: string
-  description?: string
-  image?: Image
-  title?: string
-}) {
-  const metaTitle = [
-    ...(title ? [title] : []),
-    ...(baseTitle ? [baseTitle] : []),
-  ].join(' | ')
+import { getSettings } from './sanity.fetch';
+import { urlForImage } from './sanity.image';
+
+export async function sharedMetadata(): Promise<Metadata> {
+  const settings = await getSettings();
 
   const imageUrl =
-    image && urlForImage(image)?.width(1200).height(627).fit('crop').url()
+    settings.openGraphImage &&
+    urlForImage(settings.openGraphImage)?.width(800).height(600).url();
 
   return {
-    title: metaTitle || demo.title,
+    title: {
+      default: settings?.title || 'Portfolio | Mohamad Omran',
+      template: '%s | Mohamad Omran',
+    },
+    description: settings?.description,
+    keywords: [
+      'Portfolio',
+      'Blog',
+      'Digital Garden',
+      'Fullstack Engineer',
+      'Full-stack Engineer',
+      'Sanity',
+      'NextJS',
+    ],
+    authors: [{ name: 'Mohamad Omran' }],
     themeColor: '#000',
-    description,
-    openGraph: imageUrl
-      ? {
-          images: [imageUrl],
-        }
-      : undefined,
-  } satisfies Metadata
+    openGraph: {
+      images: [
+        {
+          url: imageUrl || '/img/opengraph.jpg',
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+    twitter: {
+      title: settings?.title || 'Portfolio | Mohamad Omran',
+      card: 'summary_large_image',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  } satisfies Metadata;
 }
-
-/*
-<link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-    */

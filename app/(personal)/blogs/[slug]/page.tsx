@@ -8,7 +8,6 @@ import {
   getSettings,
 } from 'lib/sanity.fetch';
 import { blogsBySlugQuery } from 'lib/sanity.queries';
-import { defineMetadata } from 'lib/utils.metadata';
 import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
@@ -29,12 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     getHomePageTitle(),
   ]);
 
-  return defineMetadata({
-    baseTitle: homePageTitle ?? undefined,
-    description: blog?.overview ? toPlainText(blog.overview) : '',
-    image: settings?.ogImage,
-    title: blog?.title,
-  });
+  //TODO: Replace title with blog's title
+  return await sharedMetaData();
 }
 
 export async function generateStaticParams() {
@@ -60,4 +55,7 @@ export default async function PageSlugRoute({ params }: Props) {
       <Blog data={data} />
     </LiveQuery>
   );
+}
+function sharedMetaData(): Metadata | PromiseLike<Metadata> {
+  throw new Error('Function not implemented.');
 }

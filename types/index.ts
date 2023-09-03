@@ -1,12 +1,6 @@
 import type { PortableTextBlock } from '@portabletext/types';
 import type { Image } from 'sanity';
 
-export interface MenuItem {
-  _type: string;
-  slug?: string;
-  title?: string;
-}
-
 export interface MilestoneItem {
   description?: string;
   duration?: {
@@ -34,6 +28,19 @@ export interface ShowcaseBlog {
   slug?: string;
   tags?: string[];
   title?: string;
+}
+
+export interface SettingsPayload {
+  title?: string;
+  url?: string;
+  logo?: Image;
+  email?: string;
+  social?: {
+    media?: string;
+    url?: string;
+  };
+  description?: string;
+  openGraphImage?: Image;
 }
 
 export interface HomePagePayload {
@@ -73,12 +80,4 @@ export interface ProjectPayload {
   slug: string;
   tags?: string[];
   title?: string;
-}
-
-export interface SettingsPayload {
-  footer?: PortableTextBlock[];
-  menuItems?: MenuItem[];
-  ogImage?: Image;
-  title?: string;
-  overview?: string;
 }
