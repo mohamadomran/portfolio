@@ -1,37 +1,24 @@
 import type { PortableTextBlock } from '@portabletext/types';
 import { CustomPortableText } from 'components/shared/CustomPortableText';
-import ImageBox from 'components/shared/ImageBox';
-import type { ShowcaseProject } from 'types';
+import type { ShowcaseBlog } from 'types';
 
-interface ProjectProps {
-  project: ShowcaseProject;
-  odd: number;
+interface BlogProps {
+  project: ShowcaseBlog;
 }
 
-export function ProjectListItem(props: ProjectProps) {
-  const { project, odd } = props;
+export function BlogListItem(props: BlogProps) {
+  const { project } = props;
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-b border-t xl:flex-row-reverse'
-      }`}
-    >
-      <div className="w-full xl:w-9/12">
-        <ImageBox
-          image={project.coverImage}
-          alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9]"
-        />
-      </div>
-      <div className="flex xl:w-1/4">
+    <div className="flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row">
+      <div className="flex">
         <TextBox project={project} />
       </div>
     </div>
   );
 }
 
-function TextBox({ project }: { project: ShowcaseProject }) {
+function TextBox({ project }: { project: ShowcaseBlog }) {
   return (
     <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
       <div>

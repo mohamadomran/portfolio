@@ -32,6 +32,16 @@ export const projectsQuery = groq`
     title,
 }`;
 
+export const blogsQuery = groq`
+  *[_type == "blog"]{
+    _id,
+    _type,
+    overview,
+    site,
+    tags,
+    title,
+}`;
+
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
 `;

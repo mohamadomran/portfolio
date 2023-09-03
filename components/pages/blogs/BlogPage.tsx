@@ -1,26 +1,25 @@
+import { BlogListItem } from 'components/shared/BlogListItem';
 import { Header } from 'components/shared/Header';
 import { ProjectListItem } from 'components/shared/ProjectListItem';
-import type { ProjectsPayload } from 'types';
+import type { BlogsPayload, ProjectsPayload } from 'types';
 
-export interface ProjectsPageProps {
-  data: ProjectsPayload[];
+export interface BlogsPageProps {
+  data: BlogsPayload[];
 }
 
-export function ProjectsPage({ data }) {
+export function BlogsPage({ data }) {
   console.log(data);
 
   return (
     <div className="space-y-20">
       <Header centered title="Projects" />
-      {/* Showcase projects */}
-
       <div className="mx-auto max-w-[100rem] rounded-md border">
-        {data.map((project, key) => {
-          return <ProjectListItem key={key} project={project!} odd={key % 2} />;
+        {data.map((blog, key) => {
+          return <BlogListItem key={key} project={blog!} />;
         })}
       </div>
     </div>
   );
 }
 
-export default ProjectsPage;
+export default BlogsPage;

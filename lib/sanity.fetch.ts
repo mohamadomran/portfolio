@@ -5,6 +5,7 @@ import { client } from 'lib/sanity.client';
 import {
   blogPaths,
   blogsBySlugQuery,
+  blogsQuery,
   homePageQuery,
   homePageTitleQuery,
   projectBySlugQuery,
@@ -15,6 +16,7 @@ import {
 import { draftMode } from 'next/headers';
 import type {
   BlogPayload,
+  BlogsPayload,
   HomePagePayload,
   ProjectPayload,
   ProjectsPayload,
@@ -91,6 +93,13 @@ export function getHomePage() {
   return sanityFetch<HomePagePayload | null>({
     query: homePageQuery,
     tags: ['home', 'project', 'blog'],
+  });
+}
+
+export function getBlogs() {
+  return sanityFetch<BlogsPayload[] | null>({
+    query: blogsQuery,
+    tags: ['blog'],
   });
 }
 

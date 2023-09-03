@@ -10,11 +10,11 @@ export const siteConfig = {
     },
     {
       label: 'Projects',
-      href: '/project',
+      href: '/projects',
     },
     {
       label: 'Blog',
-      href: '/blog',
+      href: '/blogs',
     },
     {
       label: 'About',
