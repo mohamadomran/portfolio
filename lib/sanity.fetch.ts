@@ -9,6 +9,7 @@ import {
   homePageTitleQuery,
   projectBySlugQuery,
   projectPaths,
+  projectsQuery,
   settingsQuery,
 } from 'lib/sanity.queries';
 import { draftMode } from 'next/headers';
@@ -16,6 +17,7 @@ import type {
   BlogPayload,
   HomePagePayload,
   ProjectPayload,
+  ProjectsPayload,
   SettingsPayload,
 } from 'types';
 
@@ -88,7 +90,14 @@ export function getProjectBySlug(slug: string) {
 export function getHomePage() {
   return sanityFetch<HomePagePayload | null>({
     query: homePageQuery,
-    tags: ['home', 'project'],
+    tags: ['home', 'project', 'blog'],
+  });
+}
+
+export function getProjects() {
+  return sanityFetch<ProjectsPayload[] | null>({
+    query: projectsQuery,
+    tags: ['project'],
   });
 }
 

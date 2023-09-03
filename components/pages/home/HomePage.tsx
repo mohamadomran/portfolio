@@ -1,6 +1,6 @@
-import { BlogListItem } from 'components/pages/home/BlogListItem';
-import { ProjectListItem } from 'components/pages/home/ProjectListItem';
+import { BlogListItem } from 'components/shared/BlogListItem';
 import { Header } from 'components/shared/Header';
+import { ProjectListItem } from 'components/shared/ProjectListItem';
 import { resolveHref } from 'lib/sanity.links';
 import Link from 'next/link';
 import type { HomePagePayload } from 'types';

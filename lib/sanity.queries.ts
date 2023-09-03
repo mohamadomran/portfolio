@@ -3,7 +3,6 @@ import { groq } from 'next-sanity';
 export const homePageQuery = groq`
   *[_type == "home"][0]{
     _id,
-    overview,
     showcaseProjects[]->{
       _type,
       coverImage,
@@ -19,9 +18,19 @@ export const homePageQuery = groq`
      tags,
      title,
     },
-    title,
   }
 `;
+
+export const projectsQuery = groq`
+  *[_type == "project"]{
+    _id,
+    _type,
+    coverImage,
+    overview,
+    site,
+    tags,
+    title,
+}`;
 
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
@@ -62,12 +71,8 @@ export const blogPaths = groq`
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
-    footer,
-    menuItems[]->{
-      _type,
-      "slug": slug.current,
-      title
-    },
+    title,
+    overview,
     ogImage,
   }
 `;
