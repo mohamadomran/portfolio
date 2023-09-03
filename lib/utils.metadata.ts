@@ -7,8 +7,8 @@ export async function sharedMetadata(): Promise<Metadata> {
   const settings = await getSettings();
 
   const imageUrl =
-    settings.openGraphImage &&
-    urlForImage(settings.openGraphImage)?.width(800).height(600).url();
+    settings.ogImage &&
+    urlForImage(settings.ogImage)?.width(1200).height(600).url();
 
   return {
     title: {
@@ -30,9 +30,9 @@ export async function sharedMetadata(): Promise<Metadata> {
     openGraph: {
       images: [
         {
-          url: imageUrl || '/img/opengraph.jpg',
-          width: 800,
-          height: 600,
+          url: imageUrl || '',
+          width: 1200,
+          height: 800,
         },
       ],
     },

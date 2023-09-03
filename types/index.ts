@@ -40,7 +40,7 @@ export interface SettingsPayload {
     url?: string;
   };
   description?: string;
-  openGraphImage?: Image;
+  ogImage?: Image;
 }
 
 export interface HomePagePayload {
