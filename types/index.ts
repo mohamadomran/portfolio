@@ -19,7 +19,7 @@ export interface MilestoneItem {
 }
 
 export interface ShowcaseProject {
-  _type: string;
+  _type?: string;
   coverImage?: Image;
   overview?: PortableTextBlock[];
   slug?: string;
@@ -36,8 +36,6 @@ export interface ShowcaseBlog {
   title?: string;
 }
 
-// Page payloads
-
 export interface HomePagePayload {
   footer?: PortableTextBlock[];
   overview?: PortableTextBlock[];
@@ -52,6 +50,14 @@ export interface BlogPayload {
   overview?: PortableTextBlock[];
   title?: string;
   slug?: string;
+}
+
+export interface ProjectsPayload {
+  projects?: ShowcaseProject[];
+}
+
+export interface BlogsPayload {
+  blogs?: ShowcaseBlog[];
 }
 
 export interface ProjectPayload {
@@ -73,4 +79,6 @@ export interface SettingsPayload {
   footer?: PortableTextBlock[];
   menuItems?: MenuItem[];
   ogImage?: Image;
+  title?: string;
+  overview?: string;
 }
