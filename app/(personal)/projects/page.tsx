@@ -3,6 +3,7 @@ import ProjectsPagePreview from 'components/pages/projects/ProjectPagePreview';
 import { ProjectsPage } from 'components/pages/projects/ProjectsPage';
 import { getProjects, getSettings } from 'lib/sanity.fetch';
 import { homePageQuery } from 'lib/sanity.queries';
+import { sharedMetadata } from 'lib/utils.metadata';
 import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Link from 'next/link';
@@ -11,7 +12,7 @@ import { LiveQuery } from 'next-sanity/preview/live-query';
 export const runtime = 'edge';
 
 export async function generateMetadata(): Promise<Metadata> {
-  return await sharedMetaData();
+  return await sharedMetadata();
 }
 
 export default async function IndexRoute() {
@@ -42,7 +43,4 @@ export default async function IndexRoute() {
       <ProjectsPage data={projects} />
     </LiveQuery>
   );
-}
-function sharedMetaData(): Metadata | PromiseLike<Metadata> {
-  throw new Error('Function not implemented.');
 }
