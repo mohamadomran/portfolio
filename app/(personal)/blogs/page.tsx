@@ -18,21 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function IndexRoute() {
   const blogs = await getBlogs();
 
-  if (!blogs && !draftMode().isEnabled) {
-    return (
-      <div className="text-center">
-        You don&rsquo;t have a projects document yet,{' '}
-        <Link
-          href="/studio/desk/projects%7C%2Cview%3Dpreview"
-          className="underline"
-        >
-          create one now
-        </Link>
-        !
-      </div>
-    );
-  }
-
   return (
     <LiveQuery
       enabled={draftMode().isEnabled}

@@ -1,24 +1,30 @@
 import { BlogListItem } from 'components/shared/BlogListItem';
 import { Header } from 'components/shared/Header';
-import { ProjectCard } from 'components/shared/ProjectCard';
-import type { BlogsPayload, ProjectsPayload } from 'types';
+import { resolveHref } from 'lib/sanity.links';
+import type { BlogsPayload } from 'types';
 
 export interface BlogsPageProps {
-  data: BlogsPayload[];
+  data: BlogsPayload[] | null;
 }
 
 export function BlogsPage({ data }) {
-  console.log(data);
-
   return (
-    <div className="space-y-20">
-      <Header centered title="Projects" />
-      <div className="mx-auto max-w-[100rem] rounded-md border">
-        {data.map((blog, key) => {
-          return <BlogListItem key={key} project={blog!} />;
-        })}
-      </div>
-    </div>
+    <>
+      <Header title="Projects" />
+
+      {data.map((blog, key) => {
+        const href = resolveHref(blog._type, blog.slug);
+        if (!href) {
+          return null;
+        }
+
+        return (
+          <div className="my-4" key={key}>
+            <BlogListItem blog={blog} href={href} />
+          </div>
+        );
+      })}
+    </>
   );
 }
 

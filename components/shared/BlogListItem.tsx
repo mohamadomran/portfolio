@@ -15,12 +15,12 @@ import type { ShowcaseBlog } from 'types';
 
 interface BlogProps {
   blog: ShowcaseBlog;
-  href: string;
+  href?: string;
 }
 
 export function BlogListItem({ blog, href }: BlogProps) {
   return (
-    <Card shadow="lg" isPressable className="bg-primary/10">
+    <Card shadow="lg" isPressable className="bg-primary/10 w-full">
       <CardHeader className="flex 3 text-left px-5">
         <div className="flex flex-col">{blog.title}</div>
       </CardHeader>
@@ -28,15 +28,14 @@ export function BlogListItem({ blog, href }: BlogProps) {
       <CardBody>
         <CustomPortableText value={blog.overview as PortableTextBlock[]} />
       </CardBody>
-      <Divider />
-      <CardFooter>
+      <CardFooter className="flex flex-col">
         <Button
           href={href}
           as={Link}
           color="primary"
           showAnchorIcon
           variant="flat"
-          className="justify-end"
+          className="self-end"
         >
           Read More
         </Button>

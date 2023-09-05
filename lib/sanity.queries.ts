@@ -38,6 +38,7 @@ export const blogsQuery = groq`
     _id,
     _type,
     overview,
+    slug,
     site,
     tags,
     title,
