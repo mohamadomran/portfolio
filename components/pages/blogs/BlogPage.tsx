@@ -1,6 +1,6 @@
 import { BlogListItem } from 'components/shared/BlogListItem';
 import { Header } from 'components/shared/Header';
-import { ProjectListItem } from 'components/shared/ProjectListItem';
+import { ProjectCard } from 'components/shared/ProjectCard';
 import type { BlogsPayload, ProjectsPayload } from 'types';
 
 export interface BlogsPageProps {

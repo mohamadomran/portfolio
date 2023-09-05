@@ -1,5 +1,7 @@
 import { Header } from 'components/shared/Header';
-import { ProjectListItem } from 'components/shared/ProjectListItem';
+import { ProjectCard } from 'components/shared/ProjectCard';
+import { resolveHref } from 'lib/sanity.links';
+import Link from 'next/link';
 import type { ProjectsPayload } from 'types';
 
 export interface ProjectsPageProps {
@@ -7,16 +9,14 @@ export interface ProjectsPageProps {
 }
 
 export function ProjectsPage({ data }) {
-  console.log(data);
-
   return (
     <div className="space-y-20">
-      <Header centered title="Projects" />
-      {/* Showcase projects */}
+      <Header title="Explore My Work" />
 
-      <div className="mx-auto max-w-[100rem] rounded-md border">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
         {data.map((project, key) => {
-          return <ProjectListItem key={key} project={project!} odd={key % 2} />;
+          const href = resolveHref(project._type, project.slug);
+          return <ProjectCard key={key} project={project!} />;
         })}
       </div>
     </div>

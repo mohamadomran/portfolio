@@ -1,6 +1,6 @@
 import { BlogListItem } from 'components/shared/BlogListItem';
 import { Header } from 'components/shared/Header';
-import { ProjectListItem } from 'components/shared/ProjectListItem';
+import { ProjectCard } from 'components/shared/ProjectCard';
 import { resolveHref } from 'lib/sanity.links';
 import Link from 'next/link';
 import type { HomePagePayload } from 'types';
@@ -23,7 +23,7 @@ export function HomePage({ data }: HomePageProps) {
       {title && <Header centered title={title} description={overview} />}
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="mx-auto max-w-[100rem] rounded-md border">
+        <>
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug);
             if (!href) {
@@ -31,11 +31,11 @@ export function HomePage({ data }: HomePageProps) {
             }
             return (
               <Link key={key} href={href}>
-                <ProjectListItem project={project} odd={key % 2} />
+                <ProjectCard project={project} />
               </Link>
             );
           })}
-        </div>
+        </>
       )}
       {/* Showcase blogs */}
       {showcaseBlogs && showcaseBlogs.length > 0 && (

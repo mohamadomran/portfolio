@@ -7,6 +7,7 @@ export const homePageQuery = groq`
       _type,
       coverImage,
       overview,
+      site,
       "slug": slug.current,
       tags,
       title,

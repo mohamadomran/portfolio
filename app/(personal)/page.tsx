@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { LiveQuery } from 'next-sanity/preview/live-query';
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 export async function generateMetadata(): Promise<Metadata> {
   return await sharedMetadata();

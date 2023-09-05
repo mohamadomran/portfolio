@@ -16,6 +16,7 @@ export interface ShowcaseProject {
   _type?: string;
   coverImage?: Image;
   overview?: PortableTextBlock[];
+  site?: string;
   slug?: string;
   tags?: string[];
   title?: string;
