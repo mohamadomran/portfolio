@@ -1,6 +1,5 @@
 import 'tailwindcss/tailwind.css';
 
-import { Blobs } from 'components/global/blobs';
 import { Inter, JetBrains_Mono, PT_Serif } from 'next/font/google';
 
 import { Providers } from './providers';
@@ -34,7 +33,6 @@ export default async function RootLayout({
       className={`${mono.variable} ${sans.variable} ${serif.variable} cyan-dark`}
     >
       <body>
-        <Blobs />
         <Providers>{children}</Providers>
       </body>
     </html>

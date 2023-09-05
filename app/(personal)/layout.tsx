@@ -1,5 +1,6 @@
 import 'styles/index.css';
 
+import { Blobs } from 'components/global/blobs';
 import { Footer } from 'components/global/Footer';
 import { Navbar } from 'components/global/Navbar';
 import { PreviewBanner } from 'components/preview/PreviewBanner';
@@ -20,12 +21,13 @@ export default async function IndexRoute({
   const isDraftMode = draftMode().isEnabled;
 
   const layout = (
-    <div className="flex min-h-screen flex-col text-white">
+    <div className="flex flex-col">
       {isDraftMode && <PreviewBanner />}
+      <Blobs />
       <Suspense>
         <Navbar />
       </Suspense>
-      <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32 self-center">
+      <div className="mt-20 flex-grow px-8 md:px-16 lg:px-32 self-center md:w-[70%]">
         <Suspense>{children}</Suspense>
       </div>
       <Suspense>

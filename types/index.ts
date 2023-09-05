@@ -45,11 +45,8 @@ export interface SettingsPayload {
 }
 
 export interface HomePagePayload {
-  footer?: PortableTextBlock[];
-  overview?: PortableTextBlock[];
   showcaseProjects?: ShowcaseProject[];
   showcaseBlogs?: ShowcaseBlog[];
-  title?: string;
 }
 
 export interface BlogPayload {
